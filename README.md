@@ -6,8 +6,8 @@ A Jupyter notebooks with code examples in [R](https://www.r-project.org/) or [Py
 
 | What | Format | Contents and link |
 |:-----|:-------|:------------------|
-| Ch. 6 Data Analysis: Diagnostic Visualisations and Descriptives | R | [Chapter06_basic.ipynb](Chapter06_basic.ipynb) |
-| Ch. 6 Inferential Statistics | R | [Chapter06_inferential.ipynb](Chapter06_inferential.ipynb) |
+| Ch. 6 Diagnostic Visualisations and Descriptives | R | [Chapter06_basic.ipynb](Chapter06_basic.ipynb) |
+| Ch. 6 Inferential Statistics | R | -- |
 | Ch. 8 Score analysis | Python | [Chapter08_score.ipynb](Chapter08_score.ipynb) |
-| Ch. 8 Event analysis | Python | [Chapter08_event.ipynb](Chapter08_event.ipynb) |
-| Ch. 8 Audio analysis | Python | [Chapter08_audio.ipynb](Chapter08_audio.ipynb) |
+| Ch. 8 Event analysis | Python | -- |
+| Ch. 8 Audio analysis | Python | -- |
