@@ -1,17 +1,13 @@
 # How to Conduct Empirical Music Research
 
-R and Python code for the book.
+A Jupyter notebooks with code examples in [R](https://www.r-project.org/) or [Python](https://www.python.org/) for _Routlegde_ book titled **[How to Conduct Empirical Music Research](https://github.com/tuomaseerola/emr)** by [Tuomas Eerola](https://www.durham.ac.uk/staff/tuomas-eerola/), [Music and Science Lab]() at [Durham University](https://www.durham.ac.uk) and [Music and Science Lab](https://musicscience.net) scheduled to be published in 2023.
 
-## [Tuomas Eerola](https://www.durham.ac.uk/staff/tuomas-eerola/), [Durham University, UK](https://www.durham.ac.uk/)
-
-Routledge, 2023.
-
-### Contents
+## Contents
 
 | What | Format | Contents and link |
 |:-----|:-------|:------------------|
-| Basic statistics | R | [Chapter06_basic.ipynb](Chapter06_basic.ipynb) |
-| Inferential statistics | R | [Chapter06_inferential.ipynb](Chapter06_inferential.ipynb) |
-| Score analysis | Python | [Chapter08_score.ipynb](Chapter08_score.ipynb) |
-| Event analysis | Python | [Chapter08_event.ipynb](Chapter08_event.ipynb) |
-| Audio analysis | Python | [Chapter08_audio.ipynb](Chapter08_audio.ipynb) |
+| Ch. 6 Data Analysis: Diagnostic Visualisations and Descriptives | R | [Chapter06_basic.ipynb](Chapter06_basic.ipynb) |
+| Ch. 6 Inferential Statistics | R | [Chapter06_inferential.ipynb](Chapter06_inferential.ipynb) |
+| Ch. 8 Score analysis | Python | [Chapter08_score.ipynb](Chapter08_score.ipynb) |
+| Ch. 8 Event analysis | Python | [Chapter08_event.ipynb](Chapter08_event.ipynb) |
+| Ch. 8 Audio analysis | Python | [Chapter08_audio.ipynb](Chapter08_audio.ipynb) |
