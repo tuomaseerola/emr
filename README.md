@@ -11,4 +11,4 @@ A Jupyter notebooks with code examples in [R](https://www.r-project.org/) or [Py
 | Ch. 8 Score analysis | Python | [Chapter08_score.ipynb](Chapter08_score.ipynb) |
 | Ch. 8 Event analysis | Python | -- |
 | Ch. 8 Audio analysis | Python | [Chapter08_audio.ipynb](Chapter08_audio.ipynb) |
-
+| Ch. 8 Audio feature extraction | Python | [Chapter08_feature_extraction.ipynb](Chapter08_feature_extraction.ipynb) |
