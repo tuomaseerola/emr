@@ -4,11 +4,15 @@ A Jupyter notebooks with code examples in [R](https://www.r-project.org/) or [Py
 
 ### Contents
 
-| Contents | Format | Notebook |
-|:-----|:-------|:------------------|
-| Ch. 6 Diagnostic Visualisations and Descriptives | R | [Chapter06_basic.ipynb](Chapter06_basic.ipynb) |
-| Ch. 6 Inferential Statistics | R | -- |
-| Ch. 8 Score analysis | Python | [Chapter08_score.ipynb](Chapter08_score.ipynb) |
-| Ch. 8 Event analysis | Python | -- |
-| Ch. 8 Audio analysis | Python | [Chapter08_audio.ipynb](Chapter08_audio.ipynb) |
-| Ch. 8 Audio feature extraction | Python | [Chapter08_feature_extraction.ipynb](Chapter08_feature_extraction.ipynb) |
+| Contents                                              | Format |
+|:------------------------------------------------------|:-------|
+| [Ch. 1 Examples](Ch1_examples.ipynb)                                  | R      |
+| [Ch. 2 Examples](Ch2_examples.ipynb)                                  | R      |
+| [Ch. 3 Examples](Ch3_examples.ipynb)                                  | R      |
+| [Ch. 6 Diagnostic Visualisations and Descriptives](Chapter06_basic.ipynb)| R      |
+| Ch. 6 Inferential Statistics                          | R      |
+| [Ch. 8 Score analysis](Chapter08_score.ipynb)                            | Python |
+| Ch. 8 Event analysis                                  | Python |
+| [Ch. 8 Audio analysis](Chapter08_audio.ipynb)                            | Python |
+| [Ch. 8 Audio feature extraction](Chapter08_feature_extraction.ipynb)                  | Python |
+
