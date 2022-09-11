@@ -9,7 +9,7 @@ The notebooks are designed to be run in [Google Colab](https://colab.research.go
 | Chapter                                               | Language |
 |:------------------------------------------------------|:---------|
 | **Chapter 1: Introduction**                           |        |
-| &nbsp;&nbsp;[Ch. 1 Examples](Ch1_examples.ipynb)                      | R      |
+| &nbsp;&nbsp;Ch. 1 Examples[Jupyter Source](Ch1_examples.ipynb) [Open in Colab](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)                      | R      |
 | **Chapter 2: History**                                |        |
 | &nbsp;&nbsp;[Ch. 2 Examples](Ch1_examples.ipynb)                      | R      |
 | **Chapter 3: Contemporary Empirical Music Research**  |        |
