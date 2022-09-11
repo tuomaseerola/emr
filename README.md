@@ -33,3 +33,9 @@ The notebooks are designed to be run in [Google Colab](https://colab.research.go
 | &nbsp;&nbsp;[Online Statistics Handbooks (R flavoured)](online_statistics.md)|     |       | Links |
 | &nbsp;&nbsp;[Other Online Resources](other_resources.md)              |          |       | Links |
 
+
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tuomaseerola/emr/HEAD?labpath=Ch1_examples.ipynb)
+
+
+[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)
