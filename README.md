@@ -15,18 +15,18 @@ The notebooks are designed to be run in [Google Colab](https://colab.research.go
 | **Chapter 3: Contemporary Empirical Music Research**  |          |       |          |
 | &nbsp;&nbsp;Ch. 3 Examples                            |[link](Ch3_examples.ipynb)|[link](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch3_examples.ipynb)| R     |
 | **Chapter 4: Methods in Empirical Music Research**    |          |       |          |
-| &nbsp;&nbsp;Ch. 4 Examples                            |          |       |          |
+| &nbsp;&nbsp;Ch. 4 Examples                            |[link](Ch4_examples.ipynb)|[link](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch4_examples.ipynb)|          |
 | **Chapter 5: Sources of Information**                 |          |       |          |
 | **Chapter 6: Data Analysis**                          |          |       |          |
 | &nbsp;&nbsp;Ch. 6.6 Diagnostic Visualisations and Descriptives|[link](Ch6_basic.ipynb)|[link](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch6_basic.ipynb)| R      |
-| &nbsp;&nbsp;Ch. 6.7 Inferential Statistics            |          |       |   R      |
+| &nbsp;&nbsp;Ch. 6.7 Inferential Statistics            | [link](Ch6_inferential.ipynb) |[link](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch6_inferential.ipynb) |   R      |
 | **Chapter 7: Reporting and Craftmanship**             |          |       |          |
 | **Chapter 8: Empirical Research into Music**          |          |       |          |
 | &nbsp;&nbsp;Ch. 8.2 Score analysis                    |[link](Ch8_score.ipynb)|[link](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch8_score.ipynb)| Python |
 | &nbsp;&nbsp;Ch. 8.3 Event analysis                    |[link](Ch8_event.ipynb)|[link](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch8_event.ipynb)| Python |
 | &nbsp;&nbsp;Ch. 8.4 Audio analysis                    |[link](Ch8_audio.ipynb)|[link](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch8_audio.ipynb)| Python |
 | &nbsp;&nbsp;Ch. 8.4 Audio Feature Extraction          |[link](Ch8_extract.ipynb)|[link](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch8_extract.ipynb)| Python |
-| &nbsp;&nbsp;Ch. 8.5 Corpus Studies]                   |[link](Ch8_event.ipynb)|[link](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch8_event.ipynb)| Python |
+| &nbsp;&nbsp;Ch. 8.5 Corpus Studies                    |[link](Ch8_corpus.ipynb)|[link](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch8_corpus.ipynb)| Python |
 | **Chapter 9: Empirical Understanding of Music**       |          |       |          |
 | **Appendix**                                          |          |       |          |
 | &nbsp;&nbsp;[Online Tutorials (R and Python)](online_tutorials.md)     |          |       | Links |
