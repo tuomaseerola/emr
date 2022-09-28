@@ -4,6 +4,8 @@ Electronic materials (Jupyter notebooks with code examples in [R](https://www.r-
 
 The notebooks are designed to be run in [Google Colab](https://colab.research.google.com/) within your browser. This service is free and does not require any installations or software, but some functionalities may be limited. It is possible to run the notebooks within a [Jupyter server in your own computer](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/index.html).
 
+**Note: The links and jupyter notebooks have not yet been released (28/9/2022).**
+
 ### Contents
 
 | Chapter                                               | Jupyter  | Colab | Language |
@@ -11,25 +13,36 @@ The notebooks are designed to be run in [Google Colab](https://colab.research.go
 | **Chapter 1: Introduction**                           |          |       |          |
 | &nbsp;&nbsp;Ch. 1 Examples                            |[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tuomaseerola/emr/HEAD?labpath=Ch1_examples.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| R     |
 | **Chapter 2: History**                                |          |       |          |
-| &nbsp;&nbsp;Ch. 2 Examples                            |[link](Ch2_examples.ipynb)|[link](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch2_examples.ipynb)| R     |
+| &nbsp;&nbsp;Ch. 2 Examples                            |[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tuomaseerola/emr/HEAD?labpath=Ch1_examples.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| R     |
 | **Chapter 3: Contemporary Empirical Music Research**  |          |       |          |
-| &nbsp;&nbsp;Ch. 3 Examples                            |[link](Ch3_examples.ipynb)|[link](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch3_examples.ipynb)| R     |
+| &nbsp;&nbsp;Ch. 3 Examples                            |[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tuomaseerola/emr/HEAD?labpath=Ch1_examples.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| R     |
 | **Chapter 4: Methods in Empirical Music Research**    |          |       |          |
-| &nbsp;&nbsp;Ch. 4 Examples                            |[link](Ch4_examples.ipynb)|[link](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch4_examples.ipynb)|          |
+| &nbsp;&nbsp;Ch. 4 Examples                            |[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tuomaseerola/emr/HEAD?labpath=Ch1_examples.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| R     |
 | **Chapter 5: Sources of Information**                 |          |       |          |
-| **Chapter 6: Data Analysis**                          |          |       |          |
-| &nbsp;&nbsp;Ch. 6.6 Diagnostic Visualisations and Descriptives|[link](Ch6_basic.ipynb)|[link](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch6_basic.ipynb)| R      |
-| &nbsp;&nbsp;Ch. 6.7 Inferential Statistics            | [link](Ch6_inferential.ipynb) |[link](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch6_inferential.ipynb) |   R      |
-| **Chapter 7: Reporting and Craftmanship**             |          |       |          |
-| **Chapter 8: Empirical Research into Music**          |          |       |          |
-| &nbsp;&nbsp;Ch. 8.2 Score analysis                    |[link](Ch8_score.ipynb)|[link](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch8_score.ipynb)| Python |
-| &nbsp;&nbsp;Ch. 8.3 Event analysis                    |[link](Ch8_event.ipynb)|[link](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch8_event.ipynb)| Python |
-| &nbsp;&nbsp;Ch. 8.4 Audio analysis                    |[link](Ch8_audio.ipynb)|[link](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch8_audio.ipynb)| Python |
-| &nbsp;&nbsp;Ch. 8.4 Audio Feature Extraction          |[link](Ch8_extract.ipynb)|[link](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch8_extract.ipynb)| Python |
-| &nbsp;&nbsp;Ch. 8.5 Corpus Studies                    |[link](Ch8_corpus.ipynb)|[link](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch8_corpus.ipynb)| Python |
-| **Chapter 9: Empirical Understanding of Music**       |          |       |          |
-| **Appendix**                                          |          |       |          |
-| &nbsp;&nbsp;[Online Tutorials (R and Python)](online_tutorials.md)     |          |       | Links |
-| &nbsp;&nbsp;[Online Statistics Handbooks (R flavoured)](online_statistics.md)|     |       | Links |
-| &nbsp;&nbsp;[Other Online Resources](other_resources.md)              |          |       | Links |
+| **Chapter 6: Data Analysis: Diagnostics and Summaries**                          |          |       |          |
+| &nbsp;&nbsp;Ch. 6 Using R (bonus material)            |[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tuomaseerola/emr/HEAD?labpath=Ch1_examples.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| R     |
+| &nbsp;&nbsp;Ch. 6 Basics (bonus material)             |[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tuomaseerola/emr/HEAD?labpath=Ch1_examples.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| R     |
+| &nbsp;&nbsp;Ch. 6 Diagnostic Visualisations and Descriptives|[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tuomaseerola/emr/HEAD?labpath=Ch1_examples.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| R     |
+| **Chapter 7: Statistical Analysis**                   |          |       |          |
+| &nbsp;&nbsp;Ch. 7 Inferential Statistics              |[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tuomaseerola/emr/HEAD?labpath=Ch1_examples.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| R     |
+| **Chapter 8: Reporting and Craftmanship**             |          |       |          |
+| **Chapter 9: Empirical Research of Music Annotations and Scores**          |          |       |          |
+| &nbsp;&nbsp;Ch. 9.3 Basic analysis                    |[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tuomaseerola/emr/HEAD?labpath=Ch1_examples.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| Python     |
+| &nbsp;&nbsp;Ch. 9.3 Note counts                       |[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tuomaseerola/emr/HEAD?labpath=Ch1_examples.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| Python     |
+| &nbsp;&nbsp;Ch. 9.3 Key-Finding and tension                         |[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tuomaseerola/emr/HEAD?labpath=Ch1_examples.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| Python     |
+| **Chapter 10: Empirical Research of Music Performance and Audio**          |          |       |          |
+| &nbsp;&nbsp;Ch. 10.1 Music Performance Analysis - Expressive Timing |[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tuomaseerola/emr/HEAD?labpath=Ch1_examples.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| Python     |
+| &nbsp;&nbsp;Ch. 10.1 Music Performance Analysis - Synchronisation   |[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tuomaseerola/emr/HEAD?labpath=Ch1_examples.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| Python     |
+| &nbsp;&nbsp;Ch. 10.2 Audio Analysis Basics                          |[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tuomaseerola/emr/HEAD?labpath=Ch1_examples.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| Python     |
+| &nbsp;&nbsp;Ch. 10.3 Audio Analysis of Music – Physical             |[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tuomaseerola/emr/HEAD?labpath=Ch1_examples.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| Python     |
+| &nbsp;&nbsp;Ch. 10.3 Audio Analysis of Music – Perceptual           |[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tuomaseerola/emr/HEAD?labpath=Ch1_examples.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| Python     |
+| &nbsp;&nbsp;Ch. 10.3 Audio Analysis of Music – Semantic             |[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tuomaseerola/emr/HEAD?labpath=Ch1_examples.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| Python     |
+| **Chapter 11: Music Corpus Analysis**                               |          |       |          |
+| &nbsp;&nbsp;Ch. 11.3 Corpus Studies - Genre Classification          |[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tuomaseerola/emr/HEAD?labpath=Ch1_examples.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| Python     |
+| &nbsp;&nbsp;Ch. 11.3 Corpus Studies - Synchrony                     |[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tuomaseerola/emr/HEAD?labpath=Ch1_examples.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| Python     |
+| **Chapter 12: Empirical Understanding of Music**                    |          |       |          |
+| **Appendix**                                                        |          |       |          |
+| &nbsp;&nbsp;[Online Tutorials (R and Python)](online_tutorials.md)                   |          |       | Links |
+| &nbsp;&nbsp;[Online Statistics Handbooks (R flavoured)](online_statistics.md)         |          |       | Links |
+| &nbsp;&nbsp;[Other Online Resources](other_resources.md)                            |          |       | Links |
 
