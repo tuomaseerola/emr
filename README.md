@@ -13,7 +13,7 @@ The notebooks are designed to be run in [Google Colab](https://colab.research.go
 | Chapter                                               | Jupyter  | Colab | Language |
 |:------------------------------------------------------|:---------|:------|:---------|
 | **Chapter 1: Introduction**                           |          |       |          |
-| &nbsp;&nbsp;Ch. 1 Examples                            |[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tuomaseerola/emr/HEAD?labpath=Ch1_examples.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| R     |
+| &nbsp;&nbsp;Ch. 1 Examples                            |[Chapter1.ipynb](Chapter1.ipynb)        |[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Chapter1.ipynb)| R     |
 | **Chapter 2: History**                                |          |       |          |
 | &nbsp;&nbsp;Ch. 2 Examples                            |[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tuomaseerola/emr/HEAD?labpath=Ch1_examples.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| R     |
 | **Chapter 3: Contemporary Empirical Music Research**  |          |       |          |
