@@ -1,5 +1,73 @@
-title: Music and Science Book
-description: Python notebooks for interactive sessions on analysing audio and music
-remote_theme: pages-themes/slate@v0.2.0
+# theme: Minimal Mistakes
+remote_theme: mmistakes/minimal-mistakes@4.18.1
+minimal_mistakes_skin: default
 plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
+  - jekyll-include-cache
+  - jekyll-optional-front-matter
+
+# directories
+plugins_dir: pages/plugins
+layouts_dir: pages/layouts
+data_dir: pages/data
+includes_dir: pages/includes
+sass_dir: pages/sass
+empress_dir: pages/empress
+
+# metadata
+title: WoL
+# subtitle: Ver 1.0
+name: WoL development team
+description: A Reference Phylogeny for 10,575 Bacterial and Archaeal Genomes
+url: https://biocore.github.io/wol/
+repository: biocore/wol
+logo: ../gallery/logo/logo_s_b.png
+locale: en-US
+
+# features:
+# search: true
+permalink: none
+
+# default
+defaults:
+  - scope:
+      path: ''
+      type: pages
+    values:
+      title: ''
+      # author_profile: true
+      layout: single
+      # toc: true
+      # toc_sticky: true
+      classes: wide
+      sidebar:
+         nav: top
+      # comments: true
+      share: true
+      # related: true
+
+# footer
+footer:
+  links:
+    - label: License
+      icon: fas fa-fw fa-certificate
+      url: LICENSE
+      description: 'BSD 3-Clause'
+    - label: Citation
+      icon: fas fa-fw fa-book
+      url: https://www.nature.com/articles/s41467-019-13443-4
+      description: 'Zhu Q, Mai U, Pfeiffer W, Janssen S, Asnicar F, et al. Nat Commun. 2019. 10(1):5477.'
+    - label: Grants
+      icon: fas fa-fw fa-dollar-sign
+      url: /start#grants
+    - label: GitHub
+      icon: fab fa-fw fa-github
+      url: https://github.com/biocore/wol
+      description: 'biocore/wol'
+    - label: Twitter
+      icon: fab fa-fw fa-twitter
+      url: https://twitter.com/KnightLabNews
+      description: '@KnightLabNews'
+    - label: Contact
+      icon: fas fa-fw fa-envelope
+      url: mailto:Qiyun.Zhu@asu.edu
+      description: 'Dr. Qiyun Zhu: Qiyun.Zhu@asu.edu, Dr. Rob Knight: robknight@ucsd.edu'
