@@ -7,6 +7,7 @@ Electronic materials (Jupyter notebooks with code examples in [R](https://www.r-
 The notebooks are designed to be run in [Google Colab](https://colab.research.google.com/) within your browser. Colab service is free and does not require any installations or software, but some functionalities may be limited. It is also possible to run the notebooks within a [Jupyter server in your own computer](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/index.html).
 
 **Note: The links and jupyter notebooks have not yet been released (18/12/2022).**
+See [technical notes](Technical.md) about the notebooks and package version in Colab.
 
 ### Contents
 
@@ -47,18 +48,4 @@ The notebooks are designed to be run in [Google Colab](https://colab.research.go
 | &nbsp;&nbsp;Version (R)                |[Version_R.ipynb](Version_R.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Version_R.ipynb)|R     |
 | &nbsp;&nbsp;Version (Python)           |[Version_Python.ipynb](Version_Python.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Version_Python.ipynb)| Python     |
 
-## Technical note
-
-_Jupyter notebooks_ have been made to be compatible with Colab. For _Python_, the libraries included are in December 2022:
- 
-- `Python 3.8.16`
-- `matplotlib 3.2.2`
-- `librosa 0.8.1`
-- `numpy 1.21.6`
-
-and for _R_, this are:
-
-- `R version 4.2.2`
-- `tidyverse 1.3.1`
-- `ggplot2 3.4.0`
 
