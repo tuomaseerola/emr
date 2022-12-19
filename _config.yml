@@ -41,7 +41,7 @@ defaults:
       sidebar:
          nav: top
       # comments: true
-      share: true
+      share: false
       # related: true
 
 # footer
@@ -53,7 +53,7 @@ footer:
       description: 'BSD 3-Clause'
     - label: Citation
       icon: fas fa-fw fa-book
-      url: https://tuomaseerola.github.io/emr/
+      url: Eerola, T. (in press). Music and Science – Guide to Empirical Music Research. Routledge.
       description: 'Music and Science – Guide to Empirical Music Research'
     - label: GitHub
       icon: fab fa-fw fa-github

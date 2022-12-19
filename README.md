@@ -18,29 +18,29 @@ The notebooks are designed to be run in [Google Colab](https://colab.research.go
 | &nbsp;&nbsp;Ch. 2 Examples                            |          |       |          |
 | **Chapter 3: Contemporary Empirical Music Research**  |          |       |          |
 | &nbsp;&nbsp;Ch. 3 Examples                            |[Chapter3.ipynb](Chapter3.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Chapter3.ipynb)| R     |
-| **Chapter 4: Methods in Empirical Music Research**    |          |       |          |
+| **Chapter 4: Methods and Research Designs**           |          |       |          |
 | &nbsp;&nbsp;Ch. 4 Examples                            |[Chapter4.ipynb](Chapter4.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Chapter4.ipynb)| R     |
 | **Chapter 5: Sources of Information**                 |          |       |          |
-| **Chapter 6: Data Analysis: Diagnostics and Summaries**                          |          |       |          |
+| **Chapter 6: Data Organisation and Summaries**                          |          |       |          |
 | &nbsp;&nbsp;Ch. 6 Using R (bonus material)            |[Using_R.ipynb](Using_R.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Using_R.ipynb)| R     |
 | &nbsp;&nbsp;Ch. 6 Data Diagnostics and Summaries      |[Chapter6.ipynb](Chapter6.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Chapter6.ipynb)| R     |
 | **Chapter 7: Statistical Analysis**                   |          |       |          |
 | &nbsp;&nbsp;Ch. 7 Statistical Analysis                |[Chapter7.ipynb](Chapter7.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Chapter7.ipynb)| R     |
-| **Chapter 8: Reporting and Craftsmanship**            |          |       |          |
-| **Chapter 9: Empirical Analysis of Music Annotations and Scores**          |          |       |          |
+| **Chapter 8: Reporting**                              |          |       |          |
+| **Chapter 9: Analysis of Scores and Performances**    |          |       |          |
 | &nbsp;&nbsp;Ch. 9.1 Basic analysis                    |Chapter9.1.ipynb|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| Python     |
 | &nbsp;&nbsp;Ch. 9.2 Note counts                       |Chapter9.2.ipynb|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| Python     |
-| &nbsp;&nbsp;Ch. 9.3 Key-Finding and tension                         |Chapter9.3.ipynb|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| Python     |
-| **Chapter 10: Empirical Research of Music Performance and Audio**          |          |       |          |
-| &nbsp;&nbsp;Ch. 10.1 Music Performance Analysis - Expressive Timing |[Chapter10.1.ipynb](Chapter10.1.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| R     |
-| &nbsp;&nbsp;Ch. 10.2 Music Performance Analysis - Synchronisation   |[Chapter10.2.ipynb](Chapter10.2.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| R     |
-| &nbsp;&nbsp;Ch. 10.3 Audio Analysis Basics                          |[Chapter10.3.ipynb](Chapter10.3.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| Python     |
-| &nbsp;&nbsp;Ch. 10.4 Audio Analysis of Music – Physical             |[Chapter10.4.ipynb](Chapter10.4.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| Python     |
-| &nbsp;&nbsp;Ch. 10.5 Audio Analysis of Music – Perceptual           |Chapter10.5.ipynb|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| Python     |
-| &nbsp;&nbsp;Ch. 10.6 Audio Analysis of Music – Semantic             |Chapter10.6.ipynb|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| Python     |
-| **Chapter 11: Music Corpus Analysis**                               |          |       |          |
-| &nbsp;&nbsp;Ch. 11.1 Corpus Studies - Genre Classification          |Chapter11.1.ipynb|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| Python     |
-| &nbsp;&nbsp;Ch. 11.2 Corpus Studies - Synchrony                     |Chapter11.2.ipynb|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| R     |
+| &nbsp;&nbsp;Ch. 9.3 Key-Finding and tension           |Chapter9.3.ipynb|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| Python     |
+| &nbsp;&nbsp;Ch. 9.4 Music Performance Analysis - Expressive Timing |[Chapter9.5.ipynb](Chapter10.1.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| R     |
+| &nbsp;&nbsp;Ch. 9.5 Music Performance Analysis - Synchronisation   |[Chapter9.5.ipynb](Chapter10.2.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| R     |
+| **Chapter 10: Analysis of Audio**                     |          |       |          |
+| &nbsp;&nbsp;Ch. 10.1 Audio Analysis Basics            |[Chapter10.1.ipynb](Chapter10.3.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| Python     |
+| &nbsp;&nbsp;Ch. 10.2 Audio Analysis of Music – Physical |[Chapter10.2.ipynb](Chapter10.4.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| Python     |
+| &nbsp;&nbsp;Ch. 10.3 Audio Analysis of Music – Perceptual |Chapter10.3.ipynb|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| Python     |
+| &nbsp;&nbsp;Ch. 10.4 Audio Analysis of Music – Semantic   |Chapter10.4.ipynb|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| Python     |
+| **Chapter 11: Corpus Analysis**                       |          |       |          |
+| &nbsp;&nbsp;Ch. 11.1 Corpus Studies - Genre Classification  |Chapter11.1.ipynb|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| Python     |
+| &nbsp;&nbsp;Ch. 11.2 Corpus Studies - Synchrony in Ensemble Performance  |Chapter11.2.ipynb|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Ch1_examples.ipynb)| R     |
 | **Chapter 12: Empirical Understanding of Music**                    |          |       |          |
 | **Appendix**                                                        |          |       |          |
 | &nbsp;&nbsp;Links                     |[Links.ipynb](Links.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Links.ipynb)| Markdown     |
