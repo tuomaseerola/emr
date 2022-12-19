@@ -17,7 +17,7 @@ empress_dir: pages/empress
 title: Music and Science – Guide to Empirical Music Research
 # subtitle: Ver 1.0
 name: Tuomas Eerola
-description: Jyputer notebooks for interactive sessions on analysing audio and music
+description: Jupyter notebooks for for analysing audio and music
 url: https://tuomaseerola.github.io/emr/
 logo: ../gallery/MusicScienceDU.png
 locale: en-UK
@@ -53,11 +53,11 @@ footer:
       description: 'BSD 3-Clause'
     - label: Citation
       icon: fas fa-fw fa-book
-      url: citation.md
+      url: https://tuomaseerola.github.io/emr/citation.html
       description: 'Citation in APA and Bibtex formats'
     - label: GitHub
       icon: fab fa-fw fa-github
-      url: https://github.com/tuomaseerola/emr
+      url: https://tuomaseerola.github.io/emr/
       description: 'tuomaseerola/emr'
     - label: Twitter
       icon: fab fa-fw fa-twitter
