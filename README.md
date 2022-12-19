@@ -13,7 +13,7 @@ The notebooks are designed to be run in [Google Colab](https://colab.research.go
 | Chapter                                               | Jupyter  | Colab | Language |
 |:------------------------------------------------------|:---------|:------|:---------|
 | **Chapter 1: Introduction**                           |          |       |          |
-| &nbsp;&nbsp;Ch. 1 Examples                            |[Chapter1.ipynb](Chapter1.ipynb)        |[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Chapter1.ipynb)| R     |
+| &nbsp;&nbsp;Ch. 1 Examples                            |[Chapter1.ipynb](https://github.com/tuomaseerola/emr/blob/main/Chapter1.ipynb)        |[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Chapter1.ipynb)| R     |
 | **Chapter 2: History**                                |          |       |          |
 | &nbsp;&nbsp;Ch. 2 Examples                            |          |       |          |
 | **Chapter 3: Contemporary Empirical Music Research**  |          |       |          |
@@ -46,4 +46,19 @@ The notebooks are designed to be run in [Google Colab](https://colab.research.go
 | &nbsp;&nbsp;Links                     |[Links.ipynb](Links.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Links.ipynb)| Markdown     |
 | &nbsp;&nbsp;Version (R)                |[Version_R.ipynb](Version_R.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Version_R.ipynb)|R     |
 | &nbsp;&nbsp;Version (Python)           |[Version_Python.ipynb](Version_Python.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Version_Python.ipynb)| Python     |
+
+## Technical note
+
+_Jupyter notebooks_ have been made to be compatible with Colab. For _Python_, the libraries included are in December 2022:
+ 
+- `Python 3.8.16`
+- `matplotlib 3.2.2`
+- `librosa 0.8.1`
+- `numpy 1.21.6`
+
+and for _R_, this are:
+
+- `R version 4.2.2`
+- `tidyverse 1.3.1`
+- `ggplot2 3.4.0`
 
