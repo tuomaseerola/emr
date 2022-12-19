@@ -1,10 +1,10 @@
-### Book citation in APA format:
+### Book bibliographic details in APA format:
 
 Eerola, T. (in press). _Music and Science – Guide to Empirical Music Research_. SEMPRE Studies in the Psychology of Music. London, UK: Routledge.
 
-### Book citation in `bibtex` format:
+### Book bibliographic details in `bibtex` format:
 
-```{bibtex}
+```
 @book{eerola2023,
 	address = {London, UK},
 	author = {Eerola, T.},
@@ -14,13 +14,13 @@ Eerola, T. (in press). _Music and Science – Guide to Empirical Music Research_
 	year = {in press}}
 ```
 
-### Website citation in APA format:
+### Website bibliographic details in APA format:
 
-Eerola, T. (2022). _Music and Science – Guide to Empirical Music Research_. https://tuomaseerola.github.io/emr/
+Eerola, T. (2022). _Music and Science – Guide to Empirical Music Research_. [https://tuomaseerola.github.io/emr/](https://tuomaseerola.github.io/emr/)
 
-### Website citation in `bibtex` format:
+### Website bibliographic details in `bibtex` format:
 
-```{bibtex}
+```
 @misc{eerola2023online,
 	author = {Eerola, T.},
 	title = {Music and Science -- Guide to Empirical Music Research},
