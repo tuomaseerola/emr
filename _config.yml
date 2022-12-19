@@ -14,14 +14,13 @@ sass_dir: pages/sass
 empress_dir: pages/empress
 
 # metadata
-title: WoL
+title: Music and Science – Guide to Empirical Music Research
 # subtitle: Ver 1.0
-name: WoL development team
-description: A Reference Phylogeny for 10,575 Bacterial and Archaeal Genomes
-url: https://biocore.github.io/wol/
-repository: biocore/wol
-logo: ../gallery/logo/logo_s_b.png
-locale: en-US
+name: Tuomas Eerola
+description: Jyputer notebooks for interactive sessions on analysing audio and music
+url: https://tuomaseerola.github.io/emr/
+logo: ../gallery/MusicScienceDU.png
+locale: en-UK
 
 # features:
 # search: true
@@ -54,20 +53,17 @@ footer:
       description: 'BSD 3-Clause'
     - label: Citation
       icon: fas fa-fw fa-book
-      url: https://www.nature.com/articles/s41467-019-13443-4
-      description: 'Zhu Q, Mai U, Pfeiffer W, Janssen S, Asnicar F, et al. Nat Commun. 2019. 10(1):5477.'
-    - label: Grants
-      icon: fas fa-fw fa-dollar-sign
-      url: /start#grants
+      url: https://tuomaseerola.github.io/emr/
+      description: 'Music and Science – Guide to Empirical Music Research'
     - label: GitHub
       icon: fab fa-fw fa-github
-      url: https://github.com/biocore/wol
-      description: 'biocore/wol'
+      url: https://github.com/tuomaseerola/emr
+      description: 'tuomaseerola/emr'
     - label: Twitter
       icon: fab fa-fw fa-twitter
-      url: https://twitter.com/KnightLabNews
-      description: '@KnightLabNews'
+      url: https://twitter.com/tuomas_ee
+      description: '@tuomas_ee'
     - label: Contact
       icon: fas fa-fw fa-envelope
-      url: mailto:Qiyun.Zhu@asu.edu
-      description: 'Dr. Qiyun Zhu: Qiyun.Zhu@asu.edu, Dr. Rob Knight: robknight@ucsd.edu'
+      url: mailto:tuomas.eerola@durham.ac.uk
+      description: 'email'
