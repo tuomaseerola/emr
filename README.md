@@ -1,12 +1,12 @@
 # Music and Science – Guide to Empirical Music Research (Book)
 
-Head for public-facing version of this repository at [https://tuomaseerola.github.io/emr/](https://tuomaseerola.github.io/emr/).
+This repository contains the electronic materials for _Routledge_ book titled **[Music and Science – Guide to Empirical Music Research](https://github.com/tuomaseerola/emr)** by [Tuomas Eerola](https://www.durham.ac.uk/staff/tuomas-eerola/), at [Durham University](https://www.durham.ac.uk) and [Music and Science Lab](https://musicscience.net). The book is scheduled to be published in 2023.
 
-Electronic materials (Jupyter notebooks with code examples in [R](https://www.r-project.org/) or [Python](https://www.python.org/)) for _Routledge_ book titled **[Music and Science – Guide to Empirical Music Research](https://github.com/tuomaseerola/emr)** by [Tuomas Eerola](https://www.durham.ac.uk/staff/tuomas-eerola/), at [Durham University](https://www.durham.ac.uk) and [Music and Science Lab](https://musicscience.net). The book is scheduled to be published in 2023.
+The materials are Jupyter notebooks with code examples in [R](https://www.r-project.org/) or [Python](https://www.python.org/)). The notebooks are designed to be run in [Google Colab](https://colab.research.google.com/) within a browser. Colab service is free and does not require any installations or software. It is also possible to run the notebooks within a [Jupyter server in your own computer](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/index.html) or to use the code directly in R or in Python. See [technical notes](Technical.md) about the notebooks and package versions in Colab.
 
-The notebooks are designed to be run in [Google Colab](https://colab.research.google.com/) within your browser. Colab service is free and does not require any installations or software, but some functionalities may be limited. It is also possible to run the notebooks within a [Jupyter server in your own computer](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/index.html). See [technical notes](Technical.md) about the notebooks and package version in Colab.
+The public-facing version of this repository is at [https://tuomaseerola.github.io/emr/](https://tuomaseerola.github.io/emr/). See [Citation](citation.md) for bibliographic details of the book.
 
-**Note: All jupyter notebooks <U>have not yet been released</U> (18/12/2022).**
+**Note: Some notebooks have <U>not yet been released</U> (18/12/2022).**
 
 ### Contents
 
@@ -46,5 +46,4 @@ The notebooks are designed to be run in [Google Colab](https://colab.research.go
 | &nbsp;&nbsp;Links                     |[Links.ipynb](Links.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Links.ipynb)| Markdown     |
 | &nbsp;&nbsp;Version (R)                |[Version_R.ipynb](Version_R.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Version_R.ipynb)|R     |
 | &nbsp;&nbsp;Version (Python)           |[Version_Python.ipynb](Version_Python.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Version_Python.ipynb)| Python     |
-
 
