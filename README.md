@@ -4,10 +4,9 @@ Head for public-facing version of this repository at [https://tuomaseerola.githu
 
 Electronic materials (Jupyter notebooks with code examples in [R](https://www.r-project.org/) or [Python](https://www.python.org/)) for _Routledge_ book titled **[Music and Science – Guide to Empirical Music Research](https://github.com/tuomaseerola/emr)** by [Tuomas Eerola](https://www.durham.ac.uk/staff/tuomas-eerola/), at [Durham University](https://www.durham.ac.uk) and [Music and Science Lab](https://musicscience.net). The book is scheduled to be published in 2023.
 
-The notebooks are designed to be run in [Google Colab](https://colab.research.google.com/) within your browser. Colab service is free and does not require any installations or software, but some functionalities may be limited. It is also possible to run the notebooks within a [Jupyter server in your own computer](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/index.html).
+The notebooks are designed to be run in [Google Colab](https://colab.research.google.com/) within your browser. Colab service is free and does not require any installations or software, but some functionalities may be limited. It is also possible to run the notebooks within a [Jupyter server in your own computer](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/index.html). See [technical notes](Technical.md) about the notebooks and package version in Colab.
 
-**Note: The links and jupyter notebooks have not yet been released (18/12/2022).**
-See [technical notes](Technical.md) about the notebooks and package version in Colab.
+**Note: All jupyter notebooks <U>have not yet been released</U> (18/12/2022).**
 
 ### Contents
 
