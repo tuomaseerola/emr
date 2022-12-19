@@ -1,8 +1,8 @@
-# How to Conduct Empirical Music Research (Book)
+# Music and Science – Guide to Empirical Music Research (Book)
 
 Head for public-facing version of this repository at [https://tuomaseerola.github.io/emr/](https://tuomaseerola.github.io/emr/).
 
-Electronic materials (Jupyter notebooks with code examples in [R](https://www.r-project.org/) or [Python](https://www.python.org/)) for _Routledge_ book titled **[How to Conduct Empirical Music Research](https://github.com/tuomaseerola/emr)** by [Tuomas Eerola](https://www.durham.ac.uk/staff/tuomas-eerola/), at [Durham University](https://www.durham.ac.uk) and [Music and Science Lab](https://musicscience.net). The book is scheduled to be published in 2023.
+Electronic materials (Jupyter notebooks with code examples in [R](https://www.r-project.org/) or [Python](https://www.python.org/)) for _Routledge_ book titled **[Music and Science – Guide to Empirical Music Research](https://github.com/tuomaseerola/emr)** by [Tuomas Eerola](https://www.durham.ac.uk/staff/tuomas-eerola/), at [Durham University](https://www.durham.ac.uk) and [Music and Science Lab](https://musicscience.net). The book is scheduled to be published in 2023.
 
 The notebooks are designed to be run in [Google Colab](https://colab.research.google.com/) within your browser. Colab service is free and does not require any installations or software, but some functionalities may be limited. It is also possible to run the notebooks within a [Jupyter server in your own computer](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/index.html).
 
