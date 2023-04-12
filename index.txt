@@ -1,0 +1,22 @@
+Exists Colab Name File  Comments
+1   1   Ch. 1 Examples	Chapter1.ipynb
+0   0   Ch. 2 Examples			
+0   0   Ch. 3 Examples	Chapter3.ipynb
+0   0   Ch. 4 Examples	Chapter4.ipynb
+0   0   Ch. 6 Using R (bonus material)	Using_R.ipynb
+0   0   Ch. 6 Data Diagnostics and Summaries	Chapter6.ipynb
+0   0   Ch. 7 Statistical Analysis	Chapter7.ipynb
+0   0   Ch. 9.1 Basic analysis	Chapter9.1.ipynb
+0   0   Ch. 9.2 Note counts	Chapter9.2.ipynb
+0   0   Ch. 9.3 Key-Finding and tension	Chapter9.3.ipynb
+0   0   Ch. 10.1 Music Performance Analysis - Expressive Timing	Chapter10.1.ipynb
+0   0   Ch. 10.2 Music Performance Analysis - Synchronisation	Chapter10.2.ipynb
+0   0   Ch. 10.3 Audio Analysis Basics	Chapter10.3.ipynb
+0   0   Ch. 10.4 Audio Analysis of Music – Physical	Chapter10.4.ipynb
+0   0   Ch. 10.5 Audio Analysis of Music – Perceptual	Chapter10.5.ipynb
+0   0   Ch. 10.6 Audio Analysis of Music – Semantic	Chapter10.6.ipynb
+0   0   Ch. 11.1 Corpus Studies - Genre Classification	Chapter11.1.ipynb
+0   0   Ch. 11.2 Corpus Studies - Synchrony	Chapter11.2.ipynb
+0   0   Links	Links.ipynb
+0   0   Version (R)	Version_R.ipynb
+0   0   Version (Python)	Version_Python.ipynb
