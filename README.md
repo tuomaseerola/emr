@@ -6,7 +6,7 @@ The materials are Jupyter notebooks with code examples in [R](https://www.r-proj
 
 The public-facing version of this repository is at [https://tuomaseerola.github.io/emr/](https://tuomaseerola.github.io/emr/). See [Citation](citation.md) for bibliographic details of the book.
 
-**Note: Some notebooks have <U>not yet been released</U> (18/12/2022).**
+**Note: Some notebooks have <U>not yet been released</U> (13/4/2023).**
 
 ### Contents
 
@@ -24,7 +24,7 @@ The public-facing version of this repository is at [https://tuomaseerola.github.
 | **Chapter 6: Data Organisation and Summaries**                          |          |       |          |
 | &nbsp;&nbsp;Ch. 6 Using R                             |[Chapter6.1.ipynb](https://github.com/tuomaseerola/emr/blob/main/Chapter6.1.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Chapter6.1.ipynb)| R     |
 | &nbsp;&nbsp;Ch. 6 Data organisation                   |[Chapter6.2.ipynb](https://github.com/tuomaseerola/emr/blob/main/Chapter6.2.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Chapter6.2.ipynb)| R     |
-| &nbsp;&nbsp;Ch. 6 Data Diagnostics and Summaries      |[Chapter6.3.ipynb](https://github.com/tuomaseerola/emr/blob/main/Chapter6.3.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Chapter6.3.ipynb)| R     |
+| &nbsp;&nbsp;Ch. 6 Data Diagnostics                    |[Chapter6.3.ipynb](https://github.com/tuomaseerola/emr/blob/main/Chapter6.3.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Chapter6.3.ipynb)| R     |
 | &nbsp;&nbsp;Ch. 6 Outliers                            |[Chapter6.4.ipynb](https://github.com/tuomaseerola/emr/blob/main/Chapter6.4.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Chapter6.4.ipynb)| R     |
 | **Chapter 7: Statistical Analysis**                   |          |       |          |
 | &nbsp;&nbsp;Ch. 7 Statistical Analysis                |[Chapter7.ipynb](https://github.com/tuomaseerola/emr/blob/main/Chapter7.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Chapter7.ipynb)| R     |
