@@ -1,0 +1,84 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - Chapter1.qmd
+    - Chapter3.qmd
+    - Chapter4.qmd
+    - index.qmd
+    - Chapter6.1.qmd
+    - Chapter6.2.qmd
+    - Chapter6.3.qmd
+    - Chapter6.4.qmd
+    - Chapter7.qmd
+    - Chapter9.1.qmd
+    - Chapter9.2.qmd
+    - Chapter9.3.qmd
+    - Chapter9.4.qmd
+    - Chapter9.5.qmd
+    - Chapter10.1.qmd
+    - Chapter10.2.qmd
+    - Chapter10.3.qmd
+    - Chapter10.4.qmd
+    - Chapter10.5.qmd
+    - Chapter11.2.qmd
+    - Chapter11.3.qmd
+    - Links.qmd
+    - Citation.qmd
+    - Version_Python.qmd
+    - Version_R.qmd
+    - Technical.qmd
+website:
+  title: "EMR"
+  sidebar:
+    style: "docked"
+    contents:
+      - section: "Background"
+        contents:
+          - Chapter1.qmd
+          - Chapter3.qmd
+          - Chapter4.qmd
+      - section: "Data & Statistics"
+        contents:
+          - Chapter6.1.qmd
+          - Chapter6.2.qmd
+          - Chapter6.3.qmd    
+          - Chapter7.qmd
+      - section: "Score analysis"
+        contents:
+          - Chapter9.1.qmd
+          - Chapter9.2.qmd
+          - Chapter9.3.qmd    
+          - Chapter9.4.qmd
+          - Chapter9.5.qmd        
+      - section: "Audio analysis"
+        contents:
+          - Chapter10.1.qmd
+          - Chapter10.2.qmd
+          - Chapter10.3.qmd    
+          - Chapter10.4.qmd
+          - Chapter10.5.qmd        
+      - section: "Corpus studies"
+        contents:
+          - Chapter11.2.qmd
+          - Chapter11.3.qmd
+      - section: "Other"
+        contents:
+          - Technical.qmd
+          - Citation.qmd
+          - Links.qmd
+  page-navigation: true
+  back-to-top-navigation: true
+  page-footer:  
+    center: 
+      - text: "Home"
+        href: index.qmd
+      - text: "Citation"
+        href: Citation.qmd
+      - text: "Tech"
+        href: Technical.qmd
+format:
+  html:
+    theme: lumen # lumen, pulse, materia, yeti, zephyr
+    css: styles.css
+    toc: false

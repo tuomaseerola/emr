@@ -1,0 +1,127 @@
+---
+toc: false
+---
+
+<a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Chapter9.4.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
+# Ch. 9 - Expressive Timing
+
+This notebook demonstrates expressive timing profiles from real performances from [https://github.com/fosfrancesco/asap-dataset](https://github.com/fosfrancesco/asap-dataset).
+
+## Load libraries
+
+```{r}
+#| echo: true
+#| eval: true
+#| warning: false
+#| message: false
+#| label: libraries
+library(ggplot2, quietly = TRUE)
+library(tidyverse, quietly = TRUE)
+library(dplyr, quietly = TRUE)
+```
+
+## Get data from ASAP project
+
+This gets the metadata from ASAP project (see Foscarin et al., 2020) and selects Preludes op 23.4.
+
+```{r}
+#| echo: true
+#| eval: true
+#| output: asis
+#| id: data
+d <- read.csv("https://raw.githubusercontent.com/fosfrancesco/asap-dataset/master/metadata.csv",header = TRUE,sep = ',')
+df<-dplyr::filter(d,title=='Preludes_op_23_4')
+df<-df[1:3,]
+print(knitr::kable(head(df[,1:3],3)))
+```
+
+## Read score annotations
+
+```{r}
+#| eval: true
+#| output: asis
+#| label: read
+basedir <-'https://raw.githubusercontent.com/tuomaseerola/emr/master/'
+deadpan <- read.csv(paste0(basedir,'data/midi_score_annotations.txt'),header = FALSE, sep = '\t')
+print(knitr::kable(head(deadpan,3)))
+fn <- NULL
+fn[1]<-'data/ChenGuang12M_annotations.txt'
+fn[2]<-'data/MorozovS09_annotations.txt'
+fn[3]<-'data/WuuE07M_annotations.txt'
+Performer <- c('Chen Guang','Yevgeny Morozov','Elliot Wuu')
+```
+
+```{r}
+#| echo: false
+#| eval: true
+#| label: add_function
+
+normperf <- function(d=NULL) {
+  # function to normalise performance timing given score
+  # And calculate deviation in ms
+  d$perf_N<-d$perf
+  d$perf_N<-d$perf_N - min(d$perf_N)
+  d$perf_N <- d$perf_N * (max(d$score)/max(d$perf_N))
+  d$delta <- d$perf_N - d$score
+  d$delta2 <- c(0,diff(d$delta)*1000)
+  d$scoredelta <- c(0,diff(d$score)*1000)
+  d$rawperfdelta <- c(0,diff(d$perf)*1000)
+  d$rawperf_Ndelta <- c(0,diff(d$perf_N)*1000)
+  d$scoredelta_rawperf_Ndelta <- d$rawperf_Ndelta - d$scoredelta
+  d$annotation<-d$annotation
+  result <- d
+  return(result)
+}
+```
+
+## Choose extract from all performers
+
+```{r}
+#| echo: true
+#| eval: true
+#| output: asis
+#| label: extract
+D <- NULL
+for (k in 1:length(fn)) {
+  perf<-read.csv(paste0(basedir,fn[k]),header=F,sep='\t')
+  DF<-data.frame(score=deadpan$V1,perf=perf$V1,
+    annotation=deadpan$V3)
+  DF <- dplyr::filter(DF,score < 30) # Limit to first 10 bars = 3*10 beats
+  DF2 <- normperf(DF)                # Defined previouslys
+  DF2$Performer<-Performer[k]
+  D<-rbind(D,DF2)
+}
+
+options(encoding = "UTF-8")
+#library(dplyr)
+DF <- dplyr::filter(D,score < 30) # First 10 bars = 3*10 beats
+print(knitr::kable(head(DF[,1:6],3)))
+```
+## Plot expressive timing deviations
+
+```{r}
+#| echo: true
+#| eval: true
+#| warning: false
+#| label: plot
+options(repr.plot.width = 12, repr.plot.height = 5)
+g1 <- ggplot(DF,aes(x=perf_N,y=scoredelta_rawperf_Ndelta,colour=Performer,shape=Performer))+
+  geom_line(alpha=0.85)+
+  geom_point(alpha=0.85,size=2.5)+
+  scale_color_grey(start = 0.30,end = 0.8)+
+  geom_smooth(aes(colour = NULL,shape=NULL), method = "loess", span=0.2,se=FALSE,colour='black',linewidth=1.25)+
+  scale_x_continuous(limits=c(0,30),breaks = seq(0,30,by=3),expand = c(0.02,0.002),labels=(seq(0,30,by=3)/3)+1) +
+  xlab('Bar')+
+  ylab('Deviation in ms')+
+  theme_bw()+
+  theme(legend.position=c(.85, .80))+
+  theme(legend.background = element_blank()) +  # Remove overall border
+  theme(legend.key = element_blank())
+print(g1)
+```
+
+## References
+
+- Foscarin, F., Mcleod, A., Rigaux, P., Jacquemard, F., & Sakai, M. (2020). ASAP: a dataset of aligned scores and performances for piano transcription. In _International Society for Music Information Retrieval Conference_ (pp. 534-541).
+

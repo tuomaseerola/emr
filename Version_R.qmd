@@ -1,0 +1,45 @@
+
+<a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Version_R.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
+# Establish R library versions within Colab
+
+In March 2024 Colab version of R is:
+
+```{r}
+#| echo: true
+#| eval: false
+R version 4.3.3 (2024-02-29)
+tidyverse 2.0.0’
+ggplot2 3.4.4’
+```
+
+Test the Colab version of R.
+
+```{r}
+#| echo: true
+#| eval: true
+#| label: versions
+print(R.version.string)
+```
+
+## Libraries
+
+Show libraries
+
+```{r}
+#| echo: true
+#| eval: true
+#| label: libraries
+#print(installed.packages())
+packageVersion("tidyverse")
+packageVersion("ggplot2")
+```
+
+## Show other information
+
+```{r}
+#| echo: true
+#| eval: true
+#| label: sessioninfo
+sessionInfo()
+```
