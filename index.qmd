@@ -24,7 +24,7 @@ The public-facing version of this repository is at [https://tuomaseerola.github.
 | Chapter                                               | Jupyter  | Colab | Language |
 |:------------------------------------------------------|:---------|:------|:---------|
 | **Chapter 1: Introduction**                           |          |       |          |
-| &nbsp;&nbsp;[Ch. 1 Examples](Chapter1.qmd)                            |[Chapter1.ipynb](https://github.com/tuomaseerola/emr/blob/main/Chapter1.ipynb)        |[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Chapter1.ipynb)| R     |
+| &nbsp;&nbsp;[Ch. 1 Examples](Chapter1.qmd)                            |[Chapter1.ipynb](nb/Chapter1.ipynb)        |[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/nb/Chapter1.ipynb)| R     |
 | **Chapter 2: History**                                |          |       |          |
 | &nbsp;&nbsp;Ch. 2 Examples                            |          |       |          |
 | **Chapter 3: Contemporary Empirical Music Research**  |          |       |          |
