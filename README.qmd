@@ -1,17 +1,8 @@
 ---
 title: "Music and Science – Guide to Empirical Music Research (Book)"
-format:
-  html:
-    code-fold: false
+format: gfm
 jupyter: python3
 ---
-
-<!--
-conda activate relative_mode 
-quarto preview Chapter11.1.qmd  
-
-I am currently working towards finishing this file.
--->
 
 This repository contains the electronic materials for _Routledge_ book titled **[Music and Science – Guide to Empirical Music Research](https://tuomaseerola.github.io/emr/)** by [Tuomas Eerola](https://www.durham.ac.uk/staff/tuomas-eerola/), at [Durham University](https://www.durham.ac.uk) and [Music and Science Lab](https://musicscience.net). The book is scheduled to be published in 2024.
 
@@ -24,11 +15,11 @@ The public-facing version of this repository is at [https://tuomaseerola.github.
 | Chapter                                               | Jupyter  | Colab | Language |
 |:------------------------------------------------------|:---------|:------|:---------|
 | **Chapter 1: Introduction**                           |          |       |          |
-| &nbsp;&nbsp;[Ch. 1 Examples](Chapter1.qmd)                            |[Chapter1.ipynb](nb/Chapter1.ipynb)        |[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/nb/Chapter1.ipynb)| R     |
+| &nbsp;&nbsp;[Ch. 1 Examples](Chapter1.qmd)            |[nb/Chapter1.ipynb](https://github.com/tuomaseerola/emr/blob/main/nb/Chapter1.ipynb)        |[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/nb/Chapter1.ipynb)| R     |
 | **Chapter 2: History**                                |          |       |          |
 | &nbsp;&nbsp;Ch. 2 Examples                            |          |       |          |
 | **Chapter 3: Contemporary Empirical Music Research**  |          |       |          |
-| &nbsp;&nbsp;[Ch. 3 Examples](Chapter3.qmd)                            |[Chapter3.ipynb](https://github.com/tuomaseerola/emr/blob/main/Chapter3.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Chapter3.ipynb)| R     |
+| &nbsp;&nbsp;[Ch. 3 Examples](Chapter3.qmd)                            |[nb/Chapter3.ipynb](https://github.com/tuomaseerola/emr/blob/main/nb/Chapter3.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/nb/Chapter3.ipynb)| R     |
 | **Chapter 4: Methods and Research Designs**           |          |       |          |
 | &nbsp;&nbsp;[Ch. 4 Examples](Chapter4.qmd)                            |[Chapter4.ipynb](https://github.com/tuomaseerola/emr/blob/main/Chapter4.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/Chapter4.ipynb)| R     |
 | **Chapter 5: Sources of Information**                 |          |       |          |
