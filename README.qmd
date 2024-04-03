@@ -12,7 +12,7 @@ The public-facing version of this repository is at [https://tuomaseerola.github.
 
 # Contents
 
-| Chapter                                               | Jupyter  | Colab | Language |
+| Website (preferred link)                              | Jupyter  | Colab | Language |
 |:------------------------------------------------------|:---------|:------|:---------|
 | **Chapter 1: Introduction**                           |          |       |          |
 | &nbsp;&nbsp;[Ch. 1 - Notebook basics](https://tuomaseerola.github.io/emr/Chapter1.html)            |[Chapter1.ipynb](https://github.com/tuomaseerola/emr/blob/main/nb/Chapter1.ipynb)        |[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/nb/Chapter1.ipynb)| R     |
@@ -48,6 +48,7 @@ The public-facing version of this repository is at [https://tuomaseerola.github.
 | &nbsp;&nbsp;[Ch. 11 - Synchrony](https://tuomaseerola.github.io/emr/Chapter11.3.html)|[Chapter11.3.qmd](https://github.com/tuomaseerola/emr/blob/main/nb/Chapter11.3.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/nb/Chapter11.3.ipynb)| R     |
 | **Chapter 12: Summary and Future Directions**                    |          |       |          |
 | **Appendix**                                                        |          |       |          |
+| &nbsp;&nbsp;[Technical](https://tuomaseerola.github.io/emr/Technical.html)                      |[Technical.ipynb](https://github.com/tuomaseerola/emr/blob/main/nb/Technical.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/nb/Technical.ipynb)| Markdown     |
 | &nbsp;&nbsp;[Links](https://tuomaseerola.github.io/emr/Links.html)                      |[Links.ipynb](https://github.com/tuomaseerola/emr/blob/main/nb/Links.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/nb/Links.ipynb)| Markdown     |
 | &nbsp;&nbsp;[Version (R)](https://tuomaseerola.github.io/emr/Version_R.html)                |[Version_R.ipynb](https://github.com/tuomaseerola/emr/blob/main/nb/Version_R.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/nb/Version_R.ipynb)|R     |
 | &nbsp;&nbsp;[Version (Python)](https://tuomaseerola.github.io/emr/Version_Python.html)           |[Version_Python.ipynb](https://github.com/tuomaseerola/emr/blob/main/nb/Version_Python.ipynb)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/master/nb/Version_Python.ipynb)| Python     |
