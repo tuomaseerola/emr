@@ -1,9 +1,3 @@
----
-jupyter: python3
-code-fold: false
----
-
-<a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/Chapter10.1.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 # Ch. 10 – Spectrum and envelope
 
