@@ -1,0 +1,25 @@
+
+# Establish Python library versions within Colab
+
+In March 2024 Colab had:
+
+- Python version 3.10.12
+- matplotlib version 3.7.1
+- librosa version 0.10.1
+- numpy version 1.25.2
+
+```{python}
+#| echo: true
+#| eval: true
+#| label: python-versions
+print('Current system has:')
+import platform
+print('Python version ' + platform.python_version())
+import matplotlib
+print('matplotlib version ' + matplotlib.__version__)
+import librosa
+import librosa.display
+print('librosa version ' + librosa.__version__)
+import numpy as np
+print('numpy version ' + np.__version__)
+```

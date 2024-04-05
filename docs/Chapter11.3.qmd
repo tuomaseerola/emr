@@ -1,0 +1,44 @@
+
+## Ch. 11 – Synchrony
+
+Corpus analysis example of onsets.
+
+### Load libraries
+
+```{r}
+#| eval: true
+#| echo: false
+#| label: libraries
+#| warning: false
+library(onsetsync)              # to handle onsets
+library(dplyr)                  # to handle summaries
+```
+
+```{r}
+#| eval: false
+#| echo: true
+#| label: libraries2
+library(onsetsync)              # to handle onsets
+library(dplyr)                  # to handle summaries
+```
+
+### Get Cuban Salsa and Son materials
+
+These are build into the onsetsync package and come from [IEMP](https://osf.io/37fws/) collection. The code runs an analysis of asynchrony across different Cuban Salsa and Son tracks (five in total) and create a table of the Bass asynchronies with Guitar and Tres (in milliseconds).
+
+```{r}
+#| eval: true
+#| echo: true
+#| label: onsetsynccorpus
+#| output: asis
+#| warning: false
+#| message: false
+corpus <- onsetsync::CSS_IEMP   # Cuban Salsa & Son
+D <- sync_sample_paired(corpus,'Bass','Guitar',0,1,'SD')
+RES <-summarise(group_by(D$asynch,name), M = mean(asynch*1000))
+D2 <- sync_sample_paired(corpus,'Bass','Tres',0,1,'SD')
+RES2 <- summarise(group_by(D2$asynch,name), M = mean(asynch*1000))
+names(RES)[2] <- 'Bass - Guitar (in ms)'  # rename for clarity
+RES$`Bass - Tres (in ms)` <- RES2$M       # rename for clarity
+print(knitr::kable(RES,digits=1))         # create table
+```

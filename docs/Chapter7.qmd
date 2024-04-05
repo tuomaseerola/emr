@@ -1,0 +1,180 @@
+
+# Ch. 7 – Inferential statistics
+
+This notebook demonstrates running inferential statistical tests in R.
+
+## Preliminaries
+
+Load libraries and install `MusicScienceData` package where the example data is stored.
+
+```{r}
+#| label: libraries
+#| warning: false
+library(ggplot2,quietly = TRUE)
+library(tidyverse,quietly = TRUE)
+library(MusicScienceData,quiet=TRUE)
+```
+
+## Code 7.1
+
+See text for the explanation.
+
+```{r}
+#| label: 7-1
+#| warning: false
+df <- MusicScienceData::sadness         # define data
+t <- t.test(ASM20 ~ gender, data=df)    # t test
+print(t$statistic)                      # show the t value
+
+print(scales::pvalue(t$p.value))
+dplyr::summarise(dplyr::group_by(df, gender), # means and SDs
+                 M=mean(ASM20,na.rm=TRUE),
+                 SD=sd(ASM20,na.rm=TRUE))
+```
+
+## Code 7.2
+
+```{r}
+#| label: 7-2
+#| warning: false
+df <- MusicScienceData::sadness         # define data
+model.aov <- aov(ASM20 ~ age, data=df)  # run anova
+F <- summary(model.aov)                 # summarise
+print(F)
+```
+
+## Code 7.3
+
+```{r}
+#| label: 7-3
+#| warning: false
+TABLE<-TukeyHSD(model.aov,conf.level = 0.95)
+print(knitr::kable(TABLE$age,digits = 3,
+                   caption = 'Comparison of age groups
+                   for Item 20 in ASM survey.',
+                   format = 'simple'))
+```
+
+## Code 7.4
+
+```{r}
+#| label: 7-4
+#| warning: false
+df <- MusicScienceData::sadness                   # define data
+model2.aov <- aov(ASM20 ~ age * gender, data=df)  # run anova
+F2 <- summary(model2.aov)
+print(F2)
+```
+
+## Code 7.5
+
+This analysis requires extra libraries and raw data read from github. The installation might be slow in Colab because of package dependencies.
+
+```{r}
+#| label: 7-5
+#| eval: false
+#| warning: false
+#install.packages("lme4",quiet=TRUE)     # Required for LMM analysis
+#install.packages("lmerTest",quiet=TRUE) # Optional
+library(lme4,quiet=TRUE)
+library(lmerTest,quiet=TRUE)
+```
+
+```{r}
+#| label: load-data
+#| eval: true
+#| warning: false
+library(lme4,quiet=TRUE)
+library(lmerTest,quiet=TRUE)
+d <- read.csv('https://raw.githubusercontent.com/tuomaseerola/emr/main/data/raw_ratings.csv')
+d2 <- dplyr::filter(d,Emotion=='Dimensional')  #
+d3 <- dplyr::filter(d2, Category=='Anger' |
+  Category=='Fear' |
+  Category=='Happy' |
+  Category=='Sad' |
+  Category=='Tender')
+m1 <- lmer(Valence ~ Category * Gender + (1|id) + (1|Track), data = d3)
+s <- summary(m1,corr=FALSE)
+S<-s$coefficients; S<-round(S,2); S[,5]<-scales::pvalue(S[,5])
+print(knitr::kable(S,format = 'simple',
+                   caption = 'LMM results of Valence ratings.'))
+```
+
+## Code 7.6
+
+```{r}
+#| label: code7-6
+#| warning: false
+d <- read.csv('https://raw.githubusercontent.com/tuomaseerola/emr/main/data/raw_ratings.csv')
+S <- d %>%
+  filter(Category=='Sad') %>%
+  group_by(Category,Gender) %>%
+  summarise(M=mean(Valence,na.rm=T),SD=sd(Valence,na.rm=T),
+            .groups = 'drop')
+print(S)
+```
+
+## Code 7.7
+
+```{r}
+#| label: 7-7
+#| warning: false
+library(MusicScienceData)               # loads library w data
+gender_age_xtab <- table(MusicScienceData::sadness$age,
+                         MusicScienceData::sadness$gender)
+print(gender_age_xtab)
+
+result <- chisq.test(gender_age_xtab)   # Chi^2 test
+print(result)
+```
+
+## Code 7.8
+
+```{r}
+#| label: 7-8
+#| warning: false
+library(MusicScienceData)               # load library w data
+data <- MusicScienceData::soundtrack    # define data
+r<-cor.test(data$Valence, data$Tension) # calculate correlation
+print(r$estimate)                       # print coefficient
+##    cor
+## -0.827
+print(scales::pvalue(r$p.value))        # print pretty p value
+## [1] "<0.001"
+print(r$parameter)                      # print df
+```
+
+## Code 7.9
+
+```{r}
+#| label: 7-9
+#| warning: false
+library(MusicScienceData)               # loads library w data
+d1 <- MusicScienceData::soundtrack      # get ratings
+d2 <- MusicScienceData::soundtrack_features[,c(2:3,5:6)] # select only some features
+d1[,17:21] <- as.data.frame(scale(d2))  # normalise
+
+tmp <- cor(d1[,c(3,17:20)])             # get correlations
+print(round(tmp[2:5,1],2))              # display first line
+```
+
+## Code 7.10
+
+```{r}
+#| label: 7-10
+#| warning: false
+model.reg <- lm(Energy ~ RMS + sp_centr + spec_rolloff +
+  spec_zcr, data = d1)
+s <- summary(model.reg) # R2adj = 0.424 (Energy)
+print(s)
+```
+
+## Code 7.11
+
+```{r}
+#| label: 7-11
+#| warning: false
+r <- cor(d1$Energy, d1$RMS)
+print( r^2 )                      # print the squared correlation
+summary(lm(Energy ~ RMS,data=d1)) # Summarise regression
+```
