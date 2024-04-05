@@ -1,9 +1,3 @@
----
-jupyter: python3
-code-fold: false
----
-
-<a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/Chapter10.1.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 # Ch. 10 – Perceptual
 
@@ -21,6 +15,7 @@ For more information, see [Brian documentation](https://brian.readthedocs.io/en/
 #| code-summary: "Show the code"
 from brian2 import *
 from brian2hears import *
+import matplotlib.pyplot as plt
 ```
 
 
@@ -28,6 +23,7 @@ from brian2hears import *
 #| echo: true
 #| eval: true
 #| label: brian
+
 sound = loadsound('data/400_600_1600_hz.wav')
 
 # Inner hair cell model
@@ -46,13 +42,13 @@ M = SpikeMonitor(G)
 run(sound.duration)
 
 # Plot the results
-import matplotlib.pyplot as plt
 fig, ax = plt.subplots(figsize=(8.0, 4.0))
-ax.plot(M.t/ms, M.i, '.', alpha=0.5,color='tab:blue',ms=3)
+ax.plot(M.t/ms, M.i, '.', alpha=0.5, color='tab:blue', ms=3)
 ax.set_xlabel('Time (ms)')
 ax.set_ylabel('Neuron number (inner hair cell)')
 ylim(0, 2000)
 xlabel('Time (ms)')
 ylabel('Neuron index');
 plt.show()
+
 ```

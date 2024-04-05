@@ -81,4 +81,4 @@ format:
   html:
     theme: lumen # lumen, pulse, materia, yeti, zephyr
     css: styles.css
-    toc: false
+    toc: true

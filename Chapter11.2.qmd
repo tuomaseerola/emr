@@ -4,12 +4,7 @@ toc: true
 
 <a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/Chapter11.1.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-<!--
-conda activate relative_mode 
-quarto preview Chapter11.1.qmd  
 
-I am currently working towards finishing this file.
--->
 # Ch. 11 – Genre classification
 
 ## Figure 11.2. Illustration of genre classification with acoustic descriptors. Panel A and B: Distribution of RMSE and Spectral centroid values across 10 genres in all excerpts. Panel C: Confusion matrix of the random forest classification model showing the proportion of cases predicted in the actual and predicted genres.

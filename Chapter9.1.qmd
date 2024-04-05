@@ -82,8 +82,8 @@ for c in bChords.recurse().getElementsByClass('Chord'):
 for c in bChords.recurse().getElementsByClass('Chord'):
     rn = roman.romanNumeralFromChord(c, key.Key('A'))
     c.addLyric(str(rn.figure))
-bChords.measures(0,3).show()             # Display the result
-bChords.measures(0,3).write('xml', fp='output.xml')
+bChords.measures(0, 3).show()             # Display the result
+bChords.measures(0, 3).write('xml', fp='output.xml')
 !mscore output.xml -o images/score2.png --trim-image 0
 ```
 

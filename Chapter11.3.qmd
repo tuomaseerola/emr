@@ -1,8 +1,3 @@
----
-toc: true
----
-
-<a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/Chapter11.1.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 ## Ch. 11 – Synchrony
 
