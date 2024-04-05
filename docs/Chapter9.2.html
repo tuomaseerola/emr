@@ -136,7 +136,7 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked fullcontent">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -350,20 +350,32 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Technical.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Technical Notes</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./Citation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Citation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./Technical.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Technical Notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./Links.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Links</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Version_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Establish R library versions within Colab</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Version_Python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Establish Python library versions within Colab</span></a>
   </div>
 </li>
       </ul>
@@ -373,7 +385,28 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#event-counts" id="toc-event-counts" class="nav-link active" data-scroll-target="#event-counts">Event counts</a>
+  <ul class="collapse">
+  <li><a href="#extract-key-and-trasponse-to-common-tonic" id="toc-extract-key-and-trasponse-to-common-tonic" class="nav-link" data-scroll-target="#extract-key-and-trasponse-to-common-tonic">Extract key and trasponse to common tonic</a></li>
+  <li><a href="#calculate-pitch-class-distribution" id="toc-calculate-pitch-class-distribution" class="nav-link" data-scroll-target="#calculate-pitch-class-distribution">Calculate pitch-class distribution</a></li>
+  <li><a href="#calculate-interval-distribution" id="toc-calculate-interval-distribution" class="nav-link" data-scroll-target="#calculate-interval-distribution">Calculate interval distribution</a></li>
+  <li><a href="#calculate-duration-distribution" id="toc-calculate-duration-distribution" class="nav-link" data-scroll-target="#calculate-duration-distribution">Calculate duration distribution</a></li>
+  </ul></li>
+  <li><a href="#create-plots" id="toc-create-plots" class="nav-link" data-scroll-target="#create-plots">Create plots</a></li>
+  <li><a href="#statistics" id="toc-statistics" class="nav-link" data-scroll-target="#statistics">Statistics</a>
+  <ul class="collapse">
+  <li><a href="#pitch-class" id="toc-pitch-class" class="nav-link" data-scroll-target="#pitch-class">Pitch-class</a></li>
+  <li><a href="#intervals" id="toc-intervals" class="nav-link" data-scroll-target="#intervals">Intervals</a></li>
+  <li><a href="#durations" id="toc-durations" class="nav-link" data-scroll-target="#durations">Durations</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -399,13 +432,13 @@ window.Quarto = {
 <p>Install <code>music21</code> and other elements needed to run this in Colab environment. Press play and wait for all commands to be executed - this initial command might take some time as it needs to build the musi21 environment.</p>
 <section id="event-counts" class="level2">
 <h2 class="anchored" data-anchor-id="event-counts">Event counts</h2>
-<div id="5390681e" class="cell" data-execution_count="2">
+<div id="24519710" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> music21 <span class="im">import</span> <span class="op">*</span>                     <span class="co"># activate library</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="99dc77f7" class="cell" data-execution_count="3">
+<div id="04c18f3b" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> music21 <span class="im">import</span> <span class="op">*</span>                     <span class="co"># activate library</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -417,7 +450,7 @@ window.Quarto = {
 </div>
 <section id="extract-key-and-trasponse-to-common-tonic" class="level3">
 <h3 class="anchored" data-anchor-id="extract-key-and-trasponse-to-common-tonic">Extract key and trasponse to common tonic</h3>
-<div id="aab3714a" class="cell" data-execution_count="4">
+<div id="ff983268" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> bwv110_7.analyze(<span class="st">'key'</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(k)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> interval.Interval(k.tonic, pitch.Pitch(<span class="st">'C'</span>))</span>
@@ -448,7 +481,7 @@ c minor</code></pre>
 </section>
 <section id="calculate-pitch-class-distribution" class="level3">
 <h3 class="anchored" data-anchor-id="calculate-pitch-class-distribution">Calculate pitch-class distribution</h3>
-<div id="ea933e39" class="cell" data-execution_count="5">
+<div id="de7e9cf4" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pitch-class</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>pcCount <span class="op">=</span> analysis.pitchAnalysis.pitchAttributeCount(bwv110_7, <span class="st">'pitchClass'</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>pc <span class="op">=</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">12</span>)</span>
@@ -471,7 +504,7 @@ c minor</code></pre>
 </section>
 <section id="calculate-interval-distribution" class="level3">
 <h3 class="anchored" data-anchor-id="calculate-interval-distribution">Calculate interval distribution</h3>
-<div id="099664ee" class="cell" data-execution_count="6">
+<div id="eed79a3c" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># intervals</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
@@ -511,16 +544,16 @@ c minor</code></pre>
 <span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>IV <span class="op">=</span> pd.concat([df, df2])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/b0/vtr2rd_96119zlr64t5hvlgr0000gp/T/ipykernel_65284/4086787063.py:12: StreamIteratorInefficientWarning: melodicIntervals is not defined on StreamIterators. Call .stream() first for efficiency
+<pre><code>/var/folders/b0/vtr2rd_96119zlr64t5hvlgr0000gp/T/ipykernel_66216/4086787063.py:12: StreamIteratorInefficientWarning: melodicIntervals is not defined on StreamIterators. Call .stream() first for efficiency
   intervalStream1 = p.melodicIntervals(skipOctaves=True,skipRests=True)
-/var/folders/b0/vtr2rd_96119zlr64t5hvlgr0000gp/T/ipykernel_65284/4086787063.py:26: StreamIteratorInefficientWarning: melodicIntervals is not defined on StreamIterators. Call .stream() first for efficiency
+/var/folders/b0/vtr2rd_96119zlr64t5hvlgr0000gp/T/ipykernel_66216/4086787063.py:26: StreamIteratorInefficientWarning: melodicIntervals is not defined on StreamIterators. Call .stream() first for efficiency
   intervalStream1 = p.melodicIntervals()</code></pre>
 </div>
 </div>
 </section>
 <section id="calculate-duration-distribution" class="level3">
 <h3 class="anchored" data-anchor-id="calculate-duration-distribution">Calculate duration distribution</h3>
-<div id="1b455407" class="cell" data-execution_count="7">
+<div id="a948fd46" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># durations</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>part <span class="op">=</span> bwv110_7.recurse().parts</span>
@@ -551,9 +584,9 @@ c minor</code></pre>
 <span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>DU <span class="op">=</span> pd.concat([du, du2])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/b0/vtr2rd_96119zlr64t5hvlgr0000gp/T/ipykernel_65284/1590200641.py:4: StreamIteratorInefficientWarning: recurse is not defined on StreamIterators. Call .stream() first for efficiency
+<pre><code>/var/folders/b0/vtr2rd_96119zlr64t5hvlgr0000gp/T/ipykernel_66216/1590200641.py:4: StreamIteratorInefficientWarning: recurse is not defined on StreamIterators. Call .stream() first for efficiency
   p = part.recurse()
-/var/folders/b0/vtr2rd_96119zlr64t5hvlgr0000gp/T/ipykernel_65284/1590200641.py:17: StreamIteratorInefficientWarning: recurse is not defined on StreamIterators. Call .stream() first for efficiency
+/var/folders/b0/vtr2rd_96119zlr64t5hvlgr0000gp/T/ipykernel_66216/1590200641.py:17: StreamIteratorInefficientWarning: recurse is not defined on StreamIterators. Call .stream() first for efficiency
   p = part.recurse()</code></pre>
 </div>
 </div>
@@ -561,7 +594,7 @@ c minor</code></pre>
 </section>
 <section id="create-plots" class="level2">
 <h2 class="anchored" data-anchor-id="create-plots">Create plots</h2>
-<div id="59f1e231" class="cell" data-execution_count="8">
+<div id="313ffce9" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Set graphic params</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>sns.set_theme()</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>sns.set_style(<span class="st">"whitegrid"</span>)</span>
@@ -727,7 +760,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/tuomaseerola\.github\.io\/emr\/index\.html");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -1076,7 +1109,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./index.md">
+    <a class="nav-link" href="./index.html">
 <p>Home</p>
 </a>
   </li>  

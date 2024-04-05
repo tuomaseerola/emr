@@ -107,7 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked fullcontent">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -321,20 +321,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Technical.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Technical Notes</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./Citation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Citation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./Technical.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Technical Notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./Links.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Links</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Version_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Establish R library versions within Colab</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Version_Python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Establish Python library versions within Colab</span></a>
   </div>
 </li>
       </ul>
@@ -344,7 +356,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#ch.-4-correlations" id="toc-ch.-4-correlations" class="nav-link active" data-scroll-target="#ch.-4-correlations">Ch. 4 – Correlations</a>
+  <ul class="collapse">
+  <li><a href="#figure-4.1-illustration-of-correlations" id="toc-figure-4.1-illustration-of-correlations" class="nav-link" data-scroll-target="#figure-4.1-illustration-of-correlations">Figure 4.1 Illustration of correlations</a></li>
+  <li><a href="#example-4.2-meta-analysis" id="toc-example-4.2-meta-analysis" class="nav-link" data-scroll-target="#example-4.2-meta-analysis">Example 4.2 Meta-analysis</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -617,7 +642,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/tuomaseerola\.github\.io\/emr\/index\.html");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -966,7 +991,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./index.md">
+    <a class="nav-link" href="./index.html">
 <p>Home</p>
 </a>
   </li>  
