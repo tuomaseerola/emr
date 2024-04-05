@@ -1,7 +1,6 @@
+# Library version (R)
 
-# Establish R library versions within Colab
-
-In March 2024 Colab version of R is:
+Establish R library versions within Colab. In March 2024 Colab version of R is:
 
 ```{r}
 #| echo: true

@@ -2,10 +2,10 @@ project:
   type: website
   output-dir: docs
   render:
+    - index.qmd
     - Chapter1.qmd
     - Chapter3.qmd
     - Chapter4.qmd
-    - index.qmd
     - Chapter6.1.qmd
     - Chapter6.2.qmd
     - Chapter6.3.qmd
@@ -30,6 +30,7 @@ project:
     - Technical.qmd
 website:
   title: "EMR"
+  site-url: "https://tuomaseerola.github.io/emr/index.html"
   sidebar:
     style: "docked"
     contents:
@@ -64,9 +65,11 @@ website:
           - Chapter11.3.qmd
       - section: "Other"
         contents:
-          - Technical.qmd
           - Citation.qmd
+          - Technical.qmd
           - Links.qmd
+          - Version_R.qmd
+          - Version_Python.qmd
   page-navigation: true
   back-to-top-navigation: true
   page-footer:  

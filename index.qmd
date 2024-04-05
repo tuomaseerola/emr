@@ -1,7 +1,10 @@
 ---
 title: "Music and Science – Guide to Empirical Music Research (Book)"
-format: gfm
+format:
+  html:
+    code-fold: false
 jupyter: python3
+toc: false
 ---
 
 <!--
@@ -11,13 +14,20 @@ quarto preview Chapter11.1.qmd
 I am currently working towards finishing this file.
 -->
 
-This repository contains the electronic materials for _Routledge_ book titled **[Music and Science – Guide to Empirical Music Research](https://tuomaseerola.github.io/emr/)** by [Tuomas Eerola](https://www.durham.ac.uk/staff/tuomas-eerola/), at [Durham University](https://www.durham.ac.uk) and [Music and Science Lab](https://musicscience.net). The book is scheduled to be published in 2024.
+This repository contains the electronic materials for _Routledge_ book titled **[Music and Science – Guide to Empirical Music Research](https://tuomaseerola.github.io/emr/)** by [Tuomas Eerola](https://tuomaseerola.github.io/about/), at [Durham University](https://www.durham.ac.uk) and [Music and Science Lab](https://musicscience.net). The book is scheduled to be published in 2024.
 
-The materials are Jupyter notebooks with code examples in [R](https://www.r-project.org/) or [Python](https://www.python.org/)). The notebooks are designed to be run in [Google Colab](https://colab.research.google.com/) within a browser. Colab service is free and does not require any installations or software. It is also possible to run the notebooks within a [Jupyter server in your own computer](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/index.html) or to use the code directly in R or in Python. See [technical notes](Technical.qmd) about the notebooks and package versions in Colab.
+The materials are [Quarto](https://quarto.org) notebooks with code examples in [R](https://www.r-project.org/) or [Python](https://www.python.org/). The notebooks can be used in four ways:
 
-The public-facing version of this repository is at [https://tuomaseerola.github.io/emr/](https://tuomaseerola.github.io/emr/). See [citation](Citation.qmd) for bibliographic details of the book.
+1. Explore the code and data directly in R or in Python in your local machine. 
+2. Use the **Jupyter** notebooks locally in a [server](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/index.html).
+3. Run the notebooks through [**Google Colab**](https://colab.research.google.com/) in a browser (it is free and does not require any additional software).
+4. Study this **website** to learn how to replicate the computational and statistical aspects mentioned in the book. 
 
-`ver 5/4/2024`
+See [technical notes](Technical.qmd) about the notebooks and [package versions](Version_R.qmd).
+
+The public-facing version of this repository is at [https://tuomaseerola.github.io/emr/](https://tuomaseerola.github.io/emr/). See [citation](Citation.qmd) for the bibliographic details of the book.
+
+`Ver: 5/4/2024 16:18`
 
 # Contents
 

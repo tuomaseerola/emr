@@ -1,7 +1,7 @@
 
-# Establish Python library versions within Colab
+# Library version (Python)
 
-In March 2024 Colab had:
+Establish Python library versions within Colab. In March 2024 Colab had:
 
 - Python version 3.10.12
 - matplotlib version 3.7.1

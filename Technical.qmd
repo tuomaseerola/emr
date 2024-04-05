@@ -1,12 +1,12 @@
 
 # Technical Notes
 
-_Jupyter notebooks_ have been made to be compatible with Colab. For _Python_, the libraries included are in December 2022:
+_Jupyter notebooks_ have been made to be compatible with Colab. For _Python_, the libraries included are in March 2024:
  
-- Python version 3.10.12
-- matplotlib version 3.7.1
-- librosa version 0.10.1
-- numpy version 1.25.2
+- `Python version 3.10.12`
+- `matplotlib version 3.7.1`
+- `librosa version 0.10.1`
+- `numpy version 1.25.2`
 
 and for _R_, the version in the Colab are:
 
@@ -28,5 +28,5 @@ devtools::install_github("tuomaseerola/MusicScienceData@main",quiet=TRUE)
 library(MusicScienceData)
 ```
 
-- See [Python](Version_Python.qmd) and [R version](Version_R.qmd).
+- See [Python version](Version_Python.qmd) and [R version](Version_R.qmd).
 
