@@ -13,12 +13,12 @@
   {
     "objectID": "Version_Python.html",
     "href": "Version_Python.html",
-    "title": "Establish Python library versions within Colab",
+    "title": "Library version (Python)",
     "section": "",
-    "text": "In March 2024 Colab had:\n\nPython version 3.10.12\nmatplotlib version 3.7.1\nlibrosa version 0.10.1\nnumpy version 1.25.2\n\n\nprint('Current system has:')\nimport platform\nprint('Python version ' + platform.python_version())\nimport matplotlib\nprint('matplotlib version ' + matplotlib.__version__)\nimport librosa\nimport librosa.display\nprint('librosa version ' + librosa.__version__)\nimport numpy as np\nprint('numpy version ' + np.__version__)\n\nCurrent system has:\nPython version 3.9.18\nmatplotlib version 3.7.2\nlibrosa version 0.10.1\nnumpy version 1.24.4\n\n\n\n\n\n Back to top",
+    "text": "Establish Python library versions within Colab. In March 2024 Colab had:\n\nPython version 3.10.12\nmatplotlib version 3.7.1\nlibrosa version 0.10.1\nnumpy version 1.25.2\n\n\nprint('Current system has:')\nimport platform\nprint('Python version ' + platform.python_version())\nimport matplotlib\nprint('matplotlib version ' + matplotlib.__version__)\nimport librosa\nimport librosa.display\nprint('librosa version ' + librosa.__version__)\nimport numpy as np\nprint('numpy version ' + np.__version__)\n\nCurrent system has:\nPython version 3.9.18\nmatplotlib version 3.7.2\nlibrosa version 0.10.1\nnumpy version 1.24.4\n\n\n\n\n\n Back to top",
     "crumbs": [
       "Other",
-      "Establish Python library versions within Colab"
+      "Library version (Python)"
     ]
   },
   {
@@ -1169,34 +1169,34 @@
   {
     "objectID": "Version_R.html",
     "href": "Version_R.html",
-    "title": "Establish R library versions within Colab",
+    "title": "Library version (R)",
     "section": "",
-    "text": "In March 2024 Colab version of R is:\n\nR version 4.3.3 (2024-02-29)\ntidyverse 2.0.0’\nggplot2 3.4.4’\n\nTest the Colab version of R.\n\nprint(R.version.string)\n\n[1] \"R version 4.3.3 (2024-02-29)\"\n\n\n\n\nShow libraries\n\n#print(installed.packages())\npackageVersion(\"tidyverse\")\n\n[1] '2.0.0'\n\npackageVersion(\"ggplot2\")\n\n[1] '3.5.0'\n\n\n\n\n\n\nsessionInfo()\n\nR version 4.3.3 (2024-02-29)\nPlatform: x86_64-apple-darwin20 (64-bit)\nRunning under: macOS Ventura 13.6.4\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.11.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Europe/London\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.3.3    fastmap_1.1.1     cli_3.6.2        \n [5] tools_4.3.3       htmltools_0.5.8   yaml_2.3.8        rmarkdown_2.26   \n [9] knitr_1.45        jsonlite_1.8.8    xfun_0.43         digest_0.6.35    \n[13] rlang_1.1.3       evaluate_0.23",
+    "text": "Establish R library versions within Colab. In March 2024 Colab version of R is:\n\nR version 4.3.3 (2024-02-29)\ntidyverse 2.0.0’\nggplot2 3.4.4’\n\nTest the Colab version of R.\n\nprint(R.version.string)\n\n[1] \"R version 4.3.3 (2024-02-29)\"\n\n\n\n\nShow libraries\n\n#print(installed.packages())\npackageVersion(\"tidyverse\")\n\n[1] '2.0.0'\n\npackageVersion(\"ggplot2\")\n\n[1] '3.5.0'\n\n\n\n\n\n\nsessionInfo()\n\nR version 4.3.3 (2024-02-29)\nPlatform: x86_64-apple-darwin20 (64-bit)\nRunning under: macOS Ventura 13.6.4\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.11.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Europe/London\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.3.3    fastmap_1.1.1     cli_3.6.2        \n [5] tools_4.3.3       htmltools_0.5.8   yaml_2.3.8        rmarkdown_2.26   \n [9] knitr_1.45        jsonlite_1.8.8    xfun_0.43         digest_0.6.35    \n[13] rlang_1.1.3       evaluate_0.23",
     "crumbs": [
       "Other",
-      "Establish R library versions within Colab"
+      "Library version (R)"
     ]
   },
   {
     "objectID": "Version_R.html#libraries",
     "href": "Version_R.html#libraries",
-    "title": "Establish R library versions within Colab",
+    "title": "Library version (R)",
     "section": "",
     "text": "Show libraries\n\n#print(installed.packages())\npackageVersion(\"tidyverse\")\n\n[1] '2.0.0'\n\npackageVersion(\"ggplot2\")\n\n[1] '3.5.0'",
     "crumbs": [
       "Other",
-      "Establish R library versions within Colab"
+      "Library version (R)"
     ]
   },
   {
     "objectID": "Version_R.html#show-other-information",
     "href": "Version_R.html#show-other-information",
-    "title": "Establish R library versions within Colab",
+    "title": "Library version (R)",
     "section": "",
     "text": "sessionInfo()\n\nR version 4.3.3 (2024-02-29)\nPlatform: x86_64-apple-darwin20 (64-bit)\nRunning under: macOS Ventura 13.6.4\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.11.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Europe/London\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.3.3    fastmap_1.1.1     cli_3.6.2        \n [5] tools_4.3.3       htmltools_0.5.8   yaml_2.3.8        rmarkdown_2.26   \n [9] knitr_1.45        jsonlite_1.8.8    xfun_0.43         digest_0.6.35    \n[13] rlang_1.1.3       evaluate_0.23",
     "crumbs": [
       "Other",
-      "Establish R library versions within Colab"
+      "Library version (R)"
     ]
   },
   {
