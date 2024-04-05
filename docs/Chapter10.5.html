@@ -107,7 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked fullcontent">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -344,18 +344,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#figure-10.6.-visualisation-of-the-features-of-two-songs-help-and-yesterday-by-the-beatles-within-the-context-of-500-other-tracks-from-1964-1966-using-four-high-level-features-retrieved-from-spotify." id="toc-figure-10.6.-visualisation-of-the-features-of-two-songs-help-and-yesterday-by-the-beatles-within-the-context-of-500-other-tracks-from-1964-1966-using-four-high-level-features-retrieved-from-spotify." class="nav-link active" data-scroll-target="#figure-10.6.-visualisation-of-the-features-of-two-songs-help-and-yesterday-by-the-beatles-within-the-context-of-500-other-tracks-from-1964-1966-using-four-high-level-features-retrieved-from-spotify.">Figure 10.6. Visualisation of the features of two songs (Help! and Yesterday) by the Beatles within the context of 500 other tracks from 1964-1966 using four high-level features retrieved from Spotify.</a></li>
+  <li><a href="#retrieve-spotify-features" id="toc-retrieve-spotify-features" class="nav-link" data-scroll-target="#retrieve-spotify-features">1. Retrieve Spotify features</a></li>
+  <li><a href="#visualise" id="toc-visualise" class="nav-link" data-scroll-target="#visualise">2. Visualise</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Chapter10.1.html">Audio analysis</a></li><li class="breadcrumb-item"><a href="./Chapter10.5.html">Ch. 10 – Semantic</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Ch. 10 – Semantic</h1>
+</div>
 
 
 
-<p><a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/Chapter10.1.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
-<section id="ch.-10-semantic" class="level1">
-<h1>Ch. 10 – Semantic</h1>
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
 <section id="figure-10.6.-visualisation-of-the-features-of-two-songs-help-and-yesterday-by-the-beatles-within-the-context-of-500-other-tracks-from-1964-1966-using-four-high-level-features-retrieved-from-spotify." class="level2">
 <h2 class="anchored" data-anchor-id="figure-10.6.-visualisation-of-the-features-of-two-songs-help-and-yesterday-by-the-beatles-within-the-context-of-500-other-tracks-from-1964-1966-using-four-high-level-features-retrieved-from-spotify.">Figure 10.6. Visualisation of the features of two songs (Help! and Yesterday) by the Beatles within the context of 500 other tracks from 1964-1966 using four high-level features retrieved from Spotify.</h2>
+<p>This code requires that the user supplements their own <code>client_id</code> and <code>client_secret</code> which can be obtained after registering to developer account for Spotify API. The code will not run without these. However, the visualisation part of the code works with the save data (<code>data/top_n_track_features2.csv</code>).</p>
 <div id="libraries" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show the code</summary>
@@ -370,65 +394,66 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="retrieve-spotify-features">1. Retrieve Spotify features</h2>
 <div id="retrieve" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>client_id <span class="op">=</span> <span class="st">'YOUR_CLIENT_ID_HERE'</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>client_secret<span class="op">=</span> <span class="st">'YOUR_SECRET_KEY_HERE'</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>client_secret <span class="op">=</span> <span class="st">'YOUR_SECRET_KEY_HERE'</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>sp <span class="op">=</span> spotipy.Spotify(auth_manager<span class="op">=</span>SpotifyClientCredentials(client_id<span class="op">=</span>client_id,client_secret<span class="op">=</span>client_secret))</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> sp.search(q<span class="op">=</span><span class="st">'The Beatles'</span>, limit<span class="op">=</span><span class="dv">20</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx, track <span class="kw">in</span> <span class="bu">enumerate</span>(results[<span class="st">'tracks'</span>][<span class="st">'items'</span>]):</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(idx, track[<span class="st">'name'</span>])</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>track <span class="op">=</span> results[<span class="st">'tracks'</span>][<span class="st">'items'</span>][<span class="dv">18</span>] <span class="co"># help is 18</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(track[<span class="st">'name'</span>])</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(track[<span class="st">'href'</span>])</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(track[<span class="st">'popularity'</span>])</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"===========PREVIEW==========="</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(track[<span class="st">'preview_url'</span>])</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"===========PREVIEW==========="</span>)</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> sp.audio_features(track[<span class="st">'id'</span>])</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a[<span class="dv">0</span>][<span class="st">'valence'</span>])      <span class="co"># Help!: 0.763, Yesterday: 0.315</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a[<span class="dv">0</span>][<span class="st">'energy'</span>])       <span class="co"># Help!: 0.725, Yesterday: 0.179</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a[<span class="dv">0</span>][<span class="st">'tempo'</span>])        <span class="co"># Help!: 95.003, Yesterday: 96.53</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a[<span class="dv">0</span>][<span class="st">'loudness'</span>])     <span class="co"># Help!: -7.576, Yesterday: -11.83</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a[<span class="dv">0</span>][<span class="st">'acousticness'</span>]) <span class="co"># Help!: 0.188, Yesterday: 0.879</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"===========GENRE==========="</span>)</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>name<span class="op">=</span>[]</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>Tid<span class="op">=</span>[]</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>valence<span class="op">=</span>[]</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>energy<span class="op">=</span>[]</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>tempo<span class="op">=</span>[]</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>loudness<span class="op">=</span>[]</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>instrumentalness<span class="op">=</span>[]</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>acousticness<span class="op">=</span>[]</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>danceability<span class="op">=</span>[]</span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="co"># get 500 tracks, 50 each time</span></span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>offset_vals<span class="op">=</span>np.arange(<span class="dv">1</span>,<span class="dv">500</span>,<span class="dv">10</span>)</span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">50</span>):</span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>    results <span class="op">=</span> sp.search(q<span class="op">=</span><span class="st">'genre:pop &amp; year:1964-1966'</span>,limit<span class="op">=</span><span class="dv">10</span>,offset<span class="op">=</span>offset_vals[i])</span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="co">#results = sp.search(q='genre:pop &amp; genre:rock &amp; year:1960-1969',limit=50)</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>sp <span class="op">=</span> spotipy.Spotify(auth_manager<span class="op">=</span>SpotifyClientCredentials(client_id<span class="op">=</span>client_id,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                     client_secret<span class="op">=</span>client_secret))</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> sp.search(q<span class="op">=</span><span class="st">'The Beatles'</span>, limit<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx, track <span class="kw">in</span> <span class="bu">enumerate</span>(results[<span class="st">'tracks'</span>][<span class="st">'items'</span>]):</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(idx, track[<span class="st">'name'</span>])</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>track <span class="op">=</span> results[<span class="st">'tracks'</span>][<span class="st">'items'</span>][<span class="dv">18</span>]  <span class="co"># help is 18</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(track[<span class="st">'name'</span>])</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(track[<span class="st">'href'</span>])</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(track[<span class="st">'popularity'</span>])</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"===========PREVIEW==========="</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(track[<span class="st">'preview_url'</span>])</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"===========PREVIEW==========="</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> sp.audio_features(track[<span class="st">'id'</span>])</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a[<span class="dv">0</span>][<span class="st">'valence'</span>])       <span class="co"># Help!: 0.763, Yesterday: 0.315</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a[<span class="dv">0</span>][<span class="st">'energy'</span>])        <span class="co"># Help!: 0.725, Yesterday: 0.179</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a[<span class="dv">0</span>][<span class="st">'tempo'</span>])         <span class="co"># Help!: 95.003, Yesterday: 96.53</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a[<span class="dv">0</span>][<span class="st">'loudness'</span>])      <span class="co"># Help!: -7.576, Yesterday: -11.83</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a[<span class="dv">0</span>][<span class="st">'acousticness'</span>])  <span class="co"># Help!: 0.188, Yesterday: 0.879</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"===========GENRE==========="</span>)</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> []</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>Tid <span class="op">=</span> []</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>valence <span class="op">=</span> []</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>energy <span class="op">=</span> []</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>tempo <span class="op">=</span> []</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>loudness <span class="op">=</span> []</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>instrumentalness <span class="op">=</span> []</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>acousticness <span class="op">=</span> []</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>danceability <span class="op">=</span> []</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="co"># get 500 tracks, 50 each time</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>offset_vals <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">500</span>, <span class="dv">10</span>)</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">50</span>):</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>    results <span class="op">=</span> sp.search(q<span class="op">=</span><span class="st">'genre:pop &amp; year:1964-1966'</span>, limit<span class="op">=</span><span class="dv">10</span>, </span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>                        offset<span class="op">=</span>offset_vals[i])</span>
 <span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> idx, track <span class="kw">in</span> <span class="bu">enumerate</span>(results[<span class="st">'tracks'</span>][<span class="st">'items'</span>]):</span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>        <span class="co">#print(idx, track['name'])</span></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>        name.append(track[<span class="st">'name'</span>])</span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>        Tid.append(track[<span class="st">'id'</span>])</span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>        a <span class="op">=</span> sp.audio_features(track[<span class="st">'id'</span>])</span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>        valence.append(a[<span class="dv">0</span>][<span class="st">'valence'</span>])</span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>        energy.append(a[<span class="dv">0</span>][<span class="st">'energy'</span>])</span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>        instrumentalness.append(a[<span class="dv">0</span>][<span class="st">'instrumentalness'</span>])</span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>        acousticness.append(a[<span class="dv">0</span>][<span class="st">'acousticness'</span>])</span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>        danceability.append(a[<span class="dv">0</span>][<span class="st">'danceability'</span>])</span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>        tempo.append(a[<span class="dv">0</span>][<span class="st">'tempo'</span>])</span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>        loudness.append(a[<span class="dv">0</span>][<span class="st">'loudness'</span>])</span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(i,<span class="st">':'</span>,idx)</span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="co"># Store in data frame and save to a file</span></span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'valence'</span>:valence,<span class="st">'energy'</span>:energy,<span class="st">'tempo'</span>:tempo,<span class="st">'acousticness'</span>:acousticness,<span class="st">'loudness'</span>:loudness,<span class="st">'id'</span>:Tid})</span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>df.to_csv(<span class="st">'data/top_n_track_features2.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>        name.append(track[<span class="st">'name'</span>])</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>        Tid.append(track[<span class="st">'id'</span>])</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>        a <span class="op">=</span> sp.audio_features(track[<span class="st">'id'</span>])</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>        valence.append(a[<span class="dv">0</span>][<span class="st">'valence'</span>])</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>        energy.append(a[<span class="dv">0</span>][<span class="st">'energy'</span>])</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>        instrumentalness.append(a[<span class="dv">0</span>][<span class="st">'instrumentalness'</span>])</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>        acousticness.append(a[<span class="dv">0</span>][<span class="st">'acousticness'</span>])</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>        danceability.append(a[<span class="dv">0</span>][<span class="st">'danceability'</span>])</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>        tempo.append(a[<span class="dv">0</span>][<span class="st">'tempo'</span>])</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>        loudness.append(a[<span class="dv">0</span>][<span class="st">'loudness'</span>])</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(i, <span class="st">':'</span>, idx)</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="co"># Store in data frame and save to a file</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'valence'</span>: valence, <span class="st">'energy'</span>: energy, <span class="st">'tempo'</span>: tempo,</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>                   <span class="st">'acousticness'</span>: acousticness,</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>                   <span class="st">'loudness'</span>: loudness, <span class="st">'id'</span>: Tid})</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>df.to_csv(<span class="st">'data/top_n_track_features2.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="visualise" class="level2">
@@ -436,62 +461,71 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="cell-visualise" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>d<span class="op">=</span>pd.read_csv(<span class="st">'data/top_n_track_features2.csv'</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt </span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># With seaborn</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt </span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>sns.set_theme()</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>sns.set_style(<span class="st">"whitegrid"</span>)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure()</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>fig.set_figheight(<span class="dv">8</span>)</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>fig.set_figwidth(<span class="dv">9</span>)</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">## multiple plots</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>ax1 <span class="op">=</span> plt.subplot2grid(shape<span class="op">=</span>(<span class="dv">2</span>, <span class="dv">2</span>), loc<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">0</span>))</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>ax2 <span class="op">=</span> plt.subplot2grid(shape<span class="op">=</span>(<span class="dv">2</span>, <span class="dv">2</span>), loc<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">1</span>))</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>ax3 <span class="op">=</span> plt.subplot2grid(shape<span class="op">=</span>(<span class="dv">2</span>, <span class="dv">2</span>), loc<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">0</span>))</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>ax4 <span class="op">=</span> plt.subplot2grid(shape<span class="op">=</span>(<span class="dv">2</span>, <span class="dv">2</span>), loc<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>sns.histplot(x<span class="op">=</span><span class="st">'valence'</span>, data<span class="op">=</span>d,color<span class="op">=</span><span class="st">'blue'</span>,ax<span class="op">=</span>ax1)</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'Valence (0-1)'</span>)</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>ax1.axes.axvline(<span class="fl">0.763</span>, color<span class="op">=</span><span class="st">'red'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, alpha<span class="op">=</span><span class="fl">.7</span>)</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>ax1.text(<span class="fl">0.763</span>, ax1.get_ylim()[<span class="dv">1</span>],<span class="st">"Help!"</span>,size<span class="op">=</span><span class="dv">12</span>,backgroundcolor<span class="op">=</span><span class="st">'0.9'</span>,ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"top"</span>,alpha<span class="op">=</span><span class="fl">0.85</span>)</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>ax1.axes.axvline(<span class="fl">0.315</span>, color<span class="op">=</span><span class="st">'green'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, alpha<span class="op">=</span><span class="fl">.7</span>)</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>ax1.text(<span class="fl">0.315</span>, ax1.get_ylim()[<span class="dv">1</span>],<span class="st">"Yesterday"</span>,size<span class="op">=</span><span class="dv">12</span>,backgroundcolor<span class="op">=</span><span class="st">'0.9'</span>,ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"top"</span>,alpha<span class="op">=</span><span class="fl">0.85</span>)</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>ax1.set_xlim([<span class="dv">0</span>,<span class="dv">1</span>])</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>ax1.set_xticks(np.arange(<span class="dv">0</span>,<span class="fl">1.1</span>,<span class="fl">0.20</span>)) </span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>sns.histplot(x<span class="op">=</span><span class="st">'energy'</span>, data<span class="op">=</span>d,color<span class="op">=</span><span class="st">'blue'</span>,ax<span class="op">=</span>ax2)</span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">'Energy (0-1)'</span>)</span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>ax2.axes.axvline(<span class="fl">0.725</span>, color<span class="op">=</span><span class="st">'red'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, alpha<span class="op">=</span><span class="fl">.7</span>)</span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>ax2.text(<span class="fl">0.725</span>, ax2.get_ylim()[<span class="dv">1</span>],<span class="st">"Help!"</span>,size<span class="op">=</span><span class="dv">12</span>,backgroundcolor<span class="op">=</span><span class="st">'0.9'</span>,ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"top"</span>,alpha<span class="op">=</span><span class="fl">0.85</span>)</span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>ax2.axes.axvline(<span class="fl">0.179</span>, color<span class="op">=</span><span class="st">'green'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, alpha<span class="op">=</span><span class="fl">.7</span>)</span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>ax2.text(<span class="fl">0.179</span>, ax2.get_ylim()[<span class="dv">1</span>],<span class="st">"Yesterday"</span>,size<span class="op">=</span><span class="dv">12</span>,backgroundcolor<span class="op">=</span><span class="st">'0.9'</span>,ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"top"</span>,alpha<span class="op">=</span><span class="fl">0.85</span>)</span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>ax2.set_xlim([<span class="dv">0</span>,<span class="dv">1</span>])</span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>ax2.set_xticks(np.arange(<span class="dv">0</span>,<span class="fl">1.1</span>,<span class="fl">0.20</span>)) </span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>sns.histplot(x<span class="op">=</span><span class="st">'tempo'</span>, data<span class="op">=</span>d,color<span class="op">=</span><span class="st">'blue'</span>,ax<span class="op">=</span>ax3)</span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>ax3.set_xlabel(<span class="st">'Tempo (BPM)'</span>)</span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>ax3.axes.axvline(<span class="dv">95</span>, color<span class="op">=</span><span class="st">'red'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, alpha<span class="op">=</span><span class="fl">.7</span>)</span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>ax3.text(<span class="dv">90</span>, ax3.get_ylim()[<span class="dv">1</span>],<span class="st">"Help!"</span>,size<span class="op">=</span><span class="dv">12</span>,backgroundcolor<span class="op">=</span><span class="st">'0.9'</span>,ha<span class="op">=</span><span class="st">"right"</span>, va<span class="op">=</span><span class="st">"top"</span>,alpha<span class="op">=</span><span class="fl">0.85</span>)</span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>ax3.axes.axvline(<span class="fl">96.5</span>, color<span class="op">=</span><span class="st">'green'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, alpha<span class="op">=</span><span class="fl">.7</span>)</span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>ax3.text(<span class="dv">100</span>, ax3.get_ylim()[<span class="dv">1</span>],<span class="st">"Yesterday"</span>,size<span class="op">=</span><span class="dv">12</span>,backgroundcolor<span class="op">=</span><span class="st">'0.9'</span>,ha<span class="op">=</span><span class="st">"left"</span>, va<span class="op">=</span><span class="st">"top"</span>,alpha<span class="op">=</span><span class="fl">0.85</span>)</span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>sns.histplot(x<span class="op">=</span><span class="st">'acousticness'</span>, data<span class="op">=</span>d, color<span class="op">=</span><span class="st">'blue'</span>,ax<span class="op">=</span>ax4)</span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>ax4.set_xlabel(<span class="st">'Acousticness (0-1)'</span>)</span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>ax4.axes.axvline(<span class="fl">0.188</span>, color<span class="op">=</span><span class="st">'red'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, alpha<span class="op">=</span><span class="fl">.7</span>)</span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>ax4.text(<span class="fl">0.188</span>, ax4.get_ylim()[<span class="dv">1</span>],<span class="st">"Help!"</span>,size<span class="op">=</span><span class="dv">12</span>,backgroundcolor<span class="op">=</span><span class="st">'0.9'</span>,ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"top"</span>,alpha<span class="op">=</span><span class="fl">0.85</span>)</span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>ax4.axes.axvline(<span class="fl">0.879</span>, color<span class="op">=</span><span class="st">'green'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, alpha<span class="op">=</span><span class="fl">.7</span>)</span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>ax4.text(<span class="fl">0.879</span>, ax4.get_ylim()[<span class="dv">1</span>],<span class="st">"Yesterday"</span>,size<span class="op">=</span><span class="dv">12</span>,backgroundcolor<span class="op">=</span><span class="st">'0.9'</span>,ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"top"</span>,alpha<span class="op">=</span><span class="fl">0.85</span>)</span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>ax4.set_xlim([<span class="dv">0</span>,<span class="dv">1</span>])</span>
-<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>ax4.set_xticks(np.arange(<span class="dv">0</span>,<span class="fl">1.1</span>,<span class="fl">0.20</span>)) </span>
-<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Get data (from a previous process)</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> pd.read_csv(<span class="st">'data/top_n_track_features2.csv'</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># set graphic (seaborn) theme</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>sns.set_theme()</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>sns.set_style(<span class="st">"whitegrid"</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure()</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>fig.set_figheight(<span class="dv">8</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>fig.set_figwidth(<span class="dv">9</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Define multiple plots</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>ax1 <span class="op">=</span> plt.subplot2grid(shape<span class="op">=</span>(<span class="dv">2</span>, <span class="dv">2</span>), loc<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">0</span>))</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>ax2 <span class="op">=</span> plt.subplot2grid(shape<span class="op">=</span>(<span class="dv">2</span>, <span class="dv">2</span>), loc<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">1</span>))</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>ax3 <span class="op">=</span> plt.subplot2grid(shape<span class="op">=</span>(<span class="dv">2</span>, <span class="dv">2</span>), loc<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">0</span>))</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>ax4 <span class="op">=</span> plt.subplot2grid(shape<span class="op">=</span>(<span class="dv">2</span>, <span class="dv">2</span>), loc<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>sns.histplot(x<span class="op">=</span><span class="st">'valence'</span>, data<span class="op">=</span>d, color<span class="op">=</span><span class="st">'blue'</span>, ax<span class="op">=</span>ax1)</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'Valence (0-1)'</span>)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>ax1.axes.axvline(<span class="fl">0.763</span>, color<span class="op">=</span><span class="st">'red'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, alpha<span class="op">=</span><span class="fl">.7</span>)</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>ax1.text(<span class="fl">0.763</span>, ax1.get_ylim()[<span class="dv">1</span>], <span class="st">"Help!"</span>, size<span class="op">=</span><span class="dv">12</span>, backgroundcolor<span class="op">=</span><span class="st">'0.9'</span>,</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>         ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"top"</span>, alpha<span class="op">=</span><span class="fl">0.85</span>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>ax1.axes.axvline(<span class="fl">0.315</span>, color<span class="op">=</span><span class="st">'green'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, alpha<span class="op">=</span><span class="fl">.7</span>)</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>ax1.text(<span class="fl">0.315</span>, ax1.get_ylim()[<span class="dv">1</span>], <span class="st">"Yesterday"</span>, size<span class="op">=</span><span class="dv">12</span>, backgroundcolor<span class="op">=</span><span class="st">'0.9'</span>,</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>         ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"top"</span>, alpha<span class="op">=</span><span class="fl">0.85</span>)</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>ax1.set_xlim([<span class="dv">0</span>, <span class="dv">1</span>])</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>ax1.set_xticks(np.arange(<span class="dv">0</span>, <span class="fl">1.1</span>, <span class="fl">0.20</span>)) </span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>sns.histplot(x<span class="op">=</span><span class="st">'energy'</span>, data<span class="op">=</span>d, color<span class="op">=</span><span class="st">'blue'</span>, ax<span class="op">=</span>ax2)</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">'Energy (0-1)'</span>)</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>ax2.axes.axvline(<span class="fl">0.725</span>, color<span class="op">=</span><span class="st">'red'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, alpha<span class="op">=</span><span class="fl">.7</span>)</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>ax2.text(<span class="fl">0.725</span>, ax2.get_ylim()[<span class="dv">1</span>], <span class="st">"Help!"</span>, size<span class="op">=</span><span class="dv">12</span>, backgroundcolor<span class="op">=</span><span class="st">'0.9'</span>,</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>         ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"top"</span>, alpha<span class="op">=</span><span class="fl">0.85</span>)</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>ax2.axes.axvline(<span class="fl">0.179</span>, color<span class="op">=</span><span class="st">'green'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, alpha<span class="op">=</span><span class="fl">.7</span>)</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>ax2.text(<span class="fl">0.179</span>, ax2.get_ylim()[<span class="dv">1</span>], <span class="st">"Yesterday"</span>, size<span class="op">=</span><span class="dv">12</span>, backgroundcolor<span class="op">=</span><span class="st">'0.9'</span>,</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>         ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"top"</span>, alpha<span class="op">=</span><span class="fl">0.85</span>)</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>ax2.set_xlim([<span class="dv">0</span>, <span class="dv">1</span>])</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>ax2.set_xticks(np.arange(<span class="dv">0</span>, <span class="fl">1.1</span>, <span class="fl">0.20</span>)) </span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>sns.histplot(x<span class="op">=</span><span class="st">'tempo'</span>, data<span class="op">=</span>d, color<span class="op">=</span><span class="st">'blue'</span>, ax<span class="op">=</span>ax3)</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>ax3.set_xlabel(<span class="st">'Tempo (BPM)'</span>)</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>ax3.axes.axvline(<span class="dv">95</span>, color<span class="op">=</span><span class="st">'red'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, alpha<span class="op">=</span><span class="fl">.7</span>)</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>ax3.text(<span class="dv">90</span>, ax3.get_ylim()[<span class="dv">1</span>], <span class="st">"Help!"</span>, size<span class="op">=</span><span class="dv">12</span>, backgroundcolor<span class="op">=</span><span class="st">'0.9'</span>,</span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>         ha<span class="op">=</span><span class="st">"right"</span>, va<span class="op">=</span><span class="st">"top"</span>, alpha<span class="op">=</span><span class="fl">0.85</span>)</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>ax3.axes.axvline(<span class="fl">96.5</span>, color<span class="op">=</span><span class="st">'green'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, alpha<span class="op">=</span><span class="fl">.7</span>)</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>ax3.text(<span class="dv">100</span>, ax3.get_ylim()[<span class="dv">1</span>], <span class="st">"Yesterday"</span>, size<span class="op">=</span><span class="dv">12</span>, backgroundcolor<span class="op">=</span><span class="st">'0.9'</span>,</span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>         ha<span class="op">=</span><span class="st">"left"</span>, va<span class="op">=</span><span class="st">"top"</span>, alpha<span class="op">=</span><span class="fl">0.85</span>)</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>sns.histplot(x<span class="op">=</span><span class="st">'acousticness'</span>, data<span class="op">=</span>d, color<span class="op">=</span><span class="st">'blue'</span>, ax<span class="op">=</span>ax4)</span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>ax4.set_xlabel(<span class="st">'Acousticness (0-1)'</span>)</span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>ax4.axes.axvline(<span class="fl">0.188</span>, color<span class="op">=</span><span class="st">'red'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, alpha<span class="op">=</span><span class="fl">.7</span>)</span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>ax4.text(<span class="fl">0.188</span>, ax4.get_ylim()[<span class="dv">1</span>], <span class="st">"Help!"</span>, size<span class="op">=</span><span class="dv">12</span>, backgroundcolor<span class="op">=</span><span class="st">'0.9'</span>,</span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>         ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"top"</span>, alpha<span class="op">=</span><span class="fl">0.85</span>)</span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>ax4.axes.axvline(<span class="fl">0.879</span>, color<span class="op">=</span><span class="st">'green'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, alpha<span class="op">=</span><span class="fl">.7</span>)</span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>ax4.text(<span class="fl">0.879</span>, ax4.get_ylim()[<span class="dv">1</span>], <span class="st">"Yesterday"</span>, size<span class="op">=</span><span class="dv">12</span>, backgroundcolor<span class="op">=</span><span class="st">'0.9'</span>,</span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>         ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"top"</span>, alpha<span class="op">=</span><span class="fl">0.85</span>)</span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>ax4.set_xlim([<span class="dv">0</span>, <span class="dv">1</span>])</span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>ax4.set_xticks(np.arange(<span class="dv">0</span>, <span class="fl">1.1</span>, <span class="fl">0.20</span>)) </span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -502,7 +536,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 
 
-</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -936,7 +969,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./index.html">
+    <a class="nav-link" href="./index.md">
 <p>Home</p>
 </a>
   </li>  

@@ -107,7 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked fullcontent">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -344,7 +344,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#ch.-10-spectrum-and-envelope" id="toc-ch.-10-spectrum-and-envelope" class="nav-link active" data-scroll-target="#ch.-10-spectrum-and-envelope">Ch. 10 – Spectrum and envelope</a>
+  <ul class="collapse">
+  <li><a href="#figure-10.2.-spectrum-and-the-envelope-of-three-instruments-violin-clarinet-and-marimba." id="toc-figure-10.2.-spectrum-and-the-envelope-of-three-instruments-violin-clarinet-and-marimba." class="nav-link" data-scroll-target="#figure-10.2.-spectrum-and-the-envelope-of-three-instruments-violin-clarinet-and-marimba.">Figure 10.2. Spectrum and the envelope of three instruments (violin, clarinet, and marimba).</a>
+  <ul class="collapse">
+  <li><a href="#libraries" id="toc-libraries" class="nav-link" data-scroll-target="#libraries">Libraries</a></li>
+  <li><a href="#violin-properties-spectrum-and-envelope" id="toc-violin-properties-spectrum-and-envelope" class="nav-link" data-scroll-target="#violin-properties-spectrum-and-envelope">1. Violin properties (spectrum and envelope)</a></li>
+  <li><a href="#clarinet-properties-spectrum-and-envelope" id="toc-clarinet-properties-spectrum-and-envelope" class="nav-link" data-scroll-target="#clarinet-properties-spectrum-and-envelope">2. Clarinet properties (spectrum and envelope)</a></li>
+  <li><a href="#marimba-properties-spectrum-and-envelope" id="toc-marimba-properties-spectrum-and-envelope" class="nav-link" data-scroll-target="#marimba-properties-spectrum-and-envelope">3. Marimba properties (spectrum and envelope)</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -362,13 +380,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="libraries" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> librosa</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> librosa.display</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> IPython.display <span class="im">as</span> ipd</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> librosa</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> librosa.display</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -381,59 +396,66 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>stft <span class="op">=</span> np.<span class="bu">abs</span>(librosa.stft(x))</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>freqs <span class="op">=</span> librosa.fft_frequencies(sr<span class="op">=</span>sr)</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>f0, voiced_flag, voiced_probs <span class="op">=</span> librosa.pyin(x, fmin<span class="op">=</span>librosa.note_to_hz(<span class="st">'C2'</span>), fmax<span class="op">=</span>librosa.note_to_hz(<span class="st">'C7'</span>))</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>f<span class="op">=</span>np.nanmedian(f0)        <span class="co"># Get the Hz of the fundamental frequency for nice labels</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>n<span class="op">=</span>librosa.hz_to_note(f)  <span class="co"># Convert Hz to note name</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(n)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>X<span class="op">=</span>np.arange(f,f<span class="op">*</span><span class="dv">10</span>,f)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">2</span>, ncols<span class="op">=</span><span class="dv">1</span>, figsize<span class="op">=</span>(<span class="fl">8.0</span>, <span class="fl">5.0</span>))</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">## 1. Spectrum of a tone</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># collapse across time and plot a spectrum representation (energy across frequencies)</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>Dmean<span class="op">=</span>stft.mean(axis<span class="op">=</span><span class="dv">1</span>)<span class="op">/</span><span class="bu">max</span>(stft.mean(axis<span class="op">=</span><span class="dv">1</span>))</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].plot(freqs,Dmean,color<span class="op">=</span><span class="st">'blue'</span>)</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co">#ax[0].label_outer()</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_title(<span class="st">"Violin Spectrum"</span>)</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].<span class="bu">set</span>(xlim<span class="op">=</span>[<span class="dv">130</span>, X.<span class="bu">max</span>()])</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_ylabel(<span class="st">"Norm. Ampl."</span>)</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_xlabel(<span class="st">"Frequency (Hz)"</span>)</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].grid()</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_xticks(X)</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate spectral centroid and plot it</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>centroid <span class="op">=</span> librosa.feature.spectral_centroid(y<span class="op">=</span>x, sr<span class="op">=</span>sr)</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>centroidM <span class="op">=</span> centroid.mean()</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(centroidM.<span class="bu">round</span>(<span class="dv">0</span>))</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>centroidM_label <span class="op">=</span> <span class="st">"Centroid "</span> <span class="op">+</span> <span class="bu">str</span>(<span class="bu">int</span>(centroidM.<span class="bu">round</span>(<span class="dv">0</span>)))<span class="op">+</span><span class="st">" Hz"</span></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].annotate(<span class="st">""</span>,xy<span class="op">=</span>(<span class="dv">130</span>, <span class="fl">0.75</span>), xycoords<span class="op">=</span><span class="st">'data'</span>,xytext<span class="op">=</span>(centroidM, <span class="fl">0.75</span>), arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">"&lt;|-"</span>,connectionstyle<span class="op">=</span><span class="st">"arc3"</span>,color<span class="op">=</span><span class="st">"0.3"</span>),size<span class="op">=</span><span class="dv">4</span>)</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].annotate(<span class="st">""</span>,xy<span class="op">=</span>(centroidM, <span class="fl">0.75</span>), xycoords<span class="op">=</span><span class="st">'data'</span>,xytext<span class="op">=</span>(X.<span class="bu">max</span>(), <span class="fl">0.75</span>), arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">"-|&gt;"</span>,connectionstyle<span class="op">=</span><span class="st">"arc3"</span>,color<span class="op">=</span><span class="st">"0.3"</span>),size<span class="op">=</span><span class="dv">4</span>)</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].text(centroidM<span class="op">-</span><span class="dv">120</span>,<span class="fl">0.83</span>,centroidM_label,size<span class="op">=</span><span class="dv">10</span>,color<span class="op">=</span><span class="st">'0.2'</span>)</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Envelope</span></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>rms<span class="op">=</span>librosa.feature.rms(y<span class="op">=</span>x,frame_length<span class="op">=</span><span class="dv">2048</span>,hop_length<span class="op">=</span><span class="dv">512</span>)                 <span class="co"># Extra dynamics (RMS)</span></span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> librosa.times_like(rms)</span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].plot(times, rms[<span class="dv">0</span>],color<span class="op">=</span><span class="st">'red'</span>)</span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>librosa.display.waveshow(x, sr<span class="op">=</span>sr, ax<span class="op">=</span>ax[<span class="dv">1</span>],color<span class="op">=</span><span class="st">'0.75'</span>,max_points<span class="op">=</span><span class="dv">3000</span>)</span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].grid()</span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].<span class="bu">set</span>(ylim<span class="op">=</span>[<span class="op">-</span><span class="fl">0.25</span>, <span class="fl">0.25</span>])</span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].text(<span class="fl">0.25</span>,<span class="fl">0.17</span>,<span class="st">"A"</span>,size<span class="op">=</span><span class="dv">12</span>,color<span class="op">=</span><span class="st">'0.2'</span>)</span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="co">#ax[0,1].text(0.50,0.99,"D",size=15)</span></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].text(<span class="fl">1.20</span>,<span class="fl">0.17</span>,<span class="st">"S"</span>,size<span class="op">=</span><span class="dv">12</span>,color<span class="op">=</span><span class="st">'0.2'</span>)</span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].text(<span class="fl">1.85</span>,<span class="fl">0.17</span>,<span class="st">"D"</span>,size<span class="op">=</span><span class="dv">12</span>,color<span class="op">=</span><span class="st">'0.2'</span>)</span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].annotate(<span class="st">""</span>,xy<span class="op">=</span>(<span class="fl">0.00</span>, <span class="fl">0.15</span>), xycoords<span class="op">=</span><span class="st">'data'</span>,xytext<span class="op">=</span>(<span class="fl">0.50</span>, <span class="fl">0.15</span>),arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">"|-|"</span>,connectionstyle<span class="op">=</span><span class="st">"arc3"</span>,color<span class="op">=</span><span class="st">'0.2'</span>),size<span class="op">=</span><span class="dv">4</span>)</span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].annotate(<span class="st">""</span>,xy<span class="op">=</span>(<span class="fl">0.50</span>, <span class="fl">0.15</span>), xycoords<span class="op">=</span><span class="st">'data'</span>,xytext<span class="op">=</span>(<span class="fl">1.79</span>, <span class="fl">0.15</span>),arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">"|-|"</span>,connectionstyle<span class="op">=</span><span class="st">"arc3"</span>,color<span class="op">=</span><span class="st">'0.2'</span>),size<span class="op">=</span><span class="dv">4</span>)</span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].annotate(<span class="st">""</span>,xy<span class="op">=</span>(<span class="fl">1.79</span>, <span class="fl">0.15</span>), xycoords<span class="op">=</span><span class="st">'data'</span>,xytext<span class="op">=</span>(<span class="fl">2.0</span>, <span class="fl">0.15</span>),arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">"|-|"</span>,connectionstyle<span class="op">=</span><span class="st">"arc3"</span>,color<span class="op">=</span><span class="st">'0.2'</span>),size<span class="op">=</span><span class="dv">4</span>)</span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_ylabel(<span class="st">"Amplitude"</span>)</span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_title(<span class="st">"Violin Envelope"</span>)</span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_xlabel(<span class="st">"Time (s)"</span>)</span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>f0, voiced_flag, voiced_probs <span class="op">=</span> librosa.pyin(x, fmin<span class="op">=</span>librosa.note_to_hz(<span class="st">'C2'</span>),</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                                             fmax<span class="op">=</span>librosa.note_to_hz(<span class="st">'C7'</span>))</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> np.nanmedian(f0)        <span class="co"># Get the Hz of the F0 for nice labels</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> librosa.hz_to_note(f)   <span class="co"># Convert Hz to note name</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(n)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.arange(f, f<span class="op">*</span><span class="dv">10</span>, f)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">2</span>, ncols<span class="op">=</span><span class="dv">1</span>, figsize<span class="op">=</span>(<span class="fl">8.0</span>, <span class="fl">5.0</span>))</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Spectrum of a tone</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># collapse across time and plot a spectrum </span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>Dmean <span class="op">=</span> stft.mean(axis<span class="op">=</span><span class="dv">1</span>)<span class="op">/</span><span class="bu">max</span>(stft.mean(axis<span class="op">=</span><span class="dv">1</span>))</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].plot(freqs, Dmean, color<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_title(<span class="st">"Violin Spectrum"</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].<span class="bu">set</span>(xlim<span class="op">=</span>[<span class="dv">130</span>, X.<span class="bu">max</span>()])</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_ylabel(<span class="st">"Norm. Ampl."</span>)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_xlabel(<span class="st">"Frequency (Hz)"</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].grid()</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_xticks(X)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate spectral centroid and plot it</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>centroid <span class="op">=</span> librosa.feature.spectral_centroid(y<span class="op">=</span>x, sr<span class="op">=</span>sr)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>centroidM <span class="op">=</span> centroid.mean()</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(centroidM.<span class="bu">round</span>(<span class="dv">0</span>))</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>centroidM_label <span class="op">=</span> <span class="st">"Centroid "</span> <span class="op">+</span> <span class="bu">str</span>(<span class="bu">int</span>(centroidM.<span class="bu">round</span>(<span class="dv">0</span>)))<span class="op">+</span><span class="st">" Hz"</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].annotate(<span class="st">""</span>, xy<span class="op">=</span>(<span class="dv">130</span>, <span class="fl">0.75</span>), xycoords<span class="op">=</span><span class="st">'data'</span>, xytext<span class="op">=</span>(centroidM, <span class="fl">0.75</span>),</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>               arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">"&lt;|-"</span>, connectionstyle<span class="op">=</span><span class="st">"arc3"</span>, </span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>               color<span class="op">=</span><span class="st">"0.3"</span>), size<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].annotate(<span class="st">""</span>, xy<span class="op">=</span>(centroidM, <span class="fl">0.75</span>), xycoords<span class="op">=</span><span class="st">'data'</span>, </span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>               xytext<span class="op">=</span>(X.<span class="bu">max</span>(), <span class="fl">0.75</span>),</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>               arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">"-|&gt;"</span>, connectionstyle<span class="op">=</span><span class="st">"arc3"</span>, </span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>               color<span class="op">=</span><span class="st">"0.3"</span>), size<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].text(centroidM<span class="op">-</span><span class="dv">120</span>, <span class="fl">0.83</span>, centroidM_label, size<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span><span class="st">'0.2'</span>)</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Envelope</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>rms <span class="op">=</span> librosa.feature.rms(y<span class="op">=</span>x, frame_length<span class="op">=</span><span class="dv">2048</span>, hop_length<span class="op">=</span><span class="dv">512</span>)      </span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> librosa.times_like(rms)</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].plot(times, rms[<span class="dv">0</span>], color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>librosa.display.waveshow(x, sr<span class="op">=</span>sr, ax<span class="op">=</span>ax[<span class="dv">1</span>], color<span class="op">=</span><span class="st">'0.75'</span>, max_points<span class="op">=</span><span class="dv">3000</span>)</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].grid()</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].<span class="bu">set</span>(ylim<span class="op">=</span>[<span class="op">-</span><span class="fl">0.25</span>, <span class="fl">0.25</span>])</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].text(<span class="fl">0.25</span>, <span class="fl">0.17</span>, <span class="st">"A"</span>, size<span class="op">=</span><span class="dv">12</span>, color<span class="op">=</span><span class="st">'0.2'</span>)</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].text(<span class="fl">1.20</span>, <span class="fl">0.17</span>, <span class="st">"S"</span>, size<span class="op">=</span><span class="dv">12</span>, color<span class="op">=</span><span class="st">'0.2'</span>)</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].text(<span class="fl">1.85</span>, <span class="fl">0.17</span>, <span class="st">"D"</span>, size<span class="op">=</span><span class="dv">12</span>, color<span class="op">=</span><span class="st">'0.2'</span>)</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].annotate(<span class="st">""</span>, xy<span class="op">=</span>(<span class="fl">0.00</span>, <span class="fl">0.15</span>), xycoords<span class="op">=</span><span class="st">'data'</span>, xytext<span class="op">=</span>(<span class="fl">0.50</span>, <span class="fl">0.15</span>),</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>               arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">"|-|"</span>, connectionstyle<span class="op">=</span><span class="st">"arc3"</span>,</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>               color<span class="op">=</span><span class="st">'0.2'</span>), size<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].annotate(<span class="st">""</span>, xy<span class="op">=</span>(<span class="fl">0.50</span>, <span class="fl">0.15</span>), xycoords<span class="op">=</span><span class="st">'data'</span>, xytext<span class="op">=</span>(<span class="fl">1.79</span>, <span class="fl">0.15</span>),</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>               arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">"|-|"</span>, connectionstyle<span class="op">=</span><span class="st">"arc3"</span>,</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>               color<span class="op">=</span><span class="st">'0.2'</span>), size<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].annotate(<span class="st">""</span>, xy<span class="op">=</span>(<span class="fl">1.79</span>, <span class="fl">0.15</span>), xycoords<span class="op">=</span><span class="st">'data'</span>, xytext<span class="op">=</span>(<span class="fl">2.0</span>, <span class="fl">0.15</span>),</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>               arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">"|-|"</span>, connectionstyle<span class="op">=</span><span class="st">"arc3"</span>,</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>               color<span class="op">=</span><span class="st">'0.2'</span>), size<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_ylabel(<span class="st">"Amplitude"</span>)</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_title(<span class="st">"Violin Envelope"</span>)</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_xlabel(<span class="st">"Time (s)"</span>)</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>D♯4
@@ -1037,7 +1059,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./index.html">
+    <a class="nav-link" href="./index.md">
 <p>Home</p>
 </a>
   </li>  

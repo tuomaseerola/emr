@@ -432,6 +432,9 @@ Note
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#bwv30_6.measures(1, 3).show()             # Display 3 bars</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>bwv30_6.measures(<span class="dv">1</span>, <span class="dv">3</span>).write(<span class="st">'xml'</span>, fp<span class="op">=</span><span class="st">'output.xml'</span>)</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>mscore output.xml <span class="op">-</span>o images<span class="op">/</span>score1.png <span class="op">--</span>trim<span class="op">-</span>image <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>zsh:1: command not found: mscore</code></pre>
+</div>
 </div>
 <p><img src="images/score1-1.png" class="img-fluid"></p>
 </section>
@@ -439,16 +442,19 @@ Note
 <h3 class="anchored" data-anchor-id="harmonic-analysis">Harmonic analysis</h3>
 <p>Analyse chords using Roman numerals.</p>
 <div id="harmonic" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>bChords <span class="op">=</span> bwv30_6.chordify()              <span class="co"># Slice the chords</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c <span class="kw">in</span> bChords.recurse().getElementsByClass(<span class="st">'Chord'</span>):</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    c.closedPosition(forceOctave<span class="op">=</span><span class="dv">4</span>, inPlace<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Run analysis and add Roman numerals as lyrics</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c <span class="kw">in</span> bChords.recurse().getElementsByClass(<span class="st">'Chord'</span>):</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    rn <span class="op">=</span> roman.romanNumeralFromChord(c, key.Key(<span class="st">'A'</span>))</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    c.addLyric(<span class="bu">str</span>(rn.figure))</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>bChords.measures(<span class="dv">0</span>,<span class="dv">3</span>).show()             <span class="co"># Display the result</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>bChords.measures(<span class="dv">0</span>,<span class="dv">3</span>).write(<span class="st">'xml'</span>, fp<span class="op">=</span><span class="st">'output.xml'</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>mscore output.xml <span class="op">-</span>o images<span class="op">/</span>score2.png <span class="op">--</span>trim<span class="op">-</span>image <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>bChords <span class="op">=</span> bwv30_6.chordify()              <span class="co"># Slice the chords</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c <span class="kw">in</span> bChords.recurse().getElementsByClass(<span class="st">'Chord'</span>):</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    c.closedPosition(forceOctave<span class="op">=</span><span class="dv">4</span>, inPlace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Run analysis and add Roman numerals as lyrics</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c <span class="kw">in</span> bChords.recurse().getElementsByClass(<span class="st">'Chord'</span>):</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    rn <span class="op">=</span> roman.romanNumeralFromChord(c, key.Key(<span class="st">'A'</span>))</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    c.addLyric(<span class="bu">str</span>(rn.figure))</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>bChords.measures(<span class="dv">0</span>, <span class="dv">3</span>).show()             <span class="co"># Display the result</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>bChords.measures(<span class="dv">0</span>, <span class="dv">3</span>).write(<span class="st">'xml'</span>, fp<span class="op">=</span><span class="st">'output.xml'</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>mscore output.xml <span class="op">-</span>o images<span class="op">/</span>score2.png <span class="op">--</span>trim<span class="op">-</span>image <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>zsh:1: command not found: mscore</code></pre>
+</div>
 </div>
 <p><img src="images/score2-1.png" class="img-fluid"></p>
 </section>
@@ -456,13 +462,16 @@ Note
 <h3 class="anchored" data-anchor-id="metrical-analysis">Metrical analysis</h3>
 <p>Carry out metrical analysis.</p>
 <div id="metrical" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>bass <span class="op">=</span> bwv30_6.getElementById(<span class="st">'Bass'</span>)    <span class="co"># Get the bass part</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>excerpt <span class="op">=</span> bass.measures(<span class="dv">1</span>,<span class="dv">3</span>)             <span class="co"># Bar 1 through 3</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>analysis.metrical.labelBeatDepth(excerpt)<span class="co"># Metrical analysis</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#excerpt.show()                           # Display the results</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>excerpt.write(<span class="st">'xml'</span>, fp<span class="op">=</span><span class="st">'output.xml'</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>mscore output.xml <span class="op">-</span>o images<span class="op">/</span>score3.png <span class="op">--</span>trim<span class="op">-</span>image <span class="dv">0</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>rm output.xml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>bass <span class="op">=</span> bwv30_6.getElementById(<span class="st">'Bass'</span>)    <span class="co"># Get the bass part</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>excerpt <span class="op">=</span> bass.measures(<span class="dv">1</span>,<span class="dv">3</span>)             <span class="co"># Bar 1 through 3</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>analysis.metrical.labelBeatDepth(excerpt)<span class="co"># Metrical analysis</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#excerpt.show()                           # Display the results</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>excerpt.write(<span class="st">'xml'</span>, fp<span class="op">=</span><span class="st">'output.xml'</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>mscore output.xml <span class="op">-</span>o images<span class="op">/</span>score3.png <span class="op">--</span>trim<span class="op">-</span>image <span class="dv">0</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>rm output.xml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>zsh:1: command not found: mscore</code></pre>
+</div>
 </div>
 <p><img src="images/score3-1.png" class="img-fluid"></p>
 
@@ -902,7 +911,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./index.html">
+    <a class="nav-link" href="./index.md">
 <p>Home</p>
 </a>
   </li>  

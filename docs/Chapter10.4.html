@@ -107,7 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked fullcontent">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -344,16 +344,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#figure-10.4-auditory-nerve-fibre-model-and-inner-hair-cells-spiking-for-the-earlier-example-a-complex-tone-consisting-of-400-600-1600-hz-sine-waves." id="toc-figure-10.4-auditory-nerve-fibre-model-and-inner-hair-cells-spiking-for-the-earlier-example-a-complex-tone-consisting-of-400-600-1600-hz-sine-waves." class="nav-link active" data-scroll-target="#figure-10.4-auditory-nerve-fibre-model-and-inner-hair-cells-spiking-for-the-earlier-example-a-complex-tone-consisting-of-400-600-1600-hz-sine-waves.">Figure 10.4 Auditory nerve fibre model and inner hair cells spiking for the earlier example (a complex tone consisting of 400 + 600 + 1600 Hz sine waves).</a>
+  <ul class="collapse">
+  <li><a href="#libraries" id="toc-libraries" class="nav-link" data-scroll-target="#libraries">Libraries</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Chapter10.1.html">Audio analysis</a></li><li class="breadcrumb-item"><a href="./Chapter10.4.html">Ch. 10 – Perceptual</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Ch. 10 – Perceptual</h1>
+</div>
 
 
 
-<p><a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/Chapter10.1.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
-<section id="ch.-10-perceptual" class="level1">
-<h1>Ch. 10 – Perceptual</h1>
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
 <section id="figure-10.4-auditory-nerve-fibre-model-and-inner-hair-cells-spiking-for-the-earlier-example-a-complex-tone-consisting-of-400-600-1600-hz-sine-waves." class="level2">
 <h2 class="anchored" data-anchor-id="figure-10.4-auditory-nerve-fibre-model-and-inner-hair-cells-spiking-for-the-earlier-example-a-complex-tone-consisting-of-400-600-1600-hz-sine-waves.">Figure 10.4 Auditory nerve fibre model and inner hair cells spiking for the earlier example (a complex tone consisting of 400 + 600 + 1600 Hz sine waves).</h2>
 <p>For more information, see <a href="https://brian.readthedocs.io/en/stable/">Brian documentation</a>.</p>
@@ -363,7 +387,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> brian2 <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> brian2hears <span class="im">import</span> <span class="op">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> brian2hears <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div id="cell-brian" class="cell" data-execution_count="2">
@@ -385,17 +410,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>run(sound.duration)</span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the results</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="fl">8.0</span>, <span class="fl">4.0</span>))</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>ax.plot(M.t<span class="op">/</span>ms, M.i, <span class="st">'.'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>,color<span class="op">=</span><span class="st">'tab:blue'</span>,ms<span class="op">=</span><span class="dv">3</span>)</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Time (ms)'</span>)</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Neuron number (inner hair cell)'</span>)</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>ylim(<span class="dv">0</span>, <span class="dv">2000</span>)</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>xlabel(<span class="st">'Time (ms)'</span>)</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>ylabel(<span class="st">'Neuron index'</span>)<span class="op">;</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="fl">8.0</span>, <span class="fl">4.0</span>))</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>ax.plot(M.t<span class="op">/</span>ms, M.i, <span class="st">'.'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>, color<span class="op">=</span><span class="st">'tab:blue'</span>, ms<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Time (ms)'</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Neuron number (inner hair cell)'</span>)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>ylim(<span class="dv">0</span>, <span class="dv">2000</span>)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>xlabel(<span class="st">'Time (ms)'</span>)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>ylabel(<span class="st">'Neuron index'</span>)<span class="op">;</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>INFO       No numerical integration method specified for group 'neurongroup', using method 'euler' (took 0.03s, trying other methods took 0.00s). [brian2.stateupdaters.base.method_choice]</code></pre>
+<pre><code>INFO       No numerical integration method specified for group 'neurongroup', using method 'euler' (took 0.04s, trying other methods took 0.00s). [brian2.stateupdaters.base.method_choice]</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div>
@@ -407,7 +431,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 
 
-</section>
 </section>
 </section>
 
@@ -842,7 +865,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./index.html">
+    <a class="nav-link" href="./index.md">
 <p>Home</p>
 </a>
   </li>  

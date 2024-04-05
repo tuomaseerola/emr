@@ -110,7 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked fullcontent">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -347,7 +347,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#ch.-10-physical" id="toc-ch.-10-physical" class="nav-link active" data-scroll-target="#ch.-10-physical">Ch. 10 – Physical</a>
+  <ul class="collapse">
+  <li><a href="#figure-10.3.-waveform-loudness-and-onset-strengths-black-curve-and-estimated-beats-dashed-lines-of-the-intro-to-help-by-the-beatles." id="toc-figure-10.3.-waveform-loudness-and-onset-strengths-black-curve-and-estimated-beats-dashed-lines-of-the-intro-to-help-by-the-beatles." class="nav-link" data-scroll-target="#figure-10.3.-waveform-loudness-and-onset-strengths-black-curve-and-estimated-beats-dashed-lines-of-the-intro-to-help-by-the-beatles.">Figure 10.3. Waveform, loudness, and onset strengths (black curve) and estimated beats (dashed lines) of the intro to Help! by The Beatles.</a>
+  <ul class="collapse">
+  <li><a href="#libraries" id="toc-libraries" class="nav-link" data-scroll-target="#libraries">Libraries</a></li>
+  <li><a href="#read-audio-file" id="toc-read-audio-file" class="nav-link" data-scroll-target="#read-audio-file">1. Read audio file</a></li>
+  <li><a href="#plot-waveform" id="toc-plot-waveform" class="nav-link" data-scroll-target="#plot-waveform">2. Plot waveform</a></li>
+  <li><a href="#plot-loudness" id="toc-plot-loudness" class="nav-link" data-scroll-target="#plot-loudness">3. Plot loudness</a></li>
+  <li><a href="#plot-onset-strength-estimated-and-annotated-beats" id="toc-plot-onset-strength-estimated-and-annotated-beats" class="nav-link" data-scroll-target="#plot-onset-strength-estimated-and-annotated-beats">4. Plot onset strength, estimated and annotated beats</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -364,13 +382,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="libraries" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> librosa</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> librosa.display</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> IPython.display <span class="im">as</span> ipd</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> librosa</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> librosa.display</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> IPython.display <span class="im">as</span> ipd</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -392,19 +408,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="plot-waveform" class="level3">
 <h3 class="anchored" data-anchor-id="plot-waveform">2. Plot waveform</h3>
 <div id="cell-plot-waveform" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#fig, ax = plt.subplots(nrows=3, sharex=True, sharey=False,figsize=(7.5, 5.5))</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>,figsize<span class="op">=</span>(<span class="fl">7.5</span>, <span class="fl">2.75</span>))</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>librosa.display.waveshow(x, sr<span class="op">=</span>sr, ax<span class="op">=</span>ax,color<span class="op">=</span><span class="st">'indigo'</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#ax.set(title='Waveform')</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#ax.label_outer()</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Waveform"</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Time (s)"</span>)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Amplitude"</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(<span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">11</span>,<span class="dv">1</span>))</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>ax.set_xlim([<span class="dv">0</span>,<span class="dv">10</span>])</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>ax.grid()</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>,figsize<span class="op">=</span>(<span class="fl">7.5</span>, <span class="fl">2.75</span>))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>librosa.display.waveshow(x, sr<span class="op">=</span>sr, ax<span class="op">=</span>ax, color<span class="op">=</span><span class="st">'indigo'</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Waveform"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Time (s)"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Amplitude"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">11</span>, <span class="dv">1</span>))</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>ax.set_xlim([<span class="dv">0</span>, <span class="dv">10</span>])</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>ax.grid()</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -417,18 +431,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="plot-loudness" class="level3">
 <h3 class="anchored" data-anchor-id="plot-loudness">3. Plot loudness</h3>
 <div id="cell-features" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>,figsize<span class="op">=</span>(<span class="fl">7.5</span>, <span class="fl">2.75</span>))</span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, figsize<span class="op">=</span>(<span class="fl">7.5</span>, <span class="fl">2.75</span>))</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>rms <span class="op">=</span> librosa.feature.rms(y<span class="op">=</span>x)                 <span class="co"># Extra dynamics (RMS)</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>db <span class="op">=</span> librosa.amplitude_to_db(rms,ref<span class="op">=</span>np.<span class="bu">max</span>)   <span class="co"># Convert into dB. Note that this is a relative measure (loudest is now 0) </span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>db <span class="op">=</span> librosa.amplitude_to_db(rms, ref<span class="op">=</span>np.<span class="bu">max</span>)   <span class="co"># Convert into dB. Note that this is a relative measure (loudest is now 0) </span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> librosa.times_like(rms)</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>ax.plot(times, db[<span class="dv">0</span>],color<span class="op">=</span><span class="st">'darkblue'</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>ax.plot(times, db[<span class="dv">0</span>], color<span class="op">=</span><span class="st">'darkblue'</span>)</span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Loudness"</span>)</span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>ax.set_ylim([<span class="op">-</span><span class="dv">15</span>,<span class="dv">0</span>])</span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Decibel"</span>)</span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Time (s)"</span>)</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(<span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">11</span>,<span class="dv">1</span>))</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>ax.set_xlim([<span class="dv">0</span>,<span class="dv">10</span>])</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">11</span>, <span class="dv">1</span>))</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>ax.set_xlim([<span class="dv">0</span>, <span class="dv">10</span>])</span>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>ax.grid()</span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -444,36 +458,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="plot-onset-strength-estimated-and-annotated-beats" class="level3">
 <h3 class="anchored" data-anchor-id="plot-onset-strength-estimated-and-annotated-beats">4. Plot onset strength, estimated and annotated beats</h3>
 <div id="cell-onsets" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>,figsize<span class="op">=</span>(<span class="fl">7.5</span>, <span class="fl">2.75</span>))</span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, figsize<span class="op">=</span>(<span class="fl">7.5</span>, <span class="fl">2.75</span>))</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>onset_subbands <span class="op">=</span> librosa.onset.onset_strength_multi(y <span class="op">=</span> x, sr <span class="op">=</span> sr, channels<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">32</span>, <span class="dv">64</span>, <span class="dv">96</span>, <span class="dv">128</span>])</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>onset_subbands_s <span class="op">=</span> <span class="bu">sum</span>(onset_subbands,<span class="dv">1</span>)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>ax.plot(times, onset_subbands_s,<span class="st">'maroon'</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>onset_subbands <span class="op">=</span> librosa.onset.onset_strength_multi(y<span class="op">=</span>x, </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                                                    sr<span class="op">=</span>sr, </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>                                                    channels<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">32</span>, <span class="dv">64</span>, <span class="dv">96</span>, <span class="dv">128</span>])</span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>tempo, beats <span class="op">=</span> librosa.beat.beat_track(y<span class="op">=</span>x, sr<span class="op">=</span>sr,trim<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>plt.vlines(times[beats], <span class="dv">0</span>, onset_subbands_s.<span class="bu">max</span>(), color<span class="op">=</span><span class="st">'0.40'</span>, alpha<span class="op">=</span><span class="fl">0.80</span>,linestyle<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'Beats'</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>onset_subbands_s <span class="op">=</span> <span class="bu">sum</span>(onset_subbands, <span class="dv">1</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>ax.plot(times, onset_subbands_s, <span class="st">'maroon'</span>)</span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>o_env <span class="op">=</span> librosa.onset.onset_strength(y <span class="op">=</span> x, sr <span class="op">=</span> sr)</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> librosa.times_like(o_env, sr <span class="op">=</span> sr)</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>onset_frames <span class="op">=</span> librosa.onset.onset_detect(onset_envelope<span class="op">=</span>o_env, sr<span class="op">=</span>sr)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>tempo, beats <span class="op">=</span> librosa.beat.beat_track(y<span class="op">=</span>x, sr<span class="op">=</span>sr, trim<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>plt.vlines(times[beats], <span class="dv">0</span>, onset_subbands_s.<span class="bu">max</span>(), color<span class="op">=</span><span class="st">'0.40'</span>, alpha<span class="op">=</span><span class="fl">0.80</span>,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>           linestyle<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'Beats'</span>)</span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Onset strength and estimated beats"</span>)</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Strength"</span>)</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Time (s)"</span>)</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>ax.set_ylim([<span class="dv">0</span>,<span class="dv">60</span>])</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(<span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">11</span>,<span class="dv">1</span>))</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>ax.set_xlim([<span class="dv">0</span>,<span class="dv">10</span>])</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>ax.grid()</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.loadtxt(<span class="st">'data/Help_beats.csv'</span>) <span class="co"># ,delimiter=' </span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>ann_time <span class="op">=</span> data[<span class="dv">0</span>:<span class="dv">16</span>,<span class="dv">0</span>]<span class="op">-</span><span class="fl">1.05</span></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>ann_label<span class="op">=</span>data[<span class="dv">0</span>:<span class="dv">16</span>,<span class="dv">1</span>]</span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">16</span>):</span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    ax.text(ann_time[x],<span class="dv">53</span>,<span class="bu">int</span>(ann_label[x]),size<span class="op">=</span><span class="dv">6</span>,backgroundcolor<span class="op">=</span><span class="st">'0.8'</span>,weight<span class="op">=</span><span class="st">'bold'</span>,ha<span class="op">=</span><span class="st">'center'</span>)</span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>o_env <span class="op">=</span> librosa.onset.onset_strength(y<span class="op">=</span>x, sr<span class="op">=</span>sr)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> librosa.times_like(o_env, sr<span class="op">=</span>sr)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>onset_frames <span class="op">=</span> librosa.onset.onset_detect(onset_envelope<span class="op">=</span>o_env, sr<span class="op">=</span>sr)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Onset strength and estimated beats"</span>)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Strength"</span>)</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Time (s)"</span>)</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>ax.set_ylim([<span class="dv">0</span>, <span class="dv">60</span>])</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">11</span>, <span class="dv">1</span>))</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>ax.set_xlim([<span class="dv">0</span>, <span class="dv">10</span>])</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>ax.grid()</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.loadtxt(<span class="st">'data/Help_beats.csv'</span>)  </span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>ann_time <span class="op">=</span> data[<span class="dv">0</span>:<span class="dv">16</span>, <span class="dv">0</span>]<span class="op">-</span><span class="fl">1.05</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>ann_label <span class="op">=</span> data[<span class="dv">0</span>:<span class="dv">16</span>, <span class="dv">1</span>]</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">16</span>):</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>    ax.text(ann_time[x], <span class="dv">53</span>, <span class="bu">int</span>(ann_label[x]), size<span class="op">=</span><span class="dv">6</span>, </span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>            backgroundcolor<span class="op">=</span><span class="st">'0.8'</span>, weight<span class="op">=</span><span class="st">'bold'</span>, ha<span class="op">=</span><span class="st">'center'</span>)</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -919,7 +938,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./index.html">
+    <a class="nav-link" href="./index.md">
 <p>Home</p>
 </a>
   </li>  

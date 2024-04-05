@@ -107,7 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked fullcontent">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -344,28 +344,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#figure-10.1.-illustration-of-basic-representations-and-transformations-of-audio-using-a-400-hz-sine-wave-and-complex-tone-consisting-of-400-600-and-1600-hz-sine-waves." id="toc-figure-10.1.-illustration-of-basic-representations-and-transformations-of-audio-using-a-400-hz-sine-wave-and-complex-tone-consisting-of-400-600-and-1600-hz-sine-waves." class="nav-link active" data-scroll-target="#figure-10.1.-illustration-of-basic-representations-and-transformations-of-audio-using-a-400-hz-sine-wave-and-complex-tone-consisting-of-400-600-and-1600-hz-sine-waves.">Figure 10.1. Illustration of basic representations and transformations of audio using a 400 Hz sine wave and complex tone consisting of 400, 600 and 1600 Hz sine waves.</a></li>
+  <li><a href="#create-sine-waves" id="toc-create-sine-waves" class="nav-link" data-scroll-target="#create-sine-waves">Create sine waves</a></li>
+  <li><a href="#complex-sounds" id="toc-complex-sounds" class="nav-link" data-scroll-target="#complex-sounds">Complex sounds</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Chapter10.1.html">Audio analysis</a></li><li class="breadcrumb-item"><a href="./Chapter10.1.html">Ch. 10 – Basics (sines)</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Ch. 10 – Basics (sines)</h1>
+</div>
 
 
 
-<p><a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/Chapter10.1.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
-<section id="ch.-10-basics-sines" class="level1">
-<h1>Ch. 10 – Basics (sines)</h1>
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
 <section id="figure-10.1.-illustration-of-basic-representations-and-transformations-of-audio-using-a-400-hz-sine-wave-and-complex-tone-consisting-of-400-600-and-1600-hz-sine-waves." class="level2">
 <h2 class="anchored" data-anchor-id="figure-10.1.-illustration-of-basic-representations-and-transformations-of-audio-using-a-400-hz-sine-wave-and-complex-tone-consisting-of-400-600-and-1600-hz-sine-waves.">Figure 10.1. Illustration of basic representations and transformations of audio using a 400 Hz sine wave and complex tone consisting of 400, 600 and 1600 Hz sine waves.</h2>
 <div id="libraries" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> librosa</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> librosa.display</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> IPython.display <span class="im">as</span> ipd</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -385,21 +403,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.arange(num_samples) <span class="op">/</span> Fs</span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> amplitude <span class="op">*</span> np.sin(<span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> (frequency <span class="op">*</span> t <span class="op">-</span> phase))</span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="fl">7.5</span>, <span class="fl">2.75</span>))</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>ax.plot(t,x,color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>ax.plot(t, x, color<span class="op">=</span><span class="st">'red'</span>)</span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Time (s)'</span>)</span>
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Sine (400 Hz)"</span>)</span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Air pressure deviation'</span>)</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>ax.set_ylim([<span class="op">-</span><span class="fl">1.05</span>,<span class="fl">1.05</span>])</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>ax.set_yticks(np.arange(<span class="op">-</span><span class="dv">1</span>,<span class="fl">1.5</span>,<span class="fl">1.0</span>)) </span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>ax.set_xlim([<span class="fl">0.0</span>,<span class="fl">0.01</span>])</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(np.arange(<span class="dv">0</span>,<span class="fl">0.0125</span>,<span class="fl">0.0025</span>)) </span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>ax.set_ylim([<span class="op">-</span><span class="fl">1.05</span>, <span class="fl">1.05</span>])</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>ax.set_yticks(np.arange(<span class="op">-</span><span class="dv">1</span>, <span class="fl">1.5</span>, <span class="fl">1.0</span>)) </span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>ax.set_xlim([<span class="fl">0.0</span>, <span class="fl">0.01</span>])</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(np.arange(<span class="dv">0</span>, <span class="fl">0.0125</span>, <span class="fl">0.0025</span>)) </span>
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>ax.grid()</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="st">''</span>, xy<span class="op">=</span>(<span class="fl">0.0025</span>, <span class="dv">0</span>), xytext<span class="op">=</span>(<span class="fl">0.0025</span>, <span class="dv">1</span>),arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">'&lt;-&gt;'</span>,mutation_scale<span class="op">=</span><span class="dv">15</span>,color<span class="op">=</span><span class="st">'0.3'</span>),size<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>ax.text(<span class="fl">0.0025</span>, <span class="fl">0.5</span>,<span class="st">"Amplitude"</span>,size<span class="op">=</span><span class="dv">12</span>,color<span class="op">=</span><span class="st">'0.3'</span>,ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"center"</span>)</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="st">''</span>, xy<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">1</span>), xytext<span class="op">=</span>(<span class="fl">0.0025</span>, <span class="dv">1</span>),arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">'&lt;-&gt;'</span>,mutation_scale<span class="op">=</span><span class="dv">19</span>,color<span class="op">=</span><span class="st">'0.3'</span>),size<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>ax.text(<span class="fl">0.00125</span>, <span class="fl">0.85</span>,<span class="st">"Period"</span>,size<span class="op">=</span><span class="dv">12</span>,color<span class="op">=</span><span class="st">'0.3'</span>,ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"center"</span>)</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="st">''</span>, xy<span class="op">=</span>(<span class="fl">0.0025</span>, <span class="dv">0</span>), xytext<span class="op">=</span>(<span class="fl">0.0025</span>, <span class="dv">1</span>), </span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>            arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">'&lt;-&gt;'</span>, mutation_scale<span class="op">=</span><span class="dv">15</span>, </span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>            color<span class="op">=</span><span class="st">'0.3'</span>), size<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>ax.text(<span class="fl">0.0025</span>, <span class="fl">0.5</span>, <span class="st">"Amplitude"</span>, size<span class="op">=</span><span class="dv">12</span>, </span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>        color<span class="op">=</span><span class="st">'0.3'</span>, ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"center"</span>)</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="st">''</span>, xy<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">1</span>), xytext<span class="op">=</span>(<span class="fl">0.0025</span>, <span class="dv">1</span>), </span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>            arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">'&lt;-&gt;'</span>, mutation_scale<span class="op">=</span><span class="dv">19</span>, </span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>            color<span class="op">=</span><span class="st">'0.3'</span>), size<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>ax.text(<span class="fl">0.00125</span>, <span class="fl">0.85</span>, <span class="st">"Period"</span>, size<span class="op">=</span><span class="dv">12</span>, </span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>        color<span class="op">=</span><span class="st">'0.3'</span>, ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"center"</span>)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -415,90 +439,114 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="cell-threesines" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure()</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>fig.set_figheight(<span class="dv">6</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>fig.set_figwidth(<span class="dv">10</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>ax1 <span class="op">=</span> plt.subplot2grid(shape<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">3</span>), loc<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">1</span>), colspan<span class="op">=</span><span class="dv">2</span>,rowspan<span class="op">=</span><span class="dv">3</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>ax3 <span class="op">=</span> plt.subplot2grid(shape<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">3</span>), loc<span class="op">=</span>(<span class="dv">3</span>, <span class="dv">1</span>), colspan<span class="op">=</span><span class="dv">2</span>,rowspan<span class="op">=</span><span class="dv">3</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>ax2 <span class="op">=</span> plt.subplot2grid(shape<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">3</span>), loc<span class="op">=</span>(<span class="dv">3</span>, <span class="dv">0</span>), colspan<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>ax4 <span class="op">=</span> plt.subplot2grid(shape<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">3</span>), loc<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">0</span>), colspan<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>ax5 <span class="op">=</span> plt.subplot2grid(shape<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">3</span>), loc<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">0</span>), colspan<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>ax1.plot(t, x, color<span class="op">=</span><span class="st">'red'</span>, linewidth<span class="op">=</span><span class="fl">2.0</span>, linestyle<span class="op">=</span><span class="st">'-'</span>)</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'Time (s)'</span>)</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="st">"Sine (400 Hz)"</span>)</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">'Air pressure deviation'</span>)</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>ax1.set_ylim([<span class="op">-</span><span class="fl">1.05</span>,<span class="fl">1.05</span>])</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>ax1.set_yticks(np.arange(<span class="op">-</span><span class="dv">1</span>,<span class="fl">1.5</span>,<span class="fl">1.0</span>)) </span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>ax1.set_xlim([<span class="fl">0.0</span>,<span class="fl">0.01</span>])</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>ax1.set_xticks(np.arange(<span class="dv">0</span>,<span class="fl">0.0125</span>,<span class="fl">0.0025</span>)) </span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>ax1.grid()</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>ax1.annotate(<span class="st">''</span>, xy<span class="op">=</span>(<span class="fl">0.0025</span>, <span class="dv">0</span>), xytext<span class="op">=</span>(<span class="fl">0.0025</span>, <span class="dv">1</span>),arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">'&lt;-&gt;'</span>,mutation_scale<span class="op">=</span><span class="dv">15</span>,color<span class="op">=</span><span class="st">'0.3'</span>),size<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>ax1.text(<span class="fl">0.0025</span>, <span class="fl">0.5</span>,<span class="st">"Amplitude"</span>,size<span class="op">=</span><span class="dv">12</span>,color<span class="op">=</span><span class="st">'0.3'</span>,ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"center"</span>)</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>ax1.annotate(<span class="st">''</span>, xy<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">1</span>), xytext<span class="op">=</span>(<span class="fl">0.0025</span>, <span class="dv">1</span>),arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">'&lt;-&gt;'</span>,mutation_scale<span class="op">=</span><span class="dv">19</span>,color<span class="op">=</span><span class="st">'0.3'</span>),size<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>ax1.text(<span class="fl">0.00125</span>, <span class="fl">0.85</span>,<span class="st">"Period"</span>,size<span class="op">=</span><span class="dv">12</span>,color<span class="op">=</span><span class="st">'0.3'</span>,ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"center"</span>)</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine several sine waves (here are three frequencies)</span></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>frequency1 <span class="op">=</span> <span class="dv">400</span>  </span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>frequency2 <span class="op">=</span> <span class="dv">600</span></span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>frequency3 <span class="op">=</span> <span class="dv">1600</span></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>duration <span class="op">=</span> <span class="fl">0.01</span></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>amplitude <span class="op">=</span> <span class="fl">1.0</span></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>phase <span class="op">=</span> <span class="fl">0.75</span></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>Fs <span class="op">=</span> <span class="dv">20050</span></span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>num_samples <span class="op">=</span> <span class="bu">int</span>(Fs <span class="op">*</span> duration)</span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.arange(num_samples) <span class="op">/</span> Fs</span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> amplitude <span class="op">*</span> np.sin(<span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> (frequency1 <span class="op">*</span> t <span class="op">-</span> phase)) <span class="co"># 1st sine</span></span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> amplitude <span class="op">*</span> np.sin(<span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> (frequency2 <span class="op">*</span> t <span class="op">-</span> phase)) <span class="co"># 2nd sine</span></span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>x3 <span class="op">=</span> amplitude <span class="op">*</span> np.sin(<span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> (frequency3 <span class="op">*</span> t <span class="op">-</span> phase)) <span class="co"># 3rd sine</span></span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>ax2.plot(t, x1, color<span class="op">=</span><span class="st">'red'</span>)</span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>ax4.plot(t, x2, color<span class="op">=</span><span class="st">'red'</span>)</span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>ax5.plot(t, x3, color<span class="op">=</span><span class="st">'red'</span>)</span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="st">"400 Hz"</span>)</span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>ax4.set_title(<span class="st">"600 Hz"</span>)</span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>ax5.set_title(<span class="st">"1600 Hz"</span>)</span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>ax2.set_xticks(np.arange(<span class="dv">0</span>,<span class="fl">0.0125</span>,<span class="fl">0.0025</span>)) </span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>ax2.set_xlim([<span class="fl">0.0</span>,<span class="fl">0.01</span>])</span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>ax2.set_yticks(np.arange(<span class="op">-</span><span class="dv">1</span>,<span class="fl">1.5</span>,<span class="fl">1.0</span>)) </span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure()</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>fig.set_figheight(<span class="dv">6</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>fig.set_figwidth(<span class="dv">10</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>ax1 <span class="op">=</span> plt.subplot2grid(shape<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">3</span>), loc<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">1</span>), colspan<span class="op">=</span><span class="dv">2</span>, rowspan<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>ax3 <span class="op">=</span> plt.subplot2grid(shape<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">3</span>), loc<span class="op">=</span>(<span class="dv">3</span>, <span class="dv">1</span>), colspan<span class="op">=</span><span class="dv">2</span>, rowspan<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>ax2 <span class="op">=</span> plt.subplot2grid(shape<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">3</span>), loc<span class="op">=</span>(<span class="dv">3</span>, <span class="dv">0</span>), colspan<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>ax4 <span class="op">=</span> plt.subplot2grid(shape<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">3</span>), loc<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">0</span>), colspan<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>ax5 <span class="op">=</span> plt.subplot2grid(shape<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">3</span>), loc<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">0</span>), colspan<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>frequency <span class="op">=</span> <span class="dv">400</span>   <span class="co"># Frequency</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>duration <span class="op">=</span> <span class="fl">0.01</span>   <span class="co"># Duration of sound</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>amplitude <span class="op">=</span> <span class="fl">1.0</span>   <span class="co"># Amplitude</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>phase <span class="op">=</span> <span class="fl">0.75</span>      <span class="co"># Phase</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>Fs <span class="op">=</span> <span class="dv">22050</span>        <span class="co"># Sampling rate (per second)</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>num_samples <span class="op">=</span> <span class="bu">int</span>(Fs <span class="op">*</span> duration) </span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.arange(num_samples) <span class="op">/</span> Fs</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> amplitude <span class="op">*</span> np.sin(<span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> (frequency <span class="op">*</span> t <span class="op">-</span> phase))</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>ax1.plot(t, x, color<span class="op">=</span><span class="st">'red'</span>, linewidth<span class="op">=</span><span class="fl">2.0</span>, linestyle<span class="op">=</span><span class="st">'-'</span>)</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'Time (s)'</span>)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="st">"Sine (400 Hz)"</span>)</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">'Air pressure deviation'</span>)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>ax1.set_ylim([<span class="op">-</span><span class="fl">1.05</span>, <span class="fl">1.05</span>])</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>ax1.set_yticks(np.arange(<span class="op">-</span><span class="dv">1</span>, <span class="fl">1.5</span>, <span class="fl">1.0</span>)) </span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>ax1.set_xlim([<span class="fl">0.0</span>, <span class="fl">0.01</span>])</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>ax1.set_xticks(np.arange(<span class="dv">0</span>, <span class="fl">0.0125</span>, <span class="fl">0.0025</span>)) </span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>ax1.grid()</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>ax1.annotate(<span class="st">''</span>, xy<span class="op">=</span>(<span class="fl">0.0025</span>, <span class="dv">0</span>), xytext<span class="op">=</span>(<span class="fl">0.0025</span>, <span class="dv">1</span>), </span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>             arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">'&lt;-&gt;'</span>, </span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>             mutation_scale<span class="op">=</span><span class="dv">15</span>, color<span class="op">=</span><span class="st">'0.3'</span>), size<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>ax1.text(<span class="fl">0.0025</span>, <span class="fl">0.5</span>, <span class="st">"Amplitude"</span>, size<span class="op">=</span><span class="dv">12</span>, color<span class="op">=</span><span class="st">'0.3'</span>, </span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>         ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"center"</span>)</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>ax1.annotate(<span class="st">''</span>, xy<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">1</span>), xytext<span class="op">=</span>(<span class="fl">0.0025</span>, <span class="dv">1</span>), </span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>             arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">'&lt;-&gt;'</span>, mutation_scale<span class="op">=</span><span class="dv">19</span>, </span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>             color<span class="op">=</span><span class="st">'0.3'</span>), size<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>ax1.text(<span class="fl">0.00125</span>, <span class="fl">0.85</span>, <span class="st">"Period"</span>, size<span class="op">=</span><span class="dv">12</span>, </span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>         color<span class="op">=</span><span class="st">'0.3'</span>, ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"center"</span>)</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine several sine waves (here are three frequencies)</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>frequency1 <span class="op">=</span> <span class="dv">400</span>  </span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>frequency2 <span class="op">=</span> <span class="dv">600</span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>frequency3 <span class="op">=</span> <span class="dv">1600</span></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>duration <span class="op">=</span> <span class="fl">0.01</span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>amplitude <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>phase <span class="op">=</span> <span class="fl">0.75</span></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>Fs <span class="op">=</span> <span class="dv">20050</span></span>
 <span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>ax4.set_xticks(np.arange(<span class="dv">0</span>,<span class="fl">0.0125</span>,<span class="fl">0.0025</span>)) </span>
-<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>ax4.set_xlim([<span class="fl">0.0</span>,<span class="fl">0.01</span>])</span>
-<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>ax4.set_yticks(np.arange(<span class="op">-</span><span class="dv">1</span>,<span class="fl">1.5</span>,<span class="fl">1.0</span>)) </span>
-<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>ax5.set_xticks(np.arange(<span class="dv">0</span>,<span class="fl">0.0125</span>,<span class="fl">0.0025</span>)) </span>
-<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>ax5.set_xlim([<span class="fl">0.0</span>,<span class="fl">0.01</span>])</span>
-<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>ax5.set_yticks(np.arange(<span class="op">-</span><span class="dv">1</span>,<span class="fl">1.5</span>,<span class="fl">1.0</span>)) </span>
-<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>fig.subplots_adjust(hspace <span class="op">=</span> <span class="fl">.001</span>,wspace<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>num_samples <span class="op">=</span> <span class="bu">int</span>(Fs <span class="op">*</span> duration)</span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.arange(num_samples) <span class="op">/</span> Fs</span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> amplitude <span class="op">*</span> np.sin(<span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> (frequency1 <span class="op">*</span> t <span class="op">-</span> phase))  <span class="co"># 1st sine</span></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> amplitude <span class="op">*</span> np.sin(<span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> (frequency2 <span class="op">*</span> t <span class="op">-</span> phase))  <span class="co"># 2nd sine</span></span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>x3 <span class="op">=</span> amplitude <span class="op">*</span> np.sin(<span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> (frequency3 <span class="op">*</span> t <span class="op">-</span> phase))  <span class="co"># 3rd sine</span></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>ax2.plot(t, x1, color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>ax4.plot(t, x2, color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>ax5.plot(t, x3, color<span class="op">=</span><span class="st">'red'</span>)</span>
 <span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine all three (sum and divide by 3 to keep the amplitude as original)</span></span>
-<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>x123<span class="op">=</span>(x1<span class="op">+</span>x2<span class="op">+</span>x3)<span class="op">/</span><span class="dv">3</span></span>
-<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>ax3.plot(t, x123, color<span class="op">=</span><span class="st">'blue'</span>, linewidth<span class="op">=</span><span class="fl">2.0</span>, linestyle<span class="op">=</span><span class="st">'-'</span>)</span>
-<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>ax3.set_xlabel(<span class="st">'Time (s)'</span>)</span>
-<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>ax3.set_title(<span class="st">"Complex tone (sines of 400 Hz + 600 Hz + 1600 Hz)"</span>)</span>
-<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>ax3.set_ylabel(<span class="st">''</span>)</span>
-<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>ax3.set_ylim([<span class="op">-</span><span class="fl">1.01</span>,<span class="fl">1.01</span>])</span>
-<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>ax3.set_xlim([<span class="dv">0</span>,<span class="fl">0.01</span>])</span>
-<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>ax3.set_xticks(np.arange(<span class="dv">0</span>,<span class="fl">0.0125</span>,<span class="fl">0.0025</span>)) </span>
-<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>ax3.set_yticks(np.arange(<span class="op">-</span><span class="dv">1</span>,<span class="fl">1.5</span>,<span class="fl">1.0</span>)) </span>
-<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a>ax3.grid()</span>
-<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
-<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a>ax2.annotate(<span class="st">''</span>, xy<span class="op">=</span>(<span class="fl">1.11</span><span class="op">/</span><span class="dv">100</span>, <span class="op">-</span><span class="fl">9.3</span>), xytext<span class="op">=</span>(<span class="fl">1.01</span><span class="op">/</span><span class="dv">100</span>, <span class="dv">0</span>),arrowprops<span class="op">=</span><span class="bu">dict</span>(width<span class="op">=</span><span class="fl">0.5</span>,headlength<span class="op">=</span><span class="dv">3</span>,headwidth<span class="op">=</span><span class="dv">3</span>,color<span class="op">=</span><span class="st">'0.3'</span>),size<span class="op">=</span><span class="dv">2</span>,annotation_clip<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a>ax4.annotate(<span class="st">''</span>, xy<span class="op">=</span>(<span class="fl">1.063</span><span class="op">/</span><span class="dv">100</span>, <span class="dv">0</span>), xytext<span class="op">=</span>(<span class="fl">1.01</span><span class="op">/</span><span class="dv">100</span>, <span class="dv">0</span>),arrowprops<span class="op">=</span><span class="bu">dict</span>(width<span class="op">=</span><span class="fl">0.5</span>,headlength<span class="op">=</span><span class="dv">3</span>,headwidth<span class="op">=</span><span class="dv">3</span>,color<span class="op">=</span><span class="st">'0.3'</span>),size<span class="op">=</span><span class="dv">2</span>,annotation_clip<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>ax5.annotate(<span class="st">''</span>, xy<span class="op">=</span>(<span class="fl">1.11</span><span class="op">/</span><span class="dv">100</span>, <span class="fl">9.3</span>), xytext<span class="op">=</span>(<span class="fl">1.01</span><span class="op">/</span><span class="dv">100</span>, <span class="dv">0</span>),arrowprops<span class="op">=</span><span class="bu">dict</span>(width<span class="op">=</span><span class="fl">0.5</span>,headlength<span class="op">=</span><span class="dv">3</span>,headwidth<span class="op">=</span><span class="dv">3</span>,color<span class="op">=</span><span class="st">'0.3'</span>),size<span class="op">=</span><span class="dv">2</span>,annotation_clip<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a>ax4.text(<span class="fl">1.09</span><span class="op">/</span><span class="dv">100</span>, <span class="op">-</span><span class="fl">0.6</span>,<span class="vs">r'$\sum$'</span>,size<span class="op">=</span><span class="dv">9</span>,backgroundcolor<span class="op">=</span><span class="st">'0.8'</span>)</span>
-<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="st">"400 Hz"</span>)</span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>ax4.set_title(<span class="st">"600 Hz"</span>)</span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>ax5.set_title(<span class="st">"1600 Hz"</span>)</span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>ax2.set_xticks(np.arange(<span class="dv">0</span>, <span class="fl">0.0125</span>, <span class="fl">0.0025</span>)) </span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>ax2.set_xlim([<span class="fl">0.0</span>, <span class="fl">0.01</span>])</span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>ax2.set_yticks(np.arange(<span class="op">-</span><span class="dv">1</span>, <span class="fl">1.5</span>, <span class="fl">1.0</span>)) </span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>ax4.set_xticks(np.arange(<span class="dv">0</span>, <span class="fl">0.0125</span>, <span class="fl">0.0025</span>)) </span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>ax4.set_xlim([<span class="fl">0.0</span>, <span class="fl">0.01</span>])</span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>ax4.set_yticks(np.arange(<span class="op">-</span><span class="dv">1</span>, <span class="fl">1.5</span>, <span class="fl">1.0</span>)) </span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>ax5.set_xticks(np.arange(<span class="dv">0</span>, <span class="fl">0.0125</span>, <span class="fl">0.0025</span>)) </span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>ax5.set_xlim([<span class="fl">0.0</span>, <span class="fl">0.01</span>])</span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a>ax5.set_yticks(np.arange(<span class="op">-</span><span class="dv">1</span>, <span class="fl">1.5</span>, <span class="fl">1.0</span>)) </span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a>fig.subplots_adjust(hspace<span class="op">=</span><span class="fl">.001</span>, wspace<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine all three (sum and divide by 3 to keep the amplitude as original)</span></span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a>x123 <span class="op">=</span> (x1<span class="op">+</span>x2<span class="op">+</span>x3)<span class="op">/</span><span class="dv">3</span></span>
+<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a>ax3.plot(t, x123, color<span class="op">=</span><span class="st">'blue'</span>, linewidth<span class="op">=</span><span class="fl">2.0</span>, linestyle<span class="op">=</span><span class="st">'-'</span>)</span>
+<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a>ax3.set_xlabel(<span class="st">'Time (s)'</span>)</span>
+<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a>ax3.set_title(<span class="st">"Complex tone (sines of 400 Hz + 600 Hz + 1600 Hz)"</span>)</span>
+<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a>ax3.set_ylabel(<span class="st">''</span>)</span>
+<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a>ax3.set_ylim([<span class="op">-</span><span class="fl">1.01</span>, <span class="fl">1.01</span>])</span>
+<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a>ax3.set_xlim([<span class="dv">0</span>, <span class="fl">0.01</span>])</span>
+<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a>ax3.set_xticks(np.arange(<span class="dv">0</span>, <span class="fl">0.0125</span>, <span class="fl">0.0025</span>)) </span>
+<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a>ax3.set_yticks(np.arange(<span class="op">-</span><span class="dv">1</span>, <span class="fl">1.5</span>, <span class="fl">1.0</span>)) </span>
+<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a>ax3.grid()</span>
+<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a>ax2.annotate(<span class="st">''</span>, xy<span class="op">=</span>(<span class="fl">1.11</span><span class="op">/</span><span class="dv">100</span>, <span class="op">-</span><span class="fl">9.3</span>), xytext<span class="op">=</span>(<span class="fl">1.01</span><span class="op">/</span><span class="dv">100</span>, <span class="dv">0</span>), </span>
+<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a>             arrowprops<span class="op">=</span><span class="bu">dict</span>(width<span class="op">=</span><span class="fl">0.5</span>, headlength<span class="op">=</span><span class="dv">3</span>, headwidth<span class="op">=</span><span class="dv">3</span>, </span>
+<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a>             color<span class="op">=</span><span class="st">'0.3'</span>), size<span class="op">=</span><span class="dv">2</span>, annotation_clip<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a>ax4.annotate(<span class="st">''</span>, xy<span class="op">=</span>(<span class="fl">1.063</span><span class="op">/</span><span class="dv">100</span>, <span class="dv">0</span>), xytext<span class="op">=</span>(<span class="fl">1.01</span><span class="op">/</span><span class="dv">100</span>, <span class="dv">0</span>), </span>
+<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a>             arrowprops<span class="op">=</span><span class="bu">dict</span>(width<span class="op">=</span><span class="fl">0.5</span>, headlength<span class="op">=</span><span class="dv">3</span>, headwidth<span class="op">=</span><span class="dv">3</span>, </span>
+<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a>             color<span class="op">=</span><span class="st">'0.3'</span>), size<span class="op">=</span><span class="dv">2</span>, annotation_clip<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a>ax5.annotate(<span class="st">''</span>, xy<span class="op">=</span>(<span class="fl">1.11</span><span class="op">/</span><span class="dv">100</span>, <span class="fl">9.3</span>), xytext<span class="op">=</span>(<span class="fl">1.01</span><span class="op">/</span><span class="dv">100</span>, <span class="dv">0</span>),</span>
+<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a>             arrowprops<span class="op">=</span><span class="bu">dict</span>(width<span class="op">=</span><span class="fl">0.5</span>, headlength<span class="op">=</span><span class="dv">3</span>, headwidth<span class="op">=</span><span class="dv">3</span>, </span>
+<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a>             color<span class="op">=</span><span class="st">'0.3'</span>), size<span class="op">=</span><span class="dv">2</span>, annotation_clip<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a>ax4.text(<span class="fl">1.09</span><span class="op">/</span><span class="dv">100</span>, <span class="op">-</span><span class="fl">0.6</span>, <span class="vs">r'$\sum$'</span>, size<span class="op">=</span><span class="dv">9</span>, backgroundcolor<span class="op">=</span><span class="st">'0.8'</span>)</span>
+<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -510,7 +558,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 
 
-</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -944,7 +991,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./index.html">
+    <a class="nav-link" href="./index.md">
 <p>Home</p>
 </a>
   </li>  
