@@ -1,14 +1,7 @@
-# Music and Science – Guide to Empirical Music Research (Book)
-
-
-<!--
-conda activate relative_mode 
-quarto preview Chapter11.1.qmd  
-&#10;I am currently working towards finishing this file.
--->
+# Music and Science: A Guide to Empirical Research
 
 This repository contains the electronic materials for *Routledge* book
-titled **[Music and Science – Guide to Empirical Music
+titled **[Music and Science: Guide to Empirical
 Research](https://tuomaseerola.github.io/emr/)** by [Tuomas
 Eerola](https://www.durham.ac.uk/staff/tuomas-eerola/), at [Durham
 University](https://www.durham.ac.uk) and [Music and Science
@@ -30,7 +23,7 @@ The public-facing version of this repository is at
 <https://tuomaseerola.github.io/emr/>. See [citation](Citation.qmd) for
 bibliographic details of the book.
 
-`ver 5/4/2024`
+`ver 25/4/2024`
 
 # Contents
 

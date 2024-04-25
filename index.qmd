@@ -1,5 +1,5 @@
 ---
-title: "Music and Science – Guide to Empirical Music Research (Book)"
+title: "Music and Science: A Guide to Empirical Research"
 format:
   html:
     code-fold: false
@@ -14,7 +14,7 @@ quarto preview Chapter11.1.qmd
 I am currently working towards finishing this file.
 -->
 
-This repository contains the electronic materials for _Routledge_ book titled **[Music and Science – Guide to Empirical Music Research](https://tuomaseerola.github.io/emr/)** by [Tuomas Eerola](https://tuomaseerola.github.io/about/), at [Durham University](https://www.durham.ac.uk) and [Music and Science Lab](https://musicscience.net). The book is scheduled to be published in 2024.
+This repository contains the electronic materials for _Routledge_ book titled **[Music and Science: A Guide to Empirical Research](https://tuomaseerola.github.io/emr/)** by [Tuomas Eerola](https://tuomaseerola.github.io/about/), at [Durham University](https://www.durham.ac.uk) and [Music and Science Lab](https://musicscience.net). The book is scheduled to be published in 2024.
 
 The materials are [Quarto](https://quarto.org) notebooks with code examples in [R](https://www.r-project.org/) or [Python](https://www.python.org/). The notebooks can be used in four ways:
 
@@ -27,7 +27,7 @@ See [technical notes](Technical.qmd) about the notebooks and [package versions](
 
 The public-facing version of this repository is at [https://tuomaseerola.github.io/emr/](https://tuomaseerola.github.io/emr/). See [citation](Citation.qmd) for the bibliographic details of the book.
 
-`Ver: 5/4/2024 16:18`
+`Ver: 25/4/2024 15:32`
 
 # Contents
 
