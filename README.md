@@ -1,7 +1,9 @@
 # Music and Science: A Guide to Empirical Research
 
-This repository contains the electronic materials for *Routledge* book
-titled **[Music and Science: Guide to Empirical
+
+<img src="images/music_and_science_cover_sm.png" align="right" /> This
+repository contains the electronic materials for *Routledge* book titled
+**[Music and Science: Guide to Empirical
 Research](https://tuomaseerola.github.io/emr/)** by [Tuomas
 Eerola](https://www.durham.ac.uk/staff/tuomas-eerola/), at [Durham
 University](https://www.durham.ac.uk) and [Music and Science
