@@ -24,6 +24,7 @@ project:
     - Chapter11.2.qmd
     - Chapter11.3.qmd
     - Links.qmd
+    - Playlists.qmd
     - Citation.qmd
     - Version_Python.qmd
     - Version_R.qmd
@@ -68,6 +69,7 @@ website:
           - Citation.qmd
           - Technical.qmd
           - Links.qmd
+          - Playlists.qmd
           - Version_R.qmd
           - Version_Python.qmd
   page-navigation: true

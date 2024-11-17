@@ -1,15 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tuomaseerola.github.io/emr/index.html/Citation.html</loc>
-    <lastmod>2024-11-17T13:36:37.953Z</lastmod>
+    <loc>https://tuomaseerola.github.io/emr/index.html/Technical.html</loc>
+    <lastmod>2024-04-05T14:55:39.590Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tuomaseerola.github.io/emr/index.html/Version_Python.html</loc>
+    <lastmod>2024-04-05T14:42:40.495Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tuomaseerola.github.io/emr/index.html/Playlists.html</loc>
+    <lastmod>2024-11-17T13:42:29.194Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tuomaseerola.github.io/emr/index.html/Chapter11.3.html</loc>
+    <lastmod>2024-04-05T12:41:38.356Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tuomaseerola.github.io/emr/index.html/Chapter10.5.html</loc>
+    <lastmod>2024-04-05T12:43:15.485Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tuomaseerola.github.io/emr/index.html/Chapter10.3.html</loc>
+    <lastmod>2024-04-05T13:12:41.205Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tuomaseerola.github.io/emr/index.html/Chapter10.1.html</loc>
+    <lastmod>2024-04-05T12:41:59.186Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tuomaseerola.github.io/emr/index.html/Chapter9.4.html</loc>
+    <lastmod>2024-04-05T12:42:46.541Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tuomaseerola.github.io/emr/index.html/Chapter9.2.html</loc>
+    <lastmod>2024-04-05T13:12:42.084Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tuomaseerola.github.io/emr/index.html/Chapter7.html</loc>
+    <lastmod>2024-04-05T12:41:32.923Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tuomaseerola.github.io/emr/index.html/Chapter6.3.html</loc>
+    <lastmod>2024-04-05T13:12:45.832Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tuomaseerola.github.io/emr/index.html/Chapter6.1.html</loc>
+    <lastmod>2024-04-05T13:12:27.839Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tuomaseerola.github.io/emr/index.html/Chapter3.html</loc>
+    <lastmod>2024-04-05T13:12:44.504Z</lastmod>
   </url>
   <url>
     <loc>https://tuomaseerola.github.io/emr/index.html/index.html</loc>
     <lastmod>2024-11-17T13:24:36.478Z</lastmod>
   </url>
   <url>
-    <loc>https://tuomaseerola.github.io/emr/index.html/Playlists.html</loc>
-    <lastmod>2024-11-17T13:42:29.194Z</lastmod>
+    <loc>https://tuomaseerola.github.io/emr/index.html/Chapter1.html</loc>
+    <lastmod>2024-04-05T14:33:15.116Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tuomaseerola.github.io/emr/index.html/Chapter4.html</loc>
+    <lastmod>2024-04-05T12:35:32.296Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tuomaseerola.github.io/emr/index.html/Chapter6.2.html</loc>
+    <lastmod>2024-04-05T13:12:42.883Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tuomaseerola.github.io/emr/index.html/Chapter6.4.html</loc>
+    <lastmod>2024-04-05T12:41:26.483Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tuomaseerola.github.io/emr/index.html/Chapter9.1.html</loc>
+    <lastmod>2024-04-05T10:24:54.215Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tuomaseerola.github.io/emr/index.html/Chapter9.3.html</loc>
+    <lastmod>2024-04-05T13:12:40.314Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tuomaseerola.github.io/emr/index.html/Chapter9.5.html</loc>
+    <lastmod>2024-04-05T13:12:39.438Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tuomaseerola.github.io/emr/index.html/Chapter10.2.html</loc>
+    <lastmod>2024-04-05T13:12:45.211Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tuomaseerola.github.io/emr/index.html/Chapter10.4.html</loc>
+    <lastmod>2024-04-05T12:43:09.445Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tuomaseerola.github.io/emr/index.html/Chapter11.2.html</loc>
+    <lastmod>2024-04-05T13:12:36.197Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tuomaseerola.github.io/emr/index.html/Links.html</loc>
+    <lastmod>2024-04-05T13:12:43.759Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tuomaseerola.github.io/emr/index.html/Citation.html</loc>
+    <lastmod>2024-11-17T13:36:37.953Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tuomaseerola.github.io/emr/index.html/Version_R.html</loc>
+    <lastmod>2024-04-05T14:42:48.881Z</lastmod>
   </url>
 </urlset>
