@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./Technical.qmd" rel="next">
-<link href="./Chapter11.3.qmd" rel="prev">
+<link href="./Version_R.qmd" rel="next">
+<link href="./Links.qmd" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -116,7 +82,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Citation.html">Other</a></li><li class="breadcrumb-item"><a href="./Citation.html">Citation</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Citation.html">Other</a></li><li class="breadcrumb-item"><a href="./Playlists.html">Spotify Playlists</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -207,13 +173,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Citation.html" class="sidebar-item-text sidebar-link active">
+  <a href="./Citation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Citation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Playlists.html" class="sidebar-item-text sidebar-link">
+  <a href="./Playlists.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Spotify Playlists</span></a>
   </div>
 </li>
@@ -229,94 +195,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#book-bibliographic-details-in-apa-format" id="toc-book-bibliographic-details-in-apa-format" class="nav-link active" data-scroll-target="#book-bibliographic-details-in-apa-format">Book bibliographic details in APA format:</a></li>
-  <li><a href="#book-bibliographic-details-in-bibtex-format" id="toc-book-bibliographic-details-in-bibtex-format" class="nav-link" data-scroll-target="#book-bibliographic-details-in-bibtex-format">Book bibliographic details in <code>bibtex</code> format:</a></li>
-  <li><a href="#website-bibliographic-details-in-apa-format" id="toc-website-bibliographic-details-in-apa-format" class="nav-link" data-scroll-target="#website-bibliographic-details-in-apa-format">Website bibliographic details in APA format:</a></li>
-  <li><a href="#website-bibliographic-details-in-bibtex-format" id="toc-website-bibliographic-details-in-bibtex-format" class="nav-link" data-scroll-target="#website-bibliographic-details-in-bibtex-format">Website bibliographic details in <code>bibtex</code> format:</a></li>
+  <li><a href="#spotify-playlists" id="toc-spotify-playlists" class="nav-link active" data-scroll-target="#spotify-playlists">Spotify Playlists</a>
+  <ul class="collapse">
+  <li><a href="#music-examples-mentioned" id="toc-music-examples-mentioned" class="nav-link" data-scroll-target="#music-examples-mentioned">Music examples mentioned</a></li>
+  <li><a href="#chill-inducing-tracks" id="toc-chill-inducing-tracks" class="nav-link" data-scroll-target="#chill-inducing-tracks">Chill-inducing tracks</a></li>
+  <li><a href="#emotion-inducing-tracks" id="toc-emotion-inducing-tracks" class="nav-link" data-scroll-target="#emotion-inducing-tracks">Emotion inducing tracks</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Citation.html">Other</a></li><li class="breadcrumb-item"><a href="./Citation.html">Citation</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Citation</h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="book-bibliographic-details-in-apa-format" class="level2">
-<h2 class="anchored" data-anchor-id="book-bibliographic-details-in-apa-format">Book bibliographic details in APA format:</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Eerola, T. (2024). <em>Music and Science – A Guide to Empirical Music Research</em>. SEMPRE Studies in the Psychology of Music. London, UK: Routledge.</p>
-</div>
-</div>
+<section id="spotify-playlists" class="level1">
+<h1>Spotify Playlists</h1>
+<p>Here are tracks related to book as Spotify playlists.</p>
+<section id="music-examples-mentioned" class="level3">
+<h3 class="anchored" data-anchor-id="music-examples-mentioned">Music examples mentioned</h3>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4kNkfGbvPgHyaczEtGvCGt?utm_source=generator" width="100%" height="480" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+</iframe>
 </section>
-<section id="book-bibliographic-details-in-bibtex-format" class="level2">
-<h2 class="anchored" data-anchor-id="book-bibliographic-details-in-bibtex-format">Book bibliographic details in <code>bibtex</code> format:</h2>
-<div id="a05e7e69" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="at">@book</span>{eerola2024,</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    year <span class="op">=</span> {<span class="dv">2024</span>},</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    author <span class="op">=</span> {Eerola, T.},</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    title <span class="op">=</span> {Music <span class="kw">and</span> Science <span class="op">--</span> A Guide to Empirical Music Research},</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    address <span class="op">=</span> {London, UK},</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    publisher <span class="op">=</span> {Routledge},</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    series <span class="op">=</span> {SEMPRE Studies <span class="kw">in</span> the Psychology of Music},</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    doi <span class="op">=</span> {https:<span class="op">//</span>doi.org<span class="op">/</span><span class="fl">10.4324</span><span class="op">/</span><span class="dv">9781003293804</span>}</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="chill-inducing-tracks" class="level3">
+<h3 class="anchored" data-anchor-id="chill-inducing-tracks">Chill-inducing tracks</h3>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5PsFsyNtnJXffvDLeSqNgP?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+</iframe>
 </section>
-<section id="website-bibliographic-details-in-apa-format" class="level2">
-<h2 class="anchored" data-anchor-id="website-bibliographic-details-in-apa-format">Website bibliographic details in APA format:</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Eerola, T. (2024). <em>Music and Science – A Guide to Empirical Music Research</em>. <a href="https://tuomaseerola.github.io/emr/">https://tuomaseerola.github.io/emr/</a></p>
-</div>
-</div>
-</section>
-<section id="website-bibliographic-details-in-bibtex-format" class="level2">
-<h2 class="anchored" data-anchor-id="website-bibliographic-details-in-bibtex-format">Website bibliographic details in <code>bibtex</code> format:</h2>
-<div id="9b34c6dc" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="at">@misc</span>{eerola2024online,</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    author <span class="op">=</span> {Eerola, T.},</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    title <span class="op">=</span> {Music <span class="kw">and</span> Science <span class="op">--</span> A Guide to Empirical Music Research},</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    year <span class="op">=</span> {<span class="dv">2024</span>},</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    url <span class="op">=</span> {https:<span class="op">//</span>tuomaseerola.github.io<span class="op">/</span>emr<span class="op">/</span>},</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    urldate <span class="op">=</span> {<span class="dv">2024</span><span class="op">-</span><span class="dv">1</span><span class="op">-</span><span class="dv">1</span>}</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="emotion-inducing-tracks" class="level3">
+<h3 class="anchored" data-anchor-id="emotion-inducing-tracks">Emotion inducing tracks</h3>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/40r7eo92AXKx16bdQ9U4kh?utm_source=generator&amp;theme=0" width="100%" height="652" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+</iframe>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -731,12 +644,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./Chapter11.3.qmd" class="pagination-link" aria-label="">
+      <a href="./Links.qmd" class="pagination-link" aria-label="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Technical.qmd" class="pagination-link" aria-label="">
+      <a href="./Version_R.qmd" class="pagination-link" aria-label="">
         <span class="nav-page-text"></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

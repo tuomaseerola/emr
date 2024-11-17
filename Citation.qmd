@@ -4,7 +4,7 @@
 ## Book bibliographic details in APA format:
 
 ::: {.callout-note}
-Eerola, T. (in press). _Music and Science – Guide to Empirical Music Research_. SEMPRE Studies in the Psychology of Music. London, UK: Routledge.
+Eerola, T. (2024). _Music and Science – A Guide to Empirical Music Research_. SEMPRE Studies in the Psychology of Music. London, UK: Routledge.
 :::
 
 ## Book bibliographic details in `bibtex` format:
@@ -12,19 +12,20 @@ Eerola, T. (in press). _Music and Science – Guide to Empirical Music Research_
 ```{python}
 #| eval: false
 @book{eerola2024,
-	address = {London, UK},
+	year = {2024},
 	author = {Eerola, T.},
+	title = {Music and Science -- A Guide to Empirical Music Research},
+	address = {London, UK},
 	publisher = {Routledge},
 	series = {SEMPRE Studies in the Psychology of Music},
-	title = {Music and Science -- Guide to Empirical Music Research},
-	year = {2024}
+	doi = {https://doi.org/10.4324/9781003293804}
 }
 ```
 
 ## Website bibliographic details in APA format:
 
 ::: {.callout-note}
-Eerola, T. (2024). _Music and Science – Guide to Empirical Music Research_. [https://tuomaseerola.github.io/emr/](https://tuomaseerola.github.io/emr/)
+Eerola, T. (2024). _Music and Science – A Guide to Empirical Music Research_. [https://tuomaseerola.github.io/emr/](https://tuomaseerola.github.io/emr/)
 :::
 
 ## Website bibliographic details in `bibtex` format:
@@ -33,7 +34,7 @@ Eerola, T. (2024). _Music and Science – Guide to Empirical Music Research_. [h
 #| eval: false
 @misc{eerola2024online,
 	author = {Eerola, T.},
-	title = {Music and Science -- Guide to Empirical Music Research},
+	title = {Music and Science -- A Guide to Empirical Music Research},
 	year = {2024},
 	url = {https://tuomaseerola.github.io/emr/},
     urldate = {2024-1-1}
