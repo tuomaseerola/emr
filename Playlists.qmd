@@ -1,0 +1,17 @@
+
+# Spotify Playlists
+
+Here are tracks related to book as Spotify playlists. 
+
+### Music examples mentioned
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4kNkfGbvPgHyaczEtGvCGt?utm_source=generator" width="100%" height="480" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+### Chill-inducing tracks
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5PsFsyNtnJXffvDLeSqNgP?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+### Emotion inducing tracks
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/40r7eo92AXKx16bdQ9U4kh?utm_source=generator&theme=0" width="100%" height="652" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+

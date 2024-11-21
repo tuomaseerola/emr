@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>EMR - Music and Science: A Guide to Empirical Research</title>
+<title>EMR</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./Version_R.html" rel="next">
+<link href="./Links.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -71,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked fullcontent">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -80,9 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      EMR
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Citation.html">Other</a></li><li class="breadcrumb-item"><a href="./Playlists.html">Spotify Playlists</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -305,7 +305,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Playlists.html" class="sidebar-item-text sidebar-link">
+  <a href="./Playlists.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Spotify Playlists</span></a>
   </div>
 </li>
@@ -328,302 +328,46 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#spotify-playlists" id="toc-spotify-playlists" class="nav-link active" data-scroll-target="#spotify-playlists">Spotify Playlists</a>
+  <ul class="collapse">
+  <li><a href="#music-examples-mentioned" id="toc-music-examples-mentioned" class="nav-link" data-scroll-target="#music-examples-mentioned">Music examples mentioned</a></li>
+  <li><a href="#chill-inducing-tracks" id="toc-chill-inducing-tracks" class="nav-link" data-scroll-target="#chill-inducing-tracks">Chill-inducing tracks</a></li>
+  <li><a href="#emotion-inducing-tracks" id="toc-emotion-inducing-tracks" class="nav-link" data-scroll-target="#emotion-inducing-tracks">Emotion inducing tracks</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Music and Science: A Guide to Empirical Research</h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<!--
-conda activate relative_mode 
-quarto preview Chapter11.1.qmd  
-
-I am currently working towards finishing this file.
--->
-<p><img src="images/music_and_science_cover_sm.png" align="right"> This repository contains the electronic materials for <em>Routledge</em> book titled <strong><a href="https://tuomaseerola.github.io/emr/">Music and Science: A Guide to Empirical Research</a></strong> by <a href="https://tuomaseerola.github.io/about/">Tuomas Eerola</a>, at <a href="https://www.durham.ac.uk">Durham University</a> and <a href="https://musicscience.net">Music and Science Lab</a>. The book was published in November 2024 (see <a href="https://www.routledge.com/Music-and-Science-A-Guide-to-Empirical-Music-Research/Eerola/p/book/9781032277066">publisher page</a>).</p>
-<p>The materials are <a href="https://quarto.org">Quarto</a> notebooks with code examples in <a href="https://www.r-project.org/">R</a> or <a href="https://www.python.org/">Python</a>. The notebooks can be used in four ways:</p>
-<ol type="1">
-<li>Explore the code and data directly in R or in Python in your local machine.</li>
-<li>Use the <strong>Jupyter</strong> notebooks locally in a <a href="https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/index.html">server</a>.</li>
-<li>Run the notebooks through <a href="https://colab.research.google.com/"><strong>Google Colab</strong></a> in a browser (it is free and does not require any additional software).</li>
-<li>Study this <strong>website</strong> to learn how to replicate the computational and statistical aspects mentioned in the book.</li>
-</ol>
-<p>See <a href="./Technical.html">technical notes</a> about the notebooks and <a href="./Version_R.html">package versions</a>.</p>
-<p>The public-facing version of this repository is at <a href="https://tuomaseerola.github.io/emr/">https://tuomaseerola.github.io/emr/</a>. See <a href="./Citation.html">citation</a> for the bibliographic details of the book.</p>
-<p><code>Ver: 25/4/2024 15:32</code></p>
-<section id="contents" class="level1">
-<h1>Contents</h1>
-<table class="table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Website (preferred link)</th>
-<th style="text-align: left;">Jupyter</th>
-<th style="text-align: left;">Colab</th>
-<th style="text-align: left;">Language</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><strong>Chapter 1: Introduction</strong></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">&nbsp;&nbsp;<a href="./Chapter1.html">Ch. 1 - Notebook basics</a></td>
-<td style="text-align: left;"><a href="https://github.com/tuomaseerola/emr/blob/main/nb/Chapter1.ipynb">Chapter1.ipynb</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/nb/Chapter1.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Colab"></a></td>
-<td style="text-align: left;">R</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>Chapter 2: History</strong></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">&nbsp;&nbsp;Ch. 2 Examples</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>Chapter 3: Contemporary Empirical Music Research</strong></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">&nbsp;&nbsp;<a href="./Chapter3.html">Ch. 3 - Historic profiles</a></td>
-<td style="text-align: left;"><a href="https://github.com/tuomaseerola/emr/blob/main/nb/Chapter3.ipynb">Chapter3.ipynb</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/nb/Chapter3.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Colab"></a></td>
-<td style="text-align: left;">R</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>Chapter 4: Methods and Research Designs</strong></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">&nbsp;&nbsp;<a href="./Chapter4.html">Ch. 4 - Correlations</a></td>
-<td style="text-align: left;"><a href="https://github.com/tuomaseerola/emr/blob/main/nb/Chapter4.ipynb">Chapter4.ipynb</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/nb/Chapter4.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Colab"></a></td>
-<td style="text-align: left;">R</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>Chapter 5: Sources of Information</strong></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>Chapter 6: Data Organisation and Summaries</strong></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">&nbsp;&nbsp;<a href="./Chapter6.1.html">Ch. 6 - Using R</a></td>
-<td style="text-align: left;"><a href="https://github.com/tuomaseerola/emr/blob/main/nb/Chapter6.1.ipynb">Chapter6.1.ipynb</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/nb/Chapter6.1.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Colab"></a></td>
-<td style="text-align: left;">R</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">&nbsp;&nbsp;<a href="./Chapter6.2.html">Ch. 6 - Data organisation</a></td>
-<td style="text-align: left;"><a href="https://github.com/tuomaseerola/emr/blob/main/nb/Chapter6.2.ipynb">Chapter6.2.ipynb</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/nb/Chapter6.2.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Colab"></a></td>
-<td style="text-align: left;">R</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">&nbsp;&nbsp;<a href="./Chapter6.3.html">Ch. 6 - Diagnostics</a></td>
-<td style="text-align: left;"><a href="https://github.com/tuomaseerola/emr/blob/main/nb/Chapter6.3.ipynb">Chapter6.3.ipynb</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/nb/Chapter6.3.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Colab"></a></td>
-<td style="text-align: left;">R</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">&nbsp;&nbsp;<a href="./Chapter6.4.html">Ch. 6 - Outliers</a></td>
-<td style="text-align: left;"><a href="https://github.com/tuomaseerola/emr/blob/main/nb/Chapter6.4.ipynb">Chapter6.4.ipynb</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/nb/Chapter6.4.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Colab"></a></td>
-<td style="text-align: left;">R</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>Chapter 7: Statistical Analysis</strong></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">&nbsp;&nbsp;<a href="./Chapter7.html">Ch. 7 - Inferential statistics</a></td>
-<td style="text-align: left;"><a href="https://github.com/tuomaseerola/emr/blob/main/nb/Chapter7.ipynb">Chapter7.ipynb</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/nb/Chapter7.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Colab"></a></td>
-<td style="text-align: left;">R</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>Chapter 8: Reporting</strong></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>Chapter 9: Analysis of Scores and Performances</strong></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">&nbsp;&nbsp;<a href="./Chapter9.1.html">Ch. 9 - Music analysis</a></td>
-<td style="text-align: left;"><a href="https://github.com/tuomaseerola/emr/blob/main/nb/Chapter9.1.ipynb">Chapter9.1.ipynb</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/nb/Chapter9.1.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Colab"></a></td>
-<td style="text-align: left;">Python</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">&nbsp;&nbsp;<a href="./Chapter9.2.html">Ch. 9 - Event counts</a></td>
-<td style="text-align: left;"><a href="https://github.com/tuomaseerola/emr/blob/main/nb/Chapter9.2.ipynb">Chapter9.2.ipynb</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/nb/Chapter9.2.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Colab"></a></td>
-<td style="text-align: left;">Python</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">&nbsp;&nbsp;<a href="./Chapter9.3.html">Ch. 9 - Key-Finding</a></td>
-<td style="text-align: left;"><a href="https://github.com/tuomaseerola/emr/blob/main/nb/Chapter9.3.ipynb">Chapter9.3.ipynb</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/nb/Chapter9.3.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Colab"></a></td>
-<td style="text-align: left;">Python</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">&nbsp;&nbsp;<a href="./Chapter9.4.html">Ch. 9 - Expressive timing</a></td>
-<td style="text-align: left;"><a href="https://github.com/tuomaseerola/emr/blob/main/nb/Chapter9.4.ipynb">Chapter9.4.ipynb</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/nb/Chapter9.4.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Colab"></a></td>
-<td style="text-align: left;">R</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">&nbsp;&nbsp;<a href="./Chapter9.5.html">Ch. 9 - Synchronisation</a></td>
-<td style="text-align: left;"><a href="https://github.com/tuomaseerola/emr/blob/main/nb/Chapter9.5.ipynb">Chapter9.5.ipynb</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/nb/Chapter9.5.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Colab"></a></td>
-<td style="text-align: left;">R</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>Chapter 10: Analysis of Audio</strong></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">&nbsp;&nbsp;<a href="./Chapter10.1.html">Ch. 10 - Basics (sines)</a></td>
-<td style="text-align: left;"><a href="https://github.com/tuomaseerola/emr/blob/main/nb/Chapter10.1.ipynb">Chapter10.1.ipynb</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/nb/Chapter10.1.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Colab"></a></td>
-<td style="text-align: left;">Python</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">&nbsp;&nbsp;<a href="./Chapter10.2.html">Ch. 10 - Spectrum and envelope</a></td>
-<td style="text-align: left;"><a href="https://github.com/tuomaseerola/emr/blob/main/nb/Chapter10.2.ipynb">Chapter10.2.ipynb</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/nb/Chapter10.2.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Colab"></a></td>
-<td style="text-align: left;">Python</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">&nbsp;&nbsp;<a href="./Chapter10.3.html">Ch. 10 - Physical</a></td>
-<td style="text-align: left;"><a href="https://github.com/tuomaseerola/emr/blob/main/nb/Chapter10.3.ipynb">Chapter10.3.ipynb</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/nb/Chapter10.3.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Colab"></a></td>
-<td style="text-align: left;">Python</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">&nbsp;&nbsp;<a href="./Chapter10.4.html">Ch. 10 - Perceptual</a></td>
-<td style="text-align: left;"><a href="https://github.com/tuomaseerola/emr/blob/main/nb/Chapter10.4.ipynb">Chapter10.4.ipynb</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/nb/Chapter10.4.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Colab"></a></td>
-<td style="text-align: left;">Python</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">&nbsp;&nbsp;<a href="./Chapter10.5.html">Ch. 10 - Semantic</a></td>
-<td style="text-align: left;"><a href="https://github.com/tuomaseerola/emr/blob/main/nb/Chapter10.5.ipynb">Chapter10.5.ipynb</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/nb/Chapter10.5.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Colab"></a></td>
-<td style="text-align: left;">Python</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>Chapter 11: Corpus Studies</strong></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">&nbsp;&nbsp;<a href="./Chapter11.2.html">Ch. 11 - Genre Classification</a></td>
-<td style="text-align: left;"><a href="https://github.com/tuomaseerola/emr/blob/main/nb/Chapter11.2.ipynb">Chapter11.2.ipynb</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/nb/Chapter11.2.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Colab"></a></td>
-<td style="text-align: left;">Python</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">&nbsp;&nbsp;<a href="./Chapter11.3.html">Ch. 11 - Synchrony</a></td>
-<td style="text-align: left;"><a href="https://github.com/tuomaseerola/emr/blob/main/nb/Chapter11.3.ipynb">Chapter11.3.qmd</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/nb/Chapter11.3.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Colab"></a></td>
-<td style="text-align: left;">R</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>Chapter 12: Summary and Future Directions</strong></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>Appendix</strong></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">&nbsp;&nbsp;<a href="./Citation.html">Citation</a></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Markdown</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">&nbsp;&nbsp;<a href="./Technical.html">Technical</a></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Markdown</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">&nbsp;&nbsp;<a href="./Links.html">Links</a></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Markdown</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">&nbsp;&nbsp;<a href="./Playlists.html">Playlists</a></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Markdown</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">&nbsp;&nbsp;<a href="./Version_R.html">Version (R)</a></td>
-<td style="text-align: left;"><a href="https://github.com/tuomaseerola/emr/blob/main/nb/Version_R.ipynb">Version_R.ipynb</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/nb/Version_R.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Colab"></a></td>
-<td style="text-align: left;">R</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">&nbsp;&nbsp;<a href="./Version_Python.html">Version (Python)</a></td>
-<td style="text-align: left;"><a href="https://github.com/tuomaseerola/emr/blob/main/nb/Version_Python.ipynb">Version_Python.ipynb</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/tuomaseerola/emr/blob/main/nb/Version_Python.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Colab"></a></td>
-<td style="text-align: left;">Python</td>
-</tr>
-</tbody>
-</table>
+<section id="spotify-playlists" class="level1">
+<h1>Spotify Playlists</h1>
+<p>Here are tracks related to book as Spotify playlists.</p>
+<section id="music-examples-mentioned" class="level3">
+<h3 class="anchored" data-anchor-id="music-examples-mentioned">Music examples mentioned</h3>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4kNkfGbvPgHyaczEtGvCGt?utm_source=generator" width="100%" height="480" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+</iframe>
+</section>
+<section id="chill-inducing-tracks" class="level3">
+<h3 class="anchored" data-anchor-id="chill-inducing-tracks">Chill-inducing tracks</h3>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5PsFsyNtnJXffvDLeSqNgP?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+</iframe>
+</section>
+<section id="emotion-inducing-tracks" class="level3">
+<h3 class="anchored" data-anchor-id="emotion-inducing-tracks">Emotion inducing tracks</h3>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/40r7eo92AXKx16bdQ9U4kh?utm_source=generator&amp;theme=0" width="100%" height="652" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+</iframe>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -1036,6 +780,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Links.html" class="pagination-link" aria-label="Links">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Links</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./Version_R.html" class="pagination-link" aria-label="Library version (R)">
+        <span class="nav-page-text">Library version (R)</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1045,12 +801,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page">
+    <a class="nav-link" href="./index.html">
 <p>Home</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="./Citation.html">
+    <a class="nav-link active" href="./Citation.html" aria-current="page">
 <p>Citation</p>
 </a>
   </li>  

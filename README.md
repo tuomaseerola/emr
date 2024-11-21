@@ -7,8 +7,9 @@ repository contains the electronic materials for *Routledge* book titled
 Research](https://tuomaseerola.github.io/emr/)** by [Tuomas
 Eerola](https://www.durham.ac.uk/staff/tuomas-eerola/), at [Durham
 University](https://www.durham.ac.uk) and [Music and Science
-Lab](https://musicscience.net). The book is scheduled to be published in
-2024.
+Lab](https://musicscience.net). The book was published in November 2024
+(see [publisher
+page](https://www.routledge.com/Music-and-Science-A-Guide-to-Empirical-Music-Research/Eerola/p/book/9781032277066)).
 
 The materials are Jupyter notebooks with code examples in
 [R](https://www.r-project.org/) or [Python](https://www.python.org/)).
@@ -68,5 +69,6 @@ bibliographic details of the book.
 |   [Citation](Citation.qmd)                                                            |                                                                                               |                                                                                                                                                                   | Markdown |
 |   [Technical](Technical.qmd)                                                          |                                                                                               |                                                                                                                                                                   | Markdown |
 |   [Links](Links.qmd)                                                                  |                                                                                               |                                                                                                                                                                   | Markdown |
+|   [Playlists](Playlists.qmd)                                                          |                                                                                               |                                                                                                                                                                   | Markdown |
 |   [Version (R)](Version_R.qmd)                                                        | [Version_R.ipynb](https://github.com/tuomaseerola/emr/blob/main/nb/Version_R.ipynb)           | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/main/nb/Version_R.ipynb)      | R        |
 |   [Version (Python)](Version_Python.qmd)                                              | [Version_Python.ipynb](https://github.com/tuomaseerola/emr/blob/main/nb/Version_Python.ipynb) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tuomaseerola/emr/blob/main/nb/Version_Python.ipynb) | Python   |
